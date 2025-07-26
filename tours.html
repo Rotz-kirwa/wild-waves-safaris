@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Tours & Safaris - Wildwavesafaris</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Epic Tours & Safari Adventures">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<style>
+.tours-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1646987777528-d56c586ff51b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dG91cnMlMjBhbmQlMjBzYWZhcml8ZW58MHx8MHx8fDA%3D');
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.tour-card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 50px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: all 0.4s ease;
+    position: relative;
+}
+.tour-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
+.tour-image {
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+.tour-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,107,53,0.8), rgba(247,147,30,0.8));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.tour-card:hover .tour-image::before {
+    opacity: 1;
+}
+.tour-content {
+    padding: 35px;
+    position: relative;
+}
+.tour-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2d2c2c;
+    position: relative;
+}
+.tour-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    border-radius: 2px;
+}
+.tour-description {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+.tour-highlights {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+.tour-highlights li {
+    padding: 8px 0;
+    color: #555;
+    position: relative;
+    padding-left: 30px;
+}
+.tour-highlights li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ff6b35;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.adventure-btn {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.adventure-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+.adventure-btn:hover::before {
+    left: 100%;
+}
+.adventure-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    color: white;
+    text-decoration: none;
+}
+.duration-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 107, 53, 0.95);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.price-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+.floating-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.tour-card:hover .floating-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+.stats-section {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    padding: 60px 0;
+    margin: 80px 0;
+}
+.stat-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    display: block;
+}
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="super_container">
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="top_bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col d-flex flex-row">
+                        <div class="phone">0713241666</div>
+                        <div class="social">
+                            <ul class="social_list">
+                                <li class="social_list_item"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                <li class="social_list_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li class="social_list_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="user_box_register user_box_link"><a href="#">register</a></div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+
+        <nav class="main_nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
+                        <div class="logo_container">
+                            <div class="logo"><a href="index.html"><img src="images/logo.png" alt="">Wildwavesafaris</a></div>
+                        </div>
+                        <div class="main_nav_container ml-auto">
+                            <ul class="main_nav_list">
+                                <li class="main_nav_item"><a href="index.html">home</a></li>
+                                <li class="main_nav_item"><a href="about.html">about us</a></li>
+                                <li class="main_nav_item"><a href="activities.html">activities</a></li>
+                                <li class="main_nav_item"><a href="accommodations.html">accommodations</a></li>
+                                <li class="main_nav_item"><a href="tours.html" style="color: #ff6b35 !important;">tours</a></li>
+                                <li class="main_nav_item"><a href="contact.html">contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="tours-hero">
+        <div class="container">
+            <h1 style="font-size: 4rem; margin-bottom: 25px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">🦁 Epic Safari Adventures</h1>
+            <p style="font-size: 1.4rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Embark on the journey of a lifetime through Kenya's untamed wilderness</p>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Safari Adventures</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">National Parks</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Happy Travelers</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <span class="stat-number">10</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tours Section -->
+    <div class="container" style="padding: 80px 0;">
+        <div class="row">
+            <div class="col text-center" style="margin-bottom: 70px;">
+                <h2 style="font-size: 3rem; color: #2d2c2c; margin-bottom: 25px;">🌍 Unforgettable Safari Experiences</h2>
+                <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">From thrilling wildlife encounters to breathtaking landscapes, discover the magic of Kenya's wilderness</p>
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-lg-6 col-md-12">
+                <div class="tour-card">
+                    <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1646987777528-d56c586ff51b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dG91cnMlMjBhbmQlMjBzYWZhcml8ZW58MHx8MHx8fDA%3D')">
+                        <div class="duration-badge">5-7 Days</div>
+                        <div class="price-badge">From KSh 85,000</div>
+                        <div class="floating-icon"><i class="fa fa-binoculars"></i></div>
+                    </div>
+                    <div class="tour-content">
+                        <h3 class="tour-title">Ultimate Big Five Safari</h3>
+                        <p class="tour-description">Experience the thrill of encountering Africa's legendary Big Five in their natural habitat. This premium safari takes you through Kenya's most renowned national parks for an unforgettable wildlife adventure.</p>
+                        <ul class="tour-highlights">
+                            <li>Maasai Mara Game Reserve exploration</li>
+                            <li>Professional wildlife guide & 4x4 vehicle</li>
+                            <li>Luxury tented camp accommodation</li>
+                            <li>All meals & park entrance fees included</li>
+                            <li>Hot air balloon safari (optional)</li>
+                        </ul>
+                        <a href="contact.html" class="adventure-btn">Book Adventure</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="tour-card">
+                    <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1548781612-d0b9cdefd259?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRvdXJzJTIwYW5kJTIwc2FmYXJpfGVufDB8fDB8fHww')">
+                        <div class="duration-badge">3-5 Days</div>
+                        <div class="price-badge">From KSh 45,000</div>
+                        <div class="floating-icon"><i class="fa fa-road"></i></div>
+                    </div>
+                    <div class="tour-content">
+                        <h3 class="tour-title">Epic Road Trip Safari</h3>
+                        <p class="tour-description">Hit the road for an authentic Kenyan adventure! Travel through diverse landscapes, from rolling savannahs to dramatic escarpments, discovering hidden gems and local culture along the way.</p>
+                        <ul class="tour-highlights">
+                            <li>Scenic drives through Rift Valley</li>
+                            <li>Cultural village visits & local interactions</li>
+                            <li>Flexible itinerary & photo stops</li>
+                            <li>Comfortable safari vehicle with guide</li>
+                            <li>Authentic local meals & experiences</li>
+                        </ul>
+                        <a href="contact.html" class="adventure-btn">Start Journey</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="tour-card">
+                    <div class="tour-image" style="background-image: url('https://media.istockphoto.com/id/1468433582/photo/woman-walking-on-rope-bridge-in-lush-jungles-a.webp?a=1&b=1&s=612x612&w=0&k=20&c=dDdw0r6AdnXBx6RU3-QxZzmt8rVHABjAIZTR-ZxJe1w='); height: 350px;">
+                        <div class="duration-badge">7-10 Days</div>
+                        <div class="price-badge">From KSh 125,000</div>
+                        <div class="floating-icon"><i class="fa fa-leaf"></i></div>
+                    </div>
+                    <div class="tour-content">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h3 class="tour-title">Ultimate Adventure Expedition</h3>
+                                <p class="tour-description">For the ultimate thrill-seekers! This comprehensive expedition combines wildlife safaris, mountain trekking, forest canopy walks, and cultural immersion. Experience Kenya's incredible biodiversity from the ground up to the treetops.</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="tour-highlights">
+                                            <li>Multi-park safari experience</li>
+                                            <li>Mount Kenya trekking adventure</li>
+                                            <li>Canopy walks in ancient forests</li>
+                                            <li>White water rafting & zip-lining</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="tour-highlights">
+                                            <li>Cultural homestay experiences</li>
+                                            <li>Professional adventure guides</li>
+                                            <li>All equipment & safety gear</li>
+                                            <li>Luxury eco-lodges & camping</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-center" style="display: flex; align-items: center; justify-content: center;">
+                                <a href="contact.html" class="adventure-btn" style="font-size: 1.2rem; padding: 18px 45px;">Ultimate Adventure</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div style="background: linear-gradient(135deg, #2d2c2c, #1a1a1a); color: white; padding: 80px 0;">
+        <div class="container text-center">
+            <h2 style="margin-bottom: 25px; font-size: 2.5rem;">🌟 Ready for Your Safari Adventure?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9;">Join thousands of adventurers who have experienced the magic of Kenya with us</p>
+            <a href="contact.html" class="adventure-btn" style="font-size: 1.2rem; padding: 18px 50px;">Plan My Safari</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 footer_column">
+                    <div class="footer_col">
+                        <div class="footer_content footer_about">
+                            <div class="logo_container footer_logo">
+                                <div class="logo"><a href="#"><img src="images/logo.png" alt="">Wildwavesafaris</a></div>
+                            </div>
+                            <p class="footer_about_text">Discover breathtaking destinations and unforgettable safari adventures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Safari Activities - Wildwavesafaris</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Safari Activities">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<style>
+.activities-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/intro_1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+.activity-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.activity-card:hover {
+    transform: translateY(-5px);
+}
+.activity-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.activity-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2d2c2c;
+}
+.activity-description {
+    color: #666;
+    line-height: 1.6;
+}
+.bonus-section {
+    background: #f8f9fa;
+    padding: 50px 0;
+    margin-top: 50px;
+}
+
+/* Unique Arrow Button Styles */
+.unique-arrow-button {
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.safari-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.safari-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.safari-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.safari-cta-btn:hover::before {
+    left: 100%;
+}
+
+.btn-text {
+    margin-right: 15px;
+    z-index: 2;
+    position: relative;
+}
+
+.arrow-container {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 2;
+}
+
+.arrow-shaft {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: white;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.arrow-head {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 8px solid white;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.safari-cta-btn:hover .arrow-shaft {
+    width: 25px;
+}
+
+.safari-cta-btn:hover .arrow-head {
+    transform: translateY(-50%) translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .safari-cta-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .btn-text {
+        margin-right: 10px;
+    }
+    
+    .arrow-container {
+        width: 25px;
+        height: 18px;
+    }
+}
+</style>
+<style>
+
+</style>
+</head>
+
+<body>
+
+<div class="super_container">
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="top_bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col d-flex flex-row">
+                        <div class="phone">0713241666</div>
+                        <div class="social">
+                            <ul class="social_list">
+                                <li class="social_list_item"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                <li class="social_list_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li class="social_list_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                            <div class="user_box_register user_box_link"><a href="#">register</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+
+        <nav class="main_nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
+                        <div class="logo_container">
+                            <div class="logo"><a href="index.html"><img src="images/logo.png" alt="">Wildwavesafaris</a></div>
+                        </div>
+                        <div class="main_nav_container ml-auto">
+                            <ul class="main_nav_list">
+                                <li class="main_nav_item"><a href="index.html">home</a></li>
+                                <li class="main_nav_item"><a href="about.html">about us</a></li>
+                                <li class="main_nav_item"><a href="activities.html" style="color: #ff6b35 !important;">activities</a></li>
+                                <li class="main_nav_item"><a href="offers.html">offers</a></li>
+                                <li class="main_nav_item"><a href="blog.html">news</a></li>
+                                <li class="main_nav_item"><a href="contact.html">contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="activities-hero">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">🐾 Top Safari Activities</h1>
+            <p style="font-size: 1.2rem;">Discover amazing experiences on your safari adventure</p>
+        </div>
+    </div>
+
+    <!-- Activities Section -->
+    <div class="container" style="padding: 80px 0;">
+        <div class="row">
+            
+            <div class="col-lg-6 col-md-6">
+                <div class="activity-card">
+                    <div class="activity-icon">🚗</div>
+                    <h3 class="activity-title">1. Game Drives</h3>
+                    <div class="activity-description">
+                        <p>Go on guided drives in 4x4 vehicles through national parks and reserves</p>
+                        <p><strong>Spot the Big Five:</strong> Lion, Leopard, Elephant, Rhino, and Buffalo</p>
+                        <p><strong>Best done:</strong> Early morning or evening</p>
+                        <p><strong>📍 Top Parks:</strong> Maasai Mara, Amboseli, Tsavo, Samburu</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="activity-card">
+                    <div class="activity-icon">🐦</div>
+                    <h3 class="activity-title">2. Bird Watching</h3>
+                    <div class="activity-description">
+                        <p>Kenya has over 1,100 bird species</p>
+                        <p><strong>Ideal locations:</strong> Lake Nakuru, Naivasha, Kakamega Forest</p>
+                        <p>Perfect for ornithology enthusiasts and nature photographers</p>
+                        <p><strong>Best time:</strong> Early morning hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="activity-card">
+                    <div class="activity-icon">🎈</div>
+                    <h3 class="activity-title">3. Hot Air Balloon Safari</h3>
+                    <div class="activity-description">
+                        <p>Float above the Masai Mara at sunrise</p>
+                        <p>See herds, rivers, and plains from the sky</p>
+                        <p><strong>Special feature:</strong> Ends with a bush breakfast</p>
+                        <p><strong>📍 Best locations:</strong> Maasai Mara, Amboseli</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="activity-card">
+                    <div class="activity-icon">🥾</div>
+                    <h3 class="activity-title">4. Nature Walks / Walking Safaris</h3>
+                    <div class="activity-description">
+                        <p>Explore the wild on foot with a guide</p>
+                        <p>Learn about animal tracks, plants, and smaller wildlife</p>
+                        <p><strong>Common in:</strong> Conservancies or private reserves</p>
+                        <p><strong>Safety:</strong> Always with armed guides</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="activity-card">
+                    <div class="activity-icon">🏘️</div>
+                    <h3 class="activity-title">5. Cultural Visits</h3>
+                    <div class="activity-description">
+                        <p>Visit Maasai or Samburu villages</p>
+                        <p>Learn traditional dances, customs, dress, and lifestyle</p>
+                        <p><strong>Impact:</strong> Support local communities</p>
+                        <p><strong>Experience:</strong> Authentic cultural immersion</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="activity-card">
+                    <div class="activity-icon">🛶</div>
+                    <h3 class="activity-title">6. Boat Safaris</h3>
+                    <div class="activity-description">
+                        <p><strong>Common in:</strong> Lake Naivasha, Lake Victoria, and Tana River</p>
+                        <p>Spot hippos, crocodiles, and water birds up close</p>
+                        <p>Peaceful way to observe aquatic wildlife</p>
+                        <p><strong>Best time:</strong> Late afternoon</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="activity-card">
+                    <div class="activity-icon">🌅</div>
+                    <h3 class="activity-title">7. Bush Meals & Sundowners</h3>
+                    <div class="activity-description">
+                        <p>Enjoy meals in the wild with scenic views</p>
+                        <p><strong>Sundowners:</strong> Cocktails/snacks served while watching the sunset in the savannah</p>
+                        <p>Romantic and memorable dining experience</p>
+                        <p><strong>Setting:</strong> Under acacia trees or scenic viewpoints</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="activity-card">
+                    <div class="activity-icon">⛺</div>
+                    <h3 class="activity-title">8. Camping in the Wild</h3>
+                    <div class="activity-description">
+                        <p>Sleep in luxury tents or basic camps under the stars</p>
+                        <p>Fall asleep to the sounds of nature</p>
+                        <p><strong>Options:</strong> From basic camping to luxury glamping</p>
+                        <p><strong>Experience:</strong> True wilderness immersion</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="activity-card">
+                    <div class="activity-icon">📸</div>
+                    <h3 class="activity-title">9. Photography Safaris</h3>
+                    <div class="activity-description">
+                        <p>Specially designed vehicles and guides for wildlife photography</p>
+                        <p>Perfect for professionals or enthusiasts</p>
+                        <p><strong>Features:</strong> Extended roof hatches, bean bags for stability</p>
+                        <p><strong>Focus:</strong> Golden hour lighting and animal behavior</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="activity-card">
+                    <div class="activity-icon">🌙</div>
+                    <h3 class="activity-title">10. Night Game Drives</h3>
+                    <div class="activity-description">
+                        <p><strong>Available in:</strong> Selected conservancies</p>
+                        <p>Spot nocturnal animals like aardvarks, bush babies, and leopards</p>
+                        <p><strong>Equipment:</strong> Spotlights to illuminate wildlife</p>
+                        <p><strong>Unique sightings:</strong> Predators on the hunt</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="bonus-section">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h2 style="margin-bottom: 30px; color: #2d2c2c;">🌟 Ready for Your Safari Adventure?</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 40px; color: #666;">Experience the magic of Kenya's wilderness with our expertly guided safari activities</p>
+                    <div class="unique-arrow-button">
+                        <a href="contact.html" class="safari-cta-btn">
+                            <span class="btn-text">Book Your Safari Now</span>
+                            <div class="arrow-container">
+                                <div class="arrow-shaft"></div>
+                                <div class="arrow-head"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 60px;">
+                <div class="col-lg-3 col-md-6 text-center" style="margin-bottom: 30px;">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">🦁</div>
+                    <h4>Big Five Encounters</h4>
+                    <p style="color: #666; font-size: 0.9rem;">Lion, Leopard, Elephant, Rhino, Buffalo</p>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center" style="margin-bottom: 30px;">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">🌅</div>
+                    <h4>Sunrise Adventures</h4>
+                    <p style="color: #666; font-size: 0.9rem;">Early morning game drives & balloon safaris</p>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center" style="margin-bottom: 30px;">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">🏘️</div>
+                    <h4>Cultural Immersion</h4>
+                    <p style="color: #666; font-size: 0.9rem;">Authentic Maasai & Samburu experiences</p>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center" style="margin-bottom: 30px;">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">📸</div>
+                    <h4>Photography Tours</h4>
+                    <p style="color: #666; font-size: 0.9rem;">Capture Kenya's stunning wildlife & landscapes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 footer_column">
+                    <div class="footer_col">
+                        <div class="footer_content footer_about">
+                            <div class="logo_container footer_logo">
+                                <div class="logo"><a href="#"><img src="images/logo.png" alt="">Wildwavesafaris</a></div>
+                            </div>
+                            <p class="footer_about_text">Discover breathtaking destinations and unforgettable safari adventures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+
+</body>
+</html>
