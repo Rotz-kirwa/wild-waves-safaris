@@ -11,6 +11,248 @@
 <link rel="stylesheet" type="text/css" href="styles/about_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/about_responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/new-navbar.css">
+<style>
+/* MOBILE-FIRST RESPONSIVE DESIGN */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+	/* Body and container adjustments */
+	body {
+		padding-top: 80px !important;
+		overflow-x: hidden;
+	}
+	
+	/* Topbar mobile styling */
+	.wildwave-topbar {
+		height: auto;
+		padding: 8px 15px;
+		flex-direction: column;
+		gap: 8px;
+		position: fixed;
+		top: 0;
+		z-index: 1001;
+	}
+	
+	.wildwave-topbar .contact-info {
+		flex-direction: column;
+		gap: 5px;
+		font-size: 11px;
+		width: 100%;
+		text-align: center;
+	}
+	
+	.wildwave-topbar .contact-info span {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+	}
+	
+	.wildwave-topbar .social-icons {
+		justify-content: center;
+		gap: 10px;
+	}
+	
+	.wildwave-topbar .mobile-menu-btn-topbar {
+		display: flex !important;
+		position: absolute;
+		top: 8px;
+		right: 15px;
+		width: 40px;
+		height: 40px;
+		font-size: 18px;
+		border-radius: 8px;
+		transition: all 0.3s ease;
+	}
+	
+	.wildwave-topbar .mobile-menu-btn-topbar:hover {
+		background: #fa9e1b;
+		color: #2c3e50;
+		transform: scale(1.05);
+	}
+	
+	/* Main navbar mobile */
+	.wildwave-navbar {
+		display: none !important;
+	}
+	
+	/* Hero section mobile */
+	.home {
+		height: 400px !important;
+		margin-top: 0;
+	}
+	
+	.home > div {
+		flex-direction: column !important;
+	}
+	
+	.home > div > div {
+		flex: none !important;
+		height: 50% !important;
+	}
+	
+	.home_title {
+		font-size: 2.5rem !important;
+		line-height: 1.2;
+	}
+	
+	.home .centered-title {
+		padding: 15px 20px !important;
+	}
+	
+	.home .centered-title p {
+		font-size: 1rem !important;
+	}
+	
+	/* Premium accommodations mobile */
+	.premium-accommodations {
+		padding: 40px 0 !important;
+	}
+	
+	.premium-accommodations .container {
+		padding: 0 15px;
+	}
+	
+	.premium-accommodations h2 {
+		font-size: 2rem !important;
+		margin-bottom: 10px !important;
+		letter-spacing: 1px !important;
+	}
+	
+	.premium-accommodations p {
+		font-size: 1rem !important;
+		padding: 0 10px;
+	}
+	
+	/* Cards mobile styling */
+	.col-lg-6 {
+		margin-bottom: 30px !important;
+	}
+	
+	.luxury-accommodation-card {
+		margin: 0 10px;
+		border-radius: 15px !important;
+	}
+	
+	.accommodation-content {
+		padding: 20px !important;
+	}
+	
+	.price-section span:first-child {
+		font-size: 1.8rem !important;
+	}
+	
+	.accommodation-content p {
+		font-size: 0.95rem !important;
+		line-height: 1.5 !important;
+	}
+	
+	/* Touch-friendly buttons */
+	.accommodation-content a {
+		padding: 15px 25px !important;
+		font-size: 14px !important;
+		min-height: 50px;
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		text-align: center;
+		margin-top: 20px;
+	}
+	
+	/* Feature tags mobile */
+	.accommodation-content > div:nth-last-child(2) {
+		flex-wrap: wrap;
+		gap: 8px !important;
+		justify-content: center;
+	}
+	
+	.accommodation-content > div:nth-last-child(2) span {
+		font-size: 0.8rem !important;
+		padding: 4px 8px !important;
+	}
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+	body {
+		padding-top: 75px !important;
+	}
+	
+	.wildwave-topbar {
+		padding: 6px 10px;
+	}
+	
+	.wildwave-topbar .contact-info {
+		font-size: 10px;
+	}
+	
+	.wildwave-topbar .mobile-menu-btn-topbar {
+		width: 35px;
+		height: 35px;
+		font-size: 16px;
+		top: 6px;
+		right: 10px;
+	}
+	
+	.home {
+		height: 350px !important;
+	}
+	
+	.home_title {
+		font-size: 2rem !important;
+	}
+	
+	.premium-accommodations {
+		padding: 30px 0 !important;
+	}
+	
+	.premium-accommodations h2 {
+		font-size: 1.8rem !important;
+	}
+	
+	.luxury-accommodation-card {
+		margin: 0 5px;
+	}
+	
+	.accommodation-content {
+		padding: 15px !important;
+	}
+	
+	.price-section span:first-child {
+		font-size: 1.6rem !important;
+	}
+}
+
+/* Mobile menu enhancements */
+.mobile-menu-overlay {
+	backdrop-filter: blur(5px);
+}
+
+.mobile-nav-menu a:hover {
+	background: rgba(255,255,255,0.1) !important;
+	color: #fa9e1b !important;
+	transform: translateX(5px) !important;
+}
+
+/* Smooth scrolling and animations */
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
+.luxury-accommodation-card {
+	transition: all 0.3s ease !important;
+}
+
+@media (hover: none) and (pointer: coarse) {
+	.luxury-accommodation-card:hover {
+		transform: none !important;
+	}
+}
+</style>
 </head>
 
 <body>
@@ -101,7 +343,7 @@
 		</div>
 		<!-- Centered Title -->
 		<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 3;">
-			<div style="background: rgba(0,0,0,0.7); padding: 20px 40px; border-radius: 10px; backdrop-filter: blur(10px);">
+			<div class="centered-title" style="background: rgba(0,0,0,0.7); padding: 20px 40px; border-radius: 10px; backdrop-filter: blur(10px);">
 				<div class="home_title" style="color: white; font-size: 3.5rem; font-weight: 700; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">ACCOMMODATIONS</div>
 				<p style="color: #fa9e1b; font-size: 1.2rem; margin: 10px 0 0; font-weight: 500;">Your Perfect Safari Stay Awaits</p>
 			</div>
