@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Test</title>
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/new-navbar.css">
+    <style>
+        body { margin: 0; padding-top: 120px; font-family: Arial, sans-serif; }
+        .test-content { padding: 50px; text-align: center; }
+    </style>
+</head>
+<body>
+    <!-- Topbar -->
+    <div class="wildwave-topbar">
+        <div class="contact-info">
+            <span><i class="fa fa-envelope"></i> <a href="mailto:wildwavesafaris@gmail.com">wildwavesafaris@gmail.com</a></span>
+            <span><i class="fa fa-phone"></i> <a href="tel:+254713241666">+254 713 241 666</a></span>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <button class="mobile-menu-btn-topbar" onclick="alert('Mobile menu works!')">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="wildwave-navbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Wildwavesafaris">
+            Wildwavesafaris
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="accommodations.html">Accommodations</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="search-icon">
+            <i class="fa fa-search"></i>
+        </div>
+    </nav>
+
+    <div class="test-content">
+        <h1>Navbar Visibility Test</h1>
+        <p>If you can see the navbar above with all menu items, the fix is working!</p>
+        <p>On desktop: Full navbar should be visible</p>
+        <p>On mobile: Only hamburger menu button should be visible</p>
+    </div>
+</body>
+</html>
