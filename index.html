@@ -14,174 +14,19 @@
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/new-navbar.css">
-<link rel="stylesheet" type="text/css" href="styles/mobile-menu.css">
 
 <style>
-/* MOBILE-FIRST RESPONSIVE DESIGN */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.logo a {
+    color: #000 !important;
+    font-weight: bold !important;
+    font-size: 24px !important;
 }
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    padding-top: 60px;
+.main_nav_list a {
+    color: #000 !important;
+    font-weight: 500 !important;
 }
-
-/* TOPBAR - MOBILE FIRST */
-.wildwave-topbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #2c3e50;
-    color: white;
-    z-index: 1001;
-    padding: 8px 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-height: 60px;
-}
-
-.wildwave-topbar .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 11px;
-    text-align: center;
-}
-
-.wildwave-topbar .contact-info a {
-    color: white;
-    text-decoration: none;
-}
-
-.wildwave-topbar .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.wildwave-topbar .social-icons a {
-    color: white;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    text-decoration: none;
-}
-
-.mobile-menu-btn-topbar {
-    position: absolute;
-    top: 8px;
-    right: 15px;
-    width: 40px;
-    height: 40px;
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1002;
-}
-
-/* NAVBAR - MOBILE FIRST */
-.wildwave-navbar {
-    display: none;
-}
-
-/* DESKTOP STYLES */
-@media (min-width: 769px) {
-    body {
-        padding-top: 110px;
-    }
-    
-    .wildwave-topbar {
-        height: 40px;
-        padding: 0 20px;
-        flex-direction: row;
-        align-items: center;
-        min-height: auto;
-    }
-    
-    .wildwave-topbar .contact-info {
-        flex-direction: row;
-        gap: 30px;
-        flex: 1;
-        font-size: 13px;
-        text-align: left;
-    }
-    
-    .mobile-menu-btn-topbar {
-        display: none;
-    }
-    
-    .wildwave-navbar {
-        display: flex;
-        position: fixed;
-        top: 40px;
-        left: 0;
-        width: 100%;
-        height: 70px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        z-index: 1000;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-    }
-    
-    .wildwave-navbar .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 24px;
-        font-weight: bold;
-        color: #2c3e50;
-        text-decoration: none;
-    }
-    
-    .wildwave-navbar .logo img {
-        height: 40px;
-    }
-    
-    .wildwave-navbar .nav-menu {
-        display: flex;
-        list-style: none;
-        gap: 30px;
-    }
-    
-    .wildwave-navbar .nav-menu a {
-        color: #2c3e50;
-        text-decoration: none;
-        font-weight: 500;
-        text-transform: uppercase;
-        font-size: 14px;
-        padding: 10px 0;
-        border-bottom: 2px solid transparent;
-        transition: all 0.3s ease;
-    }
-    
-    .wildwave-navbar .nav-menu a:hover {
-        color: #ffc107;
-        border-bottom-color: #ffc107;
-    }
-    
-    .wildwave-navbar .search-icon {
-        color: #2c3e50;
-        font-size: 16px;
-        cursor: pointer;
-    }
+.main_nav_list a:hover {
+    color: #ffc107 !important;
 }
 
 /* Activities Arrow Button Styling */
@@ -2031,13 +1876,13 @@ body {
 		<div class="contact-info">
 			<span><i class="fa fa-envelope"></i> <a href="mailto:wildwavesafaris@gmail.com">wildwavesafaris@gmail.com</a></span>
 			<span><i class="fa fa-phone"></i> <a href="tel:+254713241666">+254 713 241 666</a></span>
-			<span><i class="fa fa-map-marker"></i> <a href="https://maps.google.com/?q=Spur+Mall+Thika+Road+Nairobi" target="_blank">THIKA ROAD, SPUR MALL, NAIROBI</a></span>
+			<span><i class="fa fa-map-marker"></i> <a href="https://maps.google.com/?q=Spur+Mall+Thika+Road+Nairobi" target="_blank" rel="noopener noreferrer">THIKA ROAD, SPUR MALL, NAIROBI</a></span>
 		</div>
 		<div class="social-icons">
-			<a href="#"><i class="fa fa-facebook"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-instagram"></i></a>
-			<a href="#"><i class="fa fa-telegram"></i></a>
+			<a href="booking.html"><i class="fa fa-facebook"></i></a>
+			<a href="booking.html"><i class="fa fa-twitter"></i></a>
+			<a href="booking.html"><i class="fa fa-instagram"></i></a>
+			<a href="booking.html"><i class="fa fa-telegram"></i></a>
 			<button class="mobile-menu-btn-topbar" onclick="toggleMobileMenu()">
 				<i class="fa fa-bars"></i>
 			</button>
@@ -2061,34 +1906,36 @@ body {
 		<div class="search-icon">
 			<i class="fa fa-search"></i>
 		</div>
-
+		<button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+			<i class="fa fa-bars"></i>
+		</button>
 	</nav>
 
-
-
 	<!-- Mobile Menu Overlay -->
-	<div class="mobile-menu-overlay" id="mobileMenuOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.8); z-index: 9999; transform: translateX(-100%); transition: transform 0.3s ease;">
-		<div class="mobile-menu-content" style="width: 280px; height: 100%; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 20px; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
-			<div class="mobile-menu-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
-				<div class="mobile-menu-logo" style="display: flex; align-items: center; gap: 10px; color: white; font-size: 16px; font-weight: bold;">
-					<img src="images/logo.png" alt="Wildwavesafaris" style="height: 25px;">
+	<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+		<div class="mobile-menu-content">
+			<div class="mobile-menu-header">
+				<div class="mobile-menu-logo">
+					<img src="images/logo.png" alt="Wildwavesafaris">
 					Wildwavesafaris
 				</div>
-				<button class="mobile-menu-close" onclick="toggleMobileMenu()" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 5px; min-height: 44px; min-width: 44px;">
+				<button class="mobile-menu-close" onclick="toggleMobileMenu()">
 					<i class="fa fa-times"></i>
 				</button>
 			</div>
-			<ul class="mobile-nav-menu" style="list-style: none; padding: 0; margin: 0;">
-				<li style="margin-bottom: 5px;"><a href="index.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Home</a></li>
-				<li style="margin-bottom: 5px;"><a href="about.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">About Us</a></li>
-				<li style="margin-bottom: 5px;"><a href="destinations.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Destinations</a></li>
-				<li style="margin-bottom: 5px;"><a href="accommodations.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Accommodations</a></li>
-				<li style="margin-bottom: 5px;"><a href="offers.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Special Offers</a></li>
-				<li style="margin-bottom: 5px;"><a href="booking.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Booking</a></li>
-				<li style="margin-bottom: 5px;"><a href="contact.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Contact</a></li>
+			<ul class="mobile-nav-menu">
+				<li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
+				<li><a href="about.html" onclick="toggleMobileMenu()">About Us</a></li>
+				<li><a href="destinations.html" onclick="toggleMobileMenu()">Destinations</a></li>
+				<li><a href="accommodations.html" onclick="toggleMobileMenu()">Accommodations</a></li>
+				<li><a href="offers.html" onclick="toggleMobileMenu()">Special Offers</a></li>
+				<li><a href="booking.html" onclick="toggleMobileMenu()">Booking</a></li>
+				<li><a href="contact.html" onclick="toggleMobileMenu()">Contact</a></li>
 			</ul>
 		</div>
 	</div>
+
+
 
 
 
@@ -2109,7 +1956,7 @@ body {
 						<h1 class="hero-title">Discover Kenya's Wild Beauty</h1>
 
 						<div class="hero-buttons">
-							<a href="#" class="btn-hero primary">Book Safari</a>
+							<a href="booking.html" class="btn-hero primary">Book Safari</a>
 							<a href="packages.html" class="btn-hero secondary">View Packages</a>
 						</div>
 					</div>
@@ -2118,230 +1965,6 @@ body {
 		</div>
 		<div class="hero-scroll-indicator">
 			<div class="scroll-arrow"></div>
-		</div>
-	</div>
-
-	<!-- Promotional Message -->
-	<div class="quick-search">
-		<div class="promo-banner">
-				<div class="promo-content">
-					<div class="promo-highlight">SPECIAL SAFARI OFFER</div>
-					<h2 class="promo-title">Nothing beats a wild safari adventure</h2>
-					<div class="promo-deal">
-						<span class="deal-text">Save</span>
-						<span class="deal-amount">KSh 10,000</span>
-						<span class="deal-text">per person</span>
-					</div>
-					<p class="promo-subtitle"><span style="color: #ffc107; font-size: 1.3rem;">on the ultimate getaway into the heart of nature</span></p>
-					<div class="promo-buttons">
-						<a href="packages.html" class="promo-btn primary">View Packages</a>
-						<a href="booking.html" class="promo-btn secondary">Book Now</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<style>
-	.quick-search {
-		padding: 0;
-		margin: 0;
-	}
-	
-	.promo-banner {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		padding: 12px 0;
-		position: relative;
-		overflow: hidden;
-		margin: 0;
-		width: 100vw;
-		margin-left: calc(-50vw + 50%);
-		box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
-	}
-	
-	.promo-banner::before {
-		content: '';
-		position: absolute;
-		top: -50%;
-		right: -50%;
-		width: 200%;
-		height: 200%;
-		background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-		animation: float 6s ease-in-out infinite;
-	}
-	
-	@keyframes float {
-		0%, 100% { transform: translateY(0px) rotate(0deg); }
-		50% { transform: translateY(-20px) rotate(180deg); }
-	}
-	
-	.promo-content {
-		position: relative;
-		z-index: 2;
-		text-align: center;
-		color: white;
-		padding: 0 20px;
-		max-width: 1200px;
-		margin: 0 auto;
-	}
-	
-	.promo-highlight {
-		font-size: 0.7rem;
-		font-weight: 800;
-		letter-spacing: 2px;
-		text-transform: uppercase;
-		color: #ffc107;
-		margin-bottom: 8px;
-	}
-	
-	.promo-title {
-		font-size: 1.8rem;
-		font-weight: 700;
-		margin-bottom: 15px;
-		line-height: 1.2;
-		text-shadow: 0 4px 8px rgba(0,0,0,0.2);
-	}
-	
-	.promo-deal {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 10px;
-		margin-bottom: 10px;
-		flex-wrap: wrap;
-	}
-	
-	.deal-text {
-		font-size: 1rem;
-		font-weight: 500;
-		opacity: 0.9;
-	}
-	
-	.deal-amount {
-		font-size: 2.2rem;
-		font-weight: 900;
-		color: #ffc107;
-		text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-		position: relative;
-	}
-	
-	.deal-amount::after {
-		content: '';
-		position: absolute;
-		bottom: -3px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 80%;
-		height: 2px;
-		background: #ffc107;
-		border-radius: 2px;
-	}
-	
-	.promo-subtitle {
-		font-size: 0.95rem;
-		margin-bottom: 20px;
-		opacity: 0.9;
-		max-width: 500px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	
-	.promo-buttons {
-		display: flex;
-		gap: 15px;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-	
-	.promo-btn {
-		padding: 10px 25px;
-		border-radius: 50px;
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		transition: all 0.3s ease;
-		text-decoration: none;
-		display: inline-block;
-		position: relative;
-		overflow: hidden;
-		font-size: 0.85rem;
-	}
-	
-	.promo-btn.primary {
-		background: white;
-		color: #667eea;
-		border: 2px solid white;
-	}
-	
-	.promo-btn.secondary {
-		background: transparent;
-		color: white;
-		border: 2px solid rgba(255,255,255,0.8);
-	}
-	
-	.promo-btn:hover {
-		transform: translateY(-3px);
-		box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-	}
-	
-	.promo-btn.primary:hover {
-		background: #ffc107;
-		color: #2c3e50;
-		border-color: #ffc107;
-	}
-	
-	.promo-btn.secondary:hover {
-		background: rgba(255,255,255,0.1);
-		border-color: white;
-	}
-	
-	@media (max-width: 768px) {
-		.promo-banner {
-			padding: 10px 20px;
-			margin: 0;
-		}
-		
-		.promo-title {
-			font-size: 2rem;
-		}
-		
-		.deal-amount {
-			font-size: 2.5rem;
-		}
-		
-		.promo-buttons {
-			flex-direction: column;
-			align-items: center;
-		}
-		
-		.promo-btn {
-			width: 250px;
-			text-align: center;
-		}
-	}
-	
-	.stats-section {
-		padding: 40px 0;
-	}
-	
-	.stat-item {
-		padding: 15px 10px;
-	}
-	
-	.stat-icon {
-		font-size: 2rem;
-		margin-bottom: 10px;
-	}
-	
-	.stat-number {
-		font-size: 2.5rem;
-		margin-bottom: 5px;
-	}
-	
-	.stat-label {
-		font-size: 0.9rem;
-	}
-	</style>
 		</div>
 	</div>
 
@@ -2413,7 +2036,7 @@ body {
 								<div class="stat" style="display: flex; align-items: center; gap: 8px;"><i class="fa fa-star" style="color: #ffc107;"></i><span style="font-size: 0.9rem;">4.9/5 Rating</span></div>
 							</div>
 							<div class="experience-price" style="font-size: 1.8rem; font-weight: 800; color: #ffc107; margin-bottom: 20px;">From KSh 65,000</div>
-							<a href="#" class="experience-btn" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);">Book Adventure</a>
+							<a href="booking.html" class="experience-btn" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);">Book Adventure</a>
 						</div>
 					</div>
 				</div>
@@ -2430,7 +2053,7 @@ body {
 									<p style="font-size: 0.9rem; margin-bottom: 15px; opacity: 0.9;">Immerse in authentic Maasai traditions and ceremonies</p>
 									<div style="display: flex; justify-content: space-between; align-items: center;">
 										<span style="font-size: 1.3rem; font-weight: 700; color: #ffc107;">From KSh 25,000</span>
-										<a href="#" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease;">Explore</a>
+										<a href="booking.html" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease;">Explore</a>
 									</div>
 								</div>
 							</div>
@@ -2446,7 +2069,7 @@ body {
 									<p style="font-size: 0.9rem; margin-bottom: 15px; opacity: 0.9;">5-star accommodations with world-class amenities</p>
 									<div style="display: flex; justify-content: space-between; align-items: center;">
 										<span style="font-size: 1.3rem; font-weight: 700; color: #ffc107;">From KSh 120,000</span>
-										<a href="#" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease;">Discover</a>
+										<a href="booking.html" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease;">Discover</a>
 									</div>
 								</div>
 							</div>
@@ -2472,7 +2095,7 @@ body {
 							</div>
 							<div style="display: flex; justify-content: space-between; align-items: center;">
 								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 45,000</span>
-								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -2493,7 +2116,7 @@ body {
 							</div>
 							<div style="display: flex; justify-content: space-between; align-items: center;">
 								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 18,000</span>
-								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -2514,7 +2137,7 @@ body {
 							</div>
 							<div style="display: flex; justify-content: space-between; align-items: center;">
 								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 85,000</span>
-								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -2535,7 +2158,7 @@ body {
 							</div>
 							<div style="display: flex; justify-content: space-between; align-items: center;">
 								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 95,000</span>
-								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -2556,7 +2179,7 @@ body {
 							</div>
 							<div style="display: flex; justify-content: space-between; align-items: center;">
 								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 55,000</span>
-								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -2577,7 +2200,7 @@ body {
 							</div>
 							<div style="display: flex; justify-content: space-between; align-items: center;">
 								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 150,000</span>
-								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -2598,7 +2221,7 @@ body {
 							</div>
 							<div style="display: flex; justify-content: space-between; align-items: center;">
 								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 35,000</span>
-								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -2619,7 +2242,7 @@ body {
 							</div>
 							<div style="display: flex; justify-content: space-between; align-items: center;">
 								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 75,000</span>
-								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -2640,7 +2263,7 @@ body {
 							</div>
 							<div style="display: flex; justify-content: space-between; align-items: center;">
 								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 8,000</span>
-								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -2673,7 +2296,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 8,000</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2694,7 +2317,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 10,000</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2715,7 +2338,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 7,000</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2736,7 +2359,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 9,000</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2757,7 +2380,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 5,000</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2778,7 +2401,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 6,000</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2799,7 +2422,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 4,000</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2820,7 +2443,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 3,500</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2841,7 +2464,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 2,500</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2862,7 +2485,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 4,500</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2883,7 +2506,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 3,000</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2904,7 +2527,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 8,500</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2925,7 +2548,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 6,500</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2946,7 +2569,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 2,000</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2967,7 +2590,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 7,500</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -2988,7 +2611,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 9,500</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -3009,7 +2632,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 8,500</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -3030,7 +2653,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 10,000</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -3051,7 +2674,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 9,000</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -3072,7 +2695,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 3,500</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -3093,7 +2716,7 @@ body {
 								</div>
 								<div style="display: flex; justify-content: space-between; align-items: center;">
 									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 2,500</span>
-									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+									<a href="booking.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
 								</div>
 							</div>
 						</div>
@@ -3275,7 +2898,7 @@ body {
 						<div class="intro_item_background" style="background-image:url(images/intro_1.jpg)"></div>
 						<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
 							<div class="intro_date">May 25th - June 01st</div>
-							<div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
+							<div class="button intro_button"><div class="button_bcg"></div><a href="booking.html">see more<span></span><span></span><span></span></a></div>
 							<div class="intro_center text-center">
 								<h1>Maasai Mara Safari</h1>
 								<div class="intro_price">From KSh 45,000</div>
@@ -3300,7 +2923,7 @@ body {
 						<div class="intro_item_background" style="background-image:url(images/intro_2.jpg)"></div>
 						<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
 							<div class="intro_date">May 25th - June 01st</div>
-							<div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
+							<div class="button intro_button"><div class="button_bcg"></div><a href="booking.html">see more<span></span><span></span><span></span></a></div>
 							<div class="intro_center text-center">
 								<h1>Amboseli National Park</h1>
 								<div class="intro_price">From KSh 35,000</div>
@@ -3325,7 +2948,7 @@ body {
 						<div class="intro_item_background" style="background-image:url(images/intro_3.jpg)"></div>
 						<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
 							<div class="intro_date">May 25th - June 01st</div>
-							<div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
+							<div class="button intro_button"><div class="button_bcg"></div><a href="booking.html">see more<span></span><span></span><span></span></a></div>
 							<div class="intro_center text-center">
 								<h1>Tsavo National Parks</h1>
 								<div class="intro_price">From KSh 28,000</div>
@@ -3370,7 +2993,7 @@ body {
 									<i></i>
 								</div>
 								<p class="cta_text">Experience the ultimate safari adventure across Kenya's magnificent landscapes. From the Maasai Mara to Amboseli National Park, discover Africa's incredible wildlife and breathtaking scenery. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-								<div class="button cta_button"><div class="button_bcg"></div><a href="#">book now<span></span><span></span><span></span></a></div>
+								<div class="button cta_button"><div class="button_bcg"></div><a href="booking.html">book now<span></span><span></span><span></span></a></div>
 							</div>
 
 							<!-- CTA Slider Item -->
@@ -3384,7 +3007,7 @@ body {
 									<i></i>
 								</div>
 								<p class="cta_text">Experience the ultimate safari adventure across Kenya's magnificent landscapes. From the Maasai Mara to Amboseli National Park, discover Africa's incredible wildlife and breathtaking scenery. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-								<div class="button cta_button"><div class="button_bcg"></div><a href="#">book now<span></span><span></span><span></span></a></div>
+								<div class="button cta_button"><div class="button_bcg"></div><a href="booking.html">book now<span></span><span></span><span></span></a></div>
 							</div>
 
 							<!-- CTA Slider Item -->
@@ -3398,7 +3021,7 @@ body {
 									<i></i>
 								</div>
 								<p class="cta_text">Experience the ultimate safari adventure across Kenya's magnificent landscapes. From the Maasai Mara to Amboseli National Park, discover Africa's incredible wildlife and breathtaking scenery. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-								<div class="button cta_button"><div class="button_bcg"></div><a href="#">book now<span></span><span></span><span></span></a></div>
+								<div class="button cta_button"><div class="button_bcg"></div><a href="booking.html">book now<span></span><span></span><span></span></a></div>
 							</div>
 							
 						</div>
@@ -3602,7 +3225,7 @@ body {
 					<div class="trending_item clearfix">
 						<div class="trending_image"><img src="images/trend_1.png" alt="https://unsplash.com/@fransaraco"></div>
 						<div class="trending_content">
-							<div class="trending_title"><a href="#">grand hotel</a></div>
+							<div class="trending_title"><a href="booking.html">grand hotel</a></div>
 							<div class="trending_price">From KSh 23,660</div>
 							<div class="trending_location">madrid, spain</div>
 						</div>
@@ -3614,7 +3237,7 @@ body {
 					<div class="trending_item clearfix">
 						<div class="trending_image"><img src="images/trend_2.png" alt="https://unsplash.com/@grovemade"></div>
 						<div class="trending_content">
-							<div class="trending_title"><a href="#">mars hotel</a></div>
+							<div class="trending_title"><a href="booking.html">mars hotel</a></div>
 							<div class="trending_price">From KSh 23,660</div>
 							<div class="trending_location">madrid, spain</div>
 						</div>
@@ -3626,7 +3249,7 @@ body {
 					<div class="trending_item clearfix">
 						<div class="trending_image"><img src="images/trend_3.png" alt="https://unsplash.com/@jbriscoe"></div>
 						<div class="trending_content">
-							<div class="trending_title"><a href="#">queen hotel</a></div>
+							<div class="trending_title"><a href="booking.html">queen hotel</a></div>
 							<div class="trending_price">From KSh 23,660</div>
 							<div class="trending_location">madrid, spain</div>
 						</div>
@@ -3638,7 +3261,7 @@ body {
 					<div class="trending_item clearfix">
 						<div class="trending_image"><img src="images/trend_4.png" alt="https://unsplash.com/@oowgnuj"></div>
 						<div class="trending_content">
-							<div class="trending_title"><a href="#">mars hotel</a></div>
+							<div class="trending_title"><a href="booking.html">mars hotel</a></div>
 							<div class="trending_price">From KSh 23,660</div>
 							<div class="trending_location">madrid, spain</div>
 						</div>
@@ -3650,7 +3273,7 @@ body {
 					<div class="trending_item clearfix">
 						<div class="trending_image"><img src="images/trend_5.png" alt="https://unsplash.com/@mindaugas"></div>
 						<div class="trending_content">
-							<div class="trending_title"><a href="#">grand hotel</a></div>
+							<div class="trending_title"><a href="booking.html">grand hotel</a></div>
 							<div class="trending_price">From KSh 23,660</div>
 							<div class="trending_location">madrid, spain</div>
 						</div>
@@ -3662,7 +3285,7 @@ body {
 					<div class="trending_item clearfix">
 						<div class="trending_image"><img src="images/trend_6.png" alt="https://unsplash.com/@itsnwa"></div>
 						<div class="trending_content">
-							<div class="trending_title"><a href="#">mars hotel</a></div>
+							<div class="trending_title"><a href="booking.html">mars hotel</a></div>
 							<div class="trending_price">From KSh 23,660</div>
 							<div class="trending_location">madrid, spain</div>
 						</div>
@@ -3674,7 +3297,7 @@ body {
 					<div class="trending_item clearfix">
 						<div class="trending_image"><img src="images/trend_7.png" alt="https://unsplash.com/@rktkn"></div>
 						<div class="trending_content">
-							<div class="trending_title"><a href="#">queen hotel</a></div>
+							<div class="trending_title"><a href="booking.html">queen hotel</a></div>
 							<div class="trending_price">From KSh 23,660</div>
 							<div class="trending_location">madrid, spain</div>
 						</div>
@@ -3686,7 +3309,7 @@ body {
 					<div class="trending_item clearfix">
 						<div class="trending_image"><img src="images/trend_8.png" alt="https://unsplash.com/@thoughtcatalog"></div>
 						<div class="trending_content">
-							<div class="trending_title"><a href="#">mars hotel</a></div>
+							<div class="trending_title"><a href="booking.html">mars hotel</a></div>
 							<div class="trending_price">From KSh 23,660</div>
 							<div class="trending_location">madrid, spain</div>
 						</div>
@@ -3710,10 +3333,10 @@ body {
 						</div>
 						<p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 25px;">Experience Kenya's pristine wilderness and encounter majestic wildlife. Your gateway to authentic African safari adventures that create memories lasting a lifetime.</p>
 						<div class="footer-social">
-							<a href="#" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; text-align: center; line-height: 40px; color: #ffc107; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ffc107'; this.style.color='#2c3e50'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,193,7,0.2)'; this.style.color='#ffc107'; this.style.transform='translateY(0)';"><i class="fa fa-facebook"></i></a>
-							<a href="#" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; text-align: center; line-height: 40px; color: #ffc107; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ffc107'; this.style.color='#2c3e50'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,193,7,0.2)'; this.style.color='#ffc107'; this.style.transform='translateY(0)';"><i class="fa fa-instagram"></i></a>
-							<a href="#" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; text-align: center; line-height: 40px; color: #ffc107; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ffc107'; this.style.color='#2c3e50'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,193,7,0.2)'; this.style.color='#ffc107'; this.style.transform='translateY(0)';"><i class="fa fa-twitter"></i></a>
-							<a href="#" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; text-align: center; line-height: 40px; color: #ffc107; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ffc107'; this.style.color='#2c3e50'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,193,7,0.2)'; this.style.color='#ffc107'; this.style.transform='translateY(0)';"><i class="fa fa-telegram"></i></a>
+							<a href="booking.html" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; text-align: center; line-height: 40px; color: #ffc107; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ffc107'; this.style.color='#2c3e50'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,193,7,0.2)'; this.style.color='#ffc107'; this.style.transform='translateY(0)';"><i class="fa fa-facebook"></i></a>
+							<a href="booking.html" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; text-align: center; line-height: 40px; color: #ffc107; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ffc107'; this.style.color='#2c3e50'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,193,7,0.2)'; this.style.color='#ffc107'; this.style.transform='translateY(0)';"><i class="fa fa-instagram"></i></a>
+							<a href="booking.html" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; text-align: center; line-height: 40px; color: #ffc107; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ffc107'; this.style.color='#2c3e50'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,193,7,0.2)'; this.style.color='#ffc107'; this.style.transform='translateY(0)';"><i class="fa fa-twitter"></i></a>
+							<a href="booking.html" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; text-align: center; line-height: 40px; color: #ffc107; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ffc107'; this.style.color='#2c3e50'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,193,7,0.2)'; this.style.color='#ffc107'; this.style.transform='translateY(0)';"><i class="fa fa-telegram"></i></a>
 						</div>
 					</div>
 				</div>
@@ -3725,7 +3348,7 @@ body {
 						<ul style="list-style: none; padding: 0; margin: 0;">
 							<li style="margin-bottom: 12px;"><a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Home</a></li>
 							<li style="margin-bottom: 12px;"><a href="about.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">About Us</a></li>
-							<li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Safari Packages</a></li>
+							<li style="margin-bottom: 12px;"><a href="booking.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Safari Packages</a></li>
 							<li style="margin-bottom: 12px;"><a href="blog.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">News & Blog</a></li>
 							<li style="margin-bottom: 12px;"><a href="contact.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Contact</a></li>
 						</ul>
@@ -3737,11 +3360,11 @@ body {
 					<div class="footer-section">
 						<h5 style="color: #ffc107; font-weight: 600; margin-bottom: 25px; font-size: 18px;">Top Destinations</h5>
 						<ul style="list-style: none; padding: 0; margin: 0;">
-							<li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Maasai Mara</a></li>
-							<li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Amboseli National Park</a></li>
-							<li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Tsavo National Parks</a></li>
-							<li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Samburu Reserve</a></li>
-							<li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Lake Nakuru</a></li>
+							<li style="margin-bottom: 12px;"><a href="booking.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Maasai Mara</a></li>
+							<li style="margin-bottom: 12px;"><a href="booking.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Amboseli National Park</a></li>
+							<li style="margin-bottom: 12px;"><a href="booking.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Tsavo National Parks</a></li>
+							<li style="margin-bottom: 12px;"><a href="booking.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Samburu Reserve</a></li>
+							<li style="margin-bottom: 12px;"><a href="booking.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Lake Nakuru</a></li>
 						</ul>
 					</div>
 				</div>
@@ -3803,9 +3426,9 @@ body {
 				</div>
 				<div class="col-md-6 text-md-right">
 					<div class="footer-nav" style="margin-top: 10px;">
-						<a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 15px; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#ffc107';" onmouseout="this.style.color='rgba(255,255,255,0.7)';">Privacy Policy</a>
-						<a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 15px; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#ffc107';" onmouseout="this.style.color='rgba(255,255,255,0.7)';">Terms of Service</a>
-						<a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 15px; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#ffc107';" onmouseout="this.style.color='rgba(255,255,255,0.7)';">Sitemap</a>
+						<a href="booking.html" style="color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 15px; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#ffc107';" onmouseout="this.style.color='rgba(255,255,255,0.7)';">Privacy Policy</a>
+						<a href="booking.html" style="color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 15px; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#ffc107';" onmouseout="this.style.color='rgba(255,255,255,0.7)';">Terms of Service</a>
+						<a href="booking.html" style="color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 15px; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#ffc107';" onmouseout="this.style.color='rgba(255,255,255,0.7)';">Sitemap</a>
 					</div>
 				</div>
 			</div>
@@ -3825,19 +3448,16 @@ body {
 <!-- Mobile Menu Toggle Function -->
 <script>
 function toggleMobileMenu() {
-    const overlay = document.getElementById('mobileMenuOverlay');
-    if (overlay.style.transform === 'translateX(0px)' || overlay.style.transform === '') {
-        overlay.style.transform = 'translateX(-100%)';
-    } else {
-        overlay.style.transform = 'translateX(0px)';
-    }
+	const overlay = document.getElementById('mobileMenuOverlay');
+	overlay.classList.toggle('active');
+	document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
 }
 
-// Close mobile menu when clicking outside
+// Close menu when clicking outside
 document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
-    if (e.target === this) {
-        toggleMobileMenu();
-    }
+	if (e.target === this) {
+		toggleMobileMenu();
+	}
 });
 </script>
 <script>
@@ -4243,19 +3863,88 @@ $(document).ready(function() {
 	100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
 }
 
-/* Mobile Menu Enhancements */
+
+
+/* Mobile Menu Styles */
+.mobile-menu-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0,0,0,0.8);
+	z-index: 9999;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease;
+	backdrop-filter: blur(5px);
+}
+.mobile-menu-overlay.active {
+	transform: translateX(0);
+}
+.mobile-menu-content {
+	width: 280px;
+	height: 100%;
+	background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+	padding: 20px;
+	box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+.mobile-menu-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 40px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.mobile-menu-logo {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+}
+.mobile-menu-logo img {
+	height: 25px;
+}
+.mobile-menu-close {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+	padding: 5px;
+	min-height: 44px;
+	min-width: 44px;
+}
+.mobile-nav-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.mobile-nav-menu li {
+	margin-bottom: 5px;
+}
+.mobile-nav-menu a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 15px 20px;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+	font-size: 16px;
+	font-weight: 500;
+	min-height: 44px;
+	line-height: 1.2;
+}
 .mobile-nav-menu a:hover {
 	background: rgba(255,255,255,0.1) !important;
 	color: #ffc107 !important;
 	transform: translateX(5px) !important;
 }
 
-/* Mobile Menu Overlay Backdrop */
-.mobile-menu-overlay {
-	backdrop-filter: blur(5px);
-}
-
-
+/* IMPORT SIMPLE NAVBAR */
+@import url('styles/simple-navbar.css');
 </style>
 
 </body>

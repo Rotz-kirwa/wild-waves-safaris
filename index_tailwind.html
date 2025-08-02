@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Wildwavesafaris</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Wildwavesafaris Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#2c3e50',
+                    secondary: '#ffc107',
+                    accent: '#fa9e1b'
+                },
+                fontFamily: {
+                    'sans': ['Open Sans', 'sans-serif'],
+                    'beyond': ['Beyond', 'serif']
+                }
+            }
+        }
+    }
+</script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="font-sans bg-white text-gray-600 overflow-x-hidden">
+
+<!-- Top Contact Bar -->
+<div class="fixed top-0 left-0 w-full bg-primary text-white text-xs py-2 z-50 hidden md:block">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center space-x-6">
+            <a href="tel:+254713241666" class="flex items-center hover:text-secondary transition-colors">
+                <i class="fas fa-phone mr-2"></i>
+                +254 713 241 666
+            </a>
+            <a href="mailto:wildwavesafaris@gmail.com" class="flex items-center hover:text-secondary transition-colors">
+                <i class="fas fa-envelope mr-2"></i>
+                wildwavesafaris@gmail.com
+            </a>
+        </div>
+        <div class="flex items-center space-x-3">
+            <a href="#" class="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-all">
+                <i class="fab fa-facebook-f text-xs"></i>
+            </a>
+            <a href="#" class="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-all">
+                <i class="fab fa-twitter text-xs"></i>
+            </a>
+            <a href="#" class="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-all">
+                <i class="fab fa-instagram text-xs"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Main Navigation -->
+<nav class="fixed top-0 md:top-8 left-0 w-full bg-white bg-opacity-95 backdrop-blur-md shadow-lg z-40 transition-all duration-300">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16 md:h-20">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="images/logo.png" alt="Wildwavesafaris" class="h-8 md:h-10 mr-3">
+                <span class="text-lg md:text-2xl font-bold text-primary">Wildwavesafaris</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-primary hover:text-secondary font-semibold transition-colors relative group">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="about.html" class="text-primary hover:text-secondary font-semibold transition-colors relative group">
+                    About Us
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="destinations.html" class="text-primary hover:text-secondary font-semibold transition-colors relative group">
+                    Destinations
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="accommodations.html" class="text-primary hover:text-secondary font-semibold transition-colors relative group">
+                    Accommodations
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="offers.html" class="text-primary hover:text-secondary font-semibold transition-colors relative group">
+                    Special Offers
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="contact.html" class="text-primary hover:text-secondary font-semibold transition-colors relative group">
+                    Contact
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+                </a>
+            </div>
+
+            <!-- Search Icon -->
+            <div class="hidden md:flex items-center">
+                <button class="text-primary hover:text-secondary transition-colors p-2">
+                    <i class="fas fa-search text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-primary hover:text-secondary transition-colors p-2">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-primary bg-opacity-95 backdrop-blur-md transform -translate-x-full transition-transform duration-300 z-50">
+        <div class="flex flex-col h-full">
+            <div class="flex items-center justify-between p-4 border-b border-white border-opacity-20">
+                <div class="flex items-center">
+                    <img src="images/logo.png" alt="Wildwavesafaris" class="h-8 mr-3">
+                    <span class="text-xl font-bold text-white">Wildwavesafaris</span>
+                </div>
+                <button id="mobile-menu-close" class="text-white hover:text-secondary transition-colors p-2">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="flex-1 px-4 py-8">
+                <nav class="space-y-4">
+                    <a href="index.html" class="block text-white hover:text-secondary font-semibold py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all">Home</a>
+                    <a href="about.html" class="block text-white hover:text-secondary font-semibold py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all">About Us</a>
+                    <a href="destinations.html" class="block text-white hover:text-secondary font-semibold py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all">Destinations</a>
+                    <a href="accommodations.html" class="block text-white hover:text-secondary font-semibold py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all">Accommodations</a>
+                    <a href="offers.html" class="block text-white hover:text-secondary font-semibold py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all">Special Offers</a>
+                    <a href="contact.html" class="block text-white hover:text-secondary font-semibold py-3 px-4 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all">Contact</a>
+                </nav>
+            </div>
+            <div class="p-4 border-t border-white border-opacity-20">
+                <div class="flex items-center justify-center space-x-4">
+                    <a href="tel:+254713241666" class="text-white hover:text-secondary transition-colors">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                    <a href="mailto:wildwavesafaris@gmail.com" class="text-white hover:text-secondary transition-colors">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-secondary transition-colors">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-secondary transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-secondary transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+        <source src="https://videos.pexels.com/video-files/5446310/5446310-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-primary/40 z-10"></div>
+    
+    <!-- Content -->
+    <div class="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            Discover Kenya's
+            <span class="text-secondary">Wild Beauty</span>
+        </h1>
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
+            Experience the ultimate safari adventure across Kenya's magnificent landscapes and encounter Africa's incredible wildlife
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="packages.html" class="bg-gradient-to-r from-secondary to-accent text-primary font-bold py-4 px-8 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 min-w-[200px]">
+                Book Safari
+            </a>
+            <a href="packages.html" class="border-2 border-white text-white font-bold py-4 px-8 rounded-full hover:bg-white hover:text-primary transition-all duration-300 min-w-[200px]">
+                View Packages
+            </a>
+        </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+        <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Promotional Banner -->
+<section class="bg-gradient-to-r from-primary to-blue-600 text-white py-6 md:py-8">
+    <div class="container mx-auto px-4 text-center">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0">
+                <span class="text-secondary font-bold text-sm uppercase tracking-wider">Special Safari Offer</span>
+                <h2 class="text-2xl md:text-3xl font-bold">Nothing beats a wild safari adventure</h2>
+                <div class="flex items-center justify-center md:justify-start mt-2">
+                    <span class="text-lg">Save</span>
+                    <span class="text-3xl md:text-4xl font-bold text-secondary mx-2">KSh 10,000</span>
+                    <span class="text-lg">per person</span>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a href="packages.html" class="bg-white text-primary font-bold py-3 px-6 rounded-full hover:bg-secondary hover:text-white transition-all duration-300">
+                    View Packages
+                </a>
+                <a href="booking.html" class="border-2 border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-primary transition-all duration-300">
+                    Book Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="bg-gradient-to-r from-primary to-blue-600 text-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="text-secondary text-3xl md:text-4xl mb-4">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="text-3xl md:text-4xl font-bold mb-2">2500+</div>
+                <div class="text-sm md:text-base uppercase tracking-wider">Happy Travelers</div>
+            </div>
+            <div class="text-center">
+                <div class="text-secondary text-3xl md:text-4xl mb-4">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="text-3xl md:text-4xl font-bold mb-2">100+</div>
+                <div class="text-sm md:text-base uppercase tracking-wider">Destinations</div>
+            </div>
+            <div class="text-center">
+                <div class="text-secondary text-3xl md:text-4xl mb-4">
+                    <i class="fas fa-calendar"></i>
+                </div>
+                <div class="text-3xl md:text-4xl font-bold mb-2">50+</div>
+                <div class="text-sm md:text-base uppercase tracking-wider">Countries Visited</div>
+            </div>
+            <div class="text-center">
+                <div class="text-secondary text-3xl md:text-4xl mb-4">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="text-3xl md:text-4xl font-bold mb-2">98%</div>
+                <div class="text-sm md:text-base uppercase tracking-wider">Satisfaction</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Safari Experiences Section -->
+<section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-primary mb-6">Safari Experiences That Define Adventure</h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                From heart-pounding wildlife encounters to serene cultural immersions, discover Kenya through our expertly crafted safari experiences
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <!-- Big Five Safari -->
+            <div class="relative h-96 md:h-[500px] rounded-2xl overflow-hidden group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&h=600&fit=crop" alt="Big Five Safari" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+                    <span class="inline-block bg-secondary text-primary text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Most Popular</span>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Big Five Safari Adventure</h3>
+                    <p class="text-base md:text-lg mb-6 opacity-90">Witness the legendary Big Five in their natural habitat. Lions, elephants, leopards, rhinos, and buffalo await.</p>
+                    <div class="flex flex-wrap items-center gap-4 mb-6">
+                        <span class="flex items-center text-sm"><i class="fas fa-clock mr-2 text-secondary"></i>3-7 Days</span>
+                        <span class="flex items-center text-sm"><i class="fas fa-users mr-2 text-secondary"></i>2-8 People</span>
+                        <span class="flex items-center text-sm"><i class="fas fa-star mr-2 text-secondary"></i>4.9/5 Rating</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl md:text-3xl font-bold text-secondary">From KSh 65,000</span>
+                        <a href="#" class="bg-gradient-to-r from-secondary to-accent text-primary font-bold py-3 px-6 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                            Book Adventure
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="space-y-8">
+                <!-- Cultural Safari -->
+                <div class="relative h-44 md:h-56 rounded-2xl overflow-hidden group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1504634203593-d7967426d7f8?w=600&h=300&fit=crop" alt="Cultural Safari" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex items-center text-white">
+                        <div>
+                            <h4 class="text-xl md:text-2xl font-bold mb-2">Maasai Cultural Safari</h4>
+                            <p class="text-sm md:text-base mb-4 opacity-90">Immerse in authentic Maasai traditions and ceremonies</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xl font-bold text-secondary">From KSh 25,000</span>
+                                <a href="#" class="bg-white/20 backdrop-blur-sm text-white font-semibold py-2 px-4 rounded-full hover:bg-white/30 transition-all duration-300">
+                                    Explore
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Luxury Safari -->
+                <div class="relative h-44 md:h-56 rounded-2xl overflow-hidden group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1645118036983-2f8a6c3902d2?w=600&h=300&fit=crop" alt="Luxury Safari" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex items-center text-white">
+                        <div>
+                            <span class="inline-block bg-secondary text-primary text-xs font-bold px-2 py-1 rounded-full mb-2 uppercase">Premium</span>
+                            <h4 class="text-xl md:text-2xl font-bold mb-2">Luxury Lodge Safari</h4>
+                            <p class="text-sm md:text-base mb-4 opacity-90">5-star accommodations with world-class amenities</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xl font-bold text-secondary">From KSh 120,000</span>
+                                <a href="#" class="bg-white/20 backdrop-blur-sm text-white font-semibold py-2 px-4 rounded-full hover:bg-white/30 transition-all duration-300">
+                                    Discover
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Experience Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Hot Air Balloon -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                <div class="relative h-48">
+                    <img src="https://images.unsplash.com/photo-1558472973-bb8bfb4ee4c5?w=400&h=200&fit=crop" alt="Hot Air Balloon" class="w-full h-full object-cover">
+                    <span class="absolute top-4 right-4 bg-secondary text-primary text-xs font-bold px-3 py-1 rounded-full uppercase">Unique</span>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold text-primary mb-3">Hot Air Balloon Safari</h4>
+                    <p class="text-gray-600 mb-4">Soar above the Maasai Mara at sunrise for breathtaking aerial views of wildlife migrations</p>
+                    <div class="flex items-center gap-4 mb-4 text-sm text-gray-500">
+                        <span><i class="fas fa-clock mr-1"></i>3 Hours</span>
+                        <span><i class="fas fa-users mr-1"></i>Max 16</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-primary">KSh 45,000</span>
+                        <a href="#" class="bg-gradient-to-r from-primary to-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:shadow-lg transition-all duration-300">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Night Safari -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                <div class="relative h-48">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&h=200&fit=crop" alt="Night Safari" class="w-full h-full object-cover">
+                    <span class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Thrilling</span>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold text-primary mb-3">Night Game Drive</h4>
+                    <p class="text-gray-600 mb-4">Experience the wild after dark with nocturnal animals and predators in their element</p>
+                    <div class="flex items-center gap-4 mb-4 text-sm text-gray-500">
+                        <span><i class="fas fa-moon mr-1"></i>6-10 PM</span>
+                        <span><i class="fas fa-users mr-1"></i>Max 6</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-primary">KSh 18,000</span>
+                        <a href="#" class="bg-gradient-to-r from-primary to-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:shadow-lg transition-all duration-300">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photography Safari -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                <div class="relative h-48">
+                    <img src="https://images.unsplash.com/photo-1664270716975-33992d17fdb3?w=400&h=200&fit=crop" alt="Photography Safari" class="w-full h-full object-cover">
+                    <span class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Pro</span>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold text-primary mb-3">Photography Safari</h4>
+                    <p class="text-gray-600 mb-4">Capture stunning wildlife moments with professional photography guidance and equipment</p>
+                    <div class="flex items-center gap-4 mb-4 text-sm text-gray-500">
+                        <span><i class="fas fa-camera mr-1"></i>Pro Guide</span>
+                        <span><i class="fas fa-users mr-1"></i>Max 4</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-primary">KSh 85,000</span>
+                        <a href="#" class="bg-gradient-to-r from-primary to-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:shadow-lg transition-all duration-300">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Why Choose Wildwaves Safaris?</h2>
+                <p class="text-lg text-gray-600 mb-8">
+                    We are Kenya's premier safari specialists with years of experience creating unforgettable wildlife adventures. Our expert guides and personalized service ensure every moment of your safari exceeds expectations.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-shield-alt text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-primary mb-2">Licensed & Insured</h4>
+                            <p class="text-gray-600">Fully licensed by Kenya Tourism Board with comprehensive insurance coverage</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-users text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-primary mb-2">Expert Local Guides</h4>
+                            <p class="text-gray-600">Professional guides with deep knowledge of wildlife and local culture</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-clock text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-primary mb-2">24/7 Support</h4>
+                            <p class="text-gray-600">Round-the-clock assistance throughout your safari adventure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=500&fit=crop" alt="Safari Guide" class="w-full rounded-2xl shadow-lg">
+                <div class="absolute bottom-6 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl text-center shadow-lg">
+                    <div class="text-3xl font-bold text-primary">8+</div>
+                    <div class="text-sm font-semibold text-gray-600 uppercase">Years<br>Experience</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Tours Section -->
+<section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">We have the best tours</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Embark on extraordinary safari adventures across Kenya's pristine wilderness. From witnessing the Great Migration in Maasai Mara to encountering elephants against Mount Kilimanjaro's backdrop in Amboseli.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Tour 1 -->
+            <div class="relative h-96 rounded-2xl overflow-hidden group cursor-pointer">
+                <img src="images/intro_1.jpg" alt="Maasai Mara Safari" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute top-6 left-1/2 transform -translate-x-1/2">
+                    <span class="bg-secondary text-primary font-semibold px-4 py-2 rounded-full text-sm">May 25th - June 01st</span>
+                </div>
+                <div class="absolute bottom-6 left-6 right-6 text-white text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Maasai Mara Safari</h3>
+                    <div class="text-lg mb-3">From KSh 45,000</div>
+                    <div class="flex justify-center mb-4">
+                        <div class="flex text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block bg-gradient-to-r from-secondary to-accent text-primary font-bold py-3 px-6 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                        See More
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Tour 2 -->
+            <div class="relative h-96 rounded-2xl overflow-hidden group cursor-pointer">
+                <img src="images/intro_2.jpg" alt="Amboseli National Park" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute top-6 left-1/2 transform -translate-x-1/2">
+                    <span class="bg-secondary text-primary font-semibold px-4 py-2 rounded-full text-sm">May 25th - June 01st</span>
+                </div>
+                <div class="absolute bottom-6 left-6 right-6 text-white text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Amboseli National Park</h3>
+                    <div class="text-lg mb-3">From KSh 35,000</div>
+                    <div class="flex justify-center mb-4">
+                        <div class="flex text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block bg-gradient-to-r from-secondary to-accent text-primary font-bold py-3 px-6 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                        See More
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Tour 3 -->
+            <div class="relative h-96 rounded-2xl overflow-hidden group cursor-pointer">
+                <img src="images/intro_3.jpg" alt="Tsavo National Parks" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute top-6 left-1/2 transform -translate-x-1/2">
+                    <span class="bg-secondary text-primary font-semibold px-4 py-2 rounded-full text-sm">May 25th - June 01st</span>
+                </div>
+                <div class="absolute bottom-6 left-6 right-6 text-white text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Tsavo National Parks</h3>
+                    <div class="text-lg mb-3">From KSh 28,000</div>
+                    <div class="flex justify-center mb-4">
+                        <div class="flex text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block bg-gradient-to-r from-secondary to-accent text-primary font-bold py-3 px-6 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                        See More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">What our clients say about us</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-secondary">
+                <div class="flex items-center mb-6">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face" alt="Client" class="w-16 h-16 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-bold text-primary">Jessica & Mark Thompson</h4>
+                        <p class="text-sm text-gray-500">April 12, 2024</p>
+                    </div>
+                </div>
+                <h5 class="text-lg font-semibold text-primary mb-3">"Perfect honeymoon adventure"</h5>
+                <p class="text-gray-600">Wildwavesafaris made our honeymoon magical! From romantic sundowners to incredible wildlife encounters, every detail was perfect. The team went above and beyond!</p>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-secondary">
+                <div class="flex items-center mb-6">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Client" class="w-16 h-16 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-bold text-primary">Emma Martinez</h4>
+                        <p class="text-sm text-gray-500">February 8, 2024</p>
+                    </div>
+                </div>
+                <h5 class="text-lg font-semibold text-primary mb-3">"Exceeded all expectations"</h5>
+                <p class="text-gray-600">Professional guides, stunning accommodations, and unforgettable wildlife encounters. Wildwavesafaris delivered the trip of a lifetime. Already planning my return!</p>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-secondary">
+                <div class="flex items-center mb-6">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Client" class="w-16 h-16 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-bold text-primary">Michael Johnson</h4>
+                        <p class="text-sm text-gray-500">January 18, 2024</p>
+                    </div>
+                </div>
+                <h5 class="text-lg font-semibold text-primary mb-3">"Outstanding service"</h5>
+                <p class="text-gray-600">From booking to departure, Wildwavesafaris provided exceptional service. The hot air balloon safari was breathtaking and the guides were incredibly knowledgeable!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-r from-primary to-blue-600 text-white">
+    <div class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div class="lg:col-span-1">
+                <div class="flex items-center mb-6">
+                    <img src="images/logo.png" alt="Wildwavesafaris" class="h-10 mr-3">
+                    <span class="text-2xl font-bold text-secondary">Wildwavesafaris</span>
+                </div>
+                <p class="text-white/80 mb-6 leading-relaxed">
+                    Experience Kenya's pristine wilderness and encounter majestic wildlife. Your gateway to authentic African safari adventures that create memories lasting a lifetime.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-all duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-all duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-all duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-all duration-300">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h5 class="text-secondary font-bold text-lg mb-6">Quick Links</h5>
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="text-white/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 transform inline-block">Home</a></li>
+                    <li><a href="about.html" class="text-white/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 transform inline-block">About Us</a></li>
+                    <li><a href="#" class="text-white/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 transform inline-block">Safari Packages</a></li>
+                    <li><a href="blog.html" class="text-white/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 transform inline-block">News & Blog</a></li>
+                    <li><a href="contact.html" class="text-white/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 transform inline-block">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Top Destinations -->
+            <div>
+                <h5 class="text-secondary font-bold text-lg mb-6">Top Destinations</h5>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-white/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 transform inline-block">Maasai Mara</a></li>
+                    <li><a href="#" class="text-white/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 transform inline-block">Amboseli National Park</a></li>
+                    <li><a href="#" class="text-white/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 transform inline-block">Tsavo National Parks</a></li>
+                    <li><a href="#" class="text-white/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 transform inline-block">Samburu Reserve</a></li>
+                    <li><a href="#" class="text-white/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 transform inline-block">Lake Nakuru</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div>
+                <h5 class="text-secondary font-bold text-lg mb-6">Contact Info</h5>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                            <i class="fas fa-map-marker-alt text-secondary"></i>
+                        </div>
+                        <div>
+                            <p class="text-white/80 text-sm leading-relaxed">THIKA ROAD, SPUR MALL<br>NAIROBI, KENYA</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-phone text-secondary"></i>
+                        </div>
+                        <a href="tel:+254713241666" class="text-white/80 hover:text-secondary transition-colors duration-300">+254 713 241 666</a>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-envelope text-secondary"></i>
+                        </div>
+                        <a href="mailto:wildwavesafaris@gmail.com" class="text-white/80 hover:text-secondary transition-colors duration-300 break-all">wildwavesafaris@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Newsletter Section -->
+        <div class="border-t border-white/20 mt-12 pt-8">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <div class="mb-6 lg:mb-0">
+                    <h5 class="text-secondary font-bold text-lg mb-2">Subscribe to Our Newsletter</h5>
+                    <p class="text-white/80">Get the latest safari deals, travel tips, and wildlife updates delivered to your inbox.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                    <input type="email" placeholder="Your email address" class="flex-1 lg:w-80 px-4 py-3 rounded-full bg-white/10 backdrop-blur-sm text-white placeholder-white/60 border border-white/20 focus:border-secondary focus:outline-none">
+                    <button class="bg-secondary text-primary font-bold py-3 px-6 rounded-full hover:bg-accent transition-colors duration-300 whitespace-nowrap">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Copyright -->
+    <div class="bg-black/20 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <p class="text-white/70 text-sm mb-4 md:mb-0">
+                    Copyright &copy;<span id="current-year"></span> Wildwavesafaris. All rights reserved | Made with ❤️ by wabisabi and algokings
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-end gap-6">
+                    <a href="#" class="text-white/70 hover:text-secondary text-sm transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-white/70 hover:text-secondary text-sm transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-white/70 hover:text-secondary text-sm transition-colors duration-300">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254713241666" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 z-50 animate-pulse">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- JavaScript -->
+<script>
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('-translate-x-full');
+});
+
+mobileMenuClose.addEventListener('click', () => {
+    mobileMenu.classList.add('-translate-x-full');
+});
+
+// Close mobile menu when clicking outside
+mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+        mobileMenu.classList.add('-translate-x-full');
+    }
+});
+
+// Set current year
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('nav');
+    if (window.scrollY > 100) {
+        navbar.classList.add('bg-white', 'shadow-xl');
+        navbar.classList.remove('bg-white', 'bg-opacity-95');
+    } else {
+        navbar.classList.add('bg-white', 'bg-opacity-95');
+        navbar.classList.remove('shadow-xl');
+    }
+});
+
+// Intersection Observer for animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in-up');
+        }
+    });
+}, observerOptions);
+
+// Observe elements for animation
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+});
+
+// Counter animation
+const counters = document.querySelectorAll('[data-count]');
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = parseInt(counter.getAttribute('data-count'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const updateCounter = () => {
+                current += step;
+                if (current < target) {
+                    counter.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+            
+            updateCounter();
+            counterObserver.unobserve(counter);
+        }
+    });
+}, { threshold: 0.5 });
+
+counters.forEach(counter => {
+    counterObserver.observe(counter);
+});
+</script>
+
+<!-- Custom CSS for additional animations -->
+<style>
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2c3e50;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffc107;
+}
+
+/* Ensure touch targets are at least 44px */
+@media (max-width: 768px) {
+    button, a, input, select, textarea {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+</style>
+
+</body>
+</html>
