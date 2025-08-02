@@ -4117,9 +4117,44 @@ $(document).ready(function() {
 	padding: 0 20px !important;
 }
 
+.wildwave-navbar .nav-menu {
+	display: flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	gap: 40px !important;
+}
+
+.wildwave-navbar .nav-menu li {
+	display: block !important;
+}
+
+.wildwave-navbar .nav-menu a {
+	color: #2c3e50 !important;
+	text-decoration: none !important;
+	font-weight: 500 !important;
+	text-transform: uppercase !important;
+	font-size: 14px !important;
+	padding: 5px 0 !important;
+	border-bottom: 2px solid transparent !important;
+	transition: all 0.3s ease !important;
+}
+
+.wildwave-navbar .nav-menu a:hover {
+	color: #ffc107 !important;
+	border-bottom-color: #ffc107 !important;
+}
+
 /* Ensure navbar is always visible on desktop */
 @media (min-width: 769px) {
 	.wildwave-navbar {
+		display: flex !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
+	.wildwave-navbar .nav-menu {
 		display: flex !important;
 		visibility: visible !important;
 		opacity: 1 !important;
@@ -4193,6 +4228,9 @@ $(document).ready(function() {
 @media (max-width: 768px) {
 	/* Hide desktop navbar */
 	.wildwave-navbar {
+		display: none !important;
+	}
+	.wildwave-navbar .nav-menu {
 		display: none !important;
 	}
 	
