@@ -58,6 +58,11 @@
     color: #2c3e50;
 }
 
+/* Hide mobile menu button on desktop */
+.wildwave-topbar .mobile-menu-btn-topbar {
+    display: none;
+}
+
 /* Main navbar */
 .wildwave-navbar {
     position: fixed;
