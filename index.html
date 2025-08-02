@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/new-navbar.css">
+<link rel="stylesheet" type="text/css" href="styles/mobile-menu.css">
 
 <style>
 .logo a {
@@ -1883,7 +1884,7 @@ body {
 			<a href="#"><i class="fa fa-twitter"></i></a>
 			<a href="#"><i class="fa fa-instagram"></i></a>
 			<a href="#"><i class="fa fa-telegram"></i></a>
-			<button class="mobile-menu-btn-topbar" onclick="toggleMobileMenu()">
+			<button id="openMobileMenu" class="mobile-menu-btn-topbar">
 				<i class="fa fa-bars"></i>
 			</button>
 		</div>
@@ -1908,28 +1909,21 @@ body {
 		</div>
 	</nav>
 
-	<!-- Mobile Menu Overlay -->
-	<div class="mobile-menu-overlay" id="mobileMenuOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.8); z-index: 9999; transform: translateX(-100%); transition: transform 0.3s ease; backdrop-filter: blur(5px);">
-		<div class="mobile-menu-content" style="width: 280px; height: 100%; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 20px; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
-			<div class="mobile-menu-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
-				<div class="mobile-menu-logo" style="display: flex; align-items: center; gap: 10px; color: white; font-size: 16px; font-weight: bold;">
-					<img src="images/logo.png" alt="Wildwavesafaris" style="height: 25px;">
-					Wildwavesafaris
-				</div>
-				<button class="mobile-menu-close" onclick="toggleMobileMenu()" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 5px; min-height: 44px; min-width: 44px;">
-					<i class="fa fa-times"></i>
-				</button>
-			</div>
-			<ul class="mobile-nav-menu" style="list-style: none; padding: 0; margin: 0;">
-				<li style="margin-bottom: 5px;"><a href="index.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Home</a></li>
-				<li style="margin-bottom: 5px;"><a href="about.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">About Us</a></li>
-				<li style="margin-bottom: 5px;"><a href="destinations.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Destinations</a></li>
-				<li style="margin-bottom: 5px;"><a href="accommodations.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Accommodations</a></li>
-				<li style="margin-bottom: 5px;"><a href="offers.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Special Offers</a></li>
-				<li style="margin-bottom: 5px;"><a href="booking.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Booking</a></li>
-				<li style="margin-bottom: 5px;"><a href="contact.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Contact</a></li>
-			</ul>
+	<!-- Mobile Menu -->
+	<div id="mobileMenu" class="mobile-menu">
+		<div class="mobile-menu-header">
+			<span>Wildwavesafaris</span>
+			<button id="closeMobileMenu">&times;</button>
 		</div>
+		<nav class="mobile-nav">
+			<a href="index.html">Home</a>
+			<a href="about.html">About Us</a>
+			<a href="destinations.html">Destinations</a>
+			<a href="accommodations.html">Accommodations</a>
+			<a href="offers.html">Special Offers</a>
+			<a href="booking.html">Booking</a>
+			<a href="contact.html">Contact</a>
+		</nav>
 	</div>
 
 
@@ -4022,53 +4016,7 @@ $(document).ready(function() {
     });
 });
 
-// Mobile Menu Toggle Function
-function toggleMobileMenu() {
-    const overlay = document.getElementById('mobileMenuOverlay');
-    if (!overlay) return;
-    
-    if (overlay.style.transform === 'translateX(0%)' || overlay.style.transform === 'translateX(0px)') {
-        overlay.style.transform = 'translateX(-100%)';
-        document.body.style.overflow = 'auto';
-    } else {
-        overlay.style.transform = 'translateX(0%)';
-        document.body.style.overflow = 'hidden';
-    }
-}
 
-// Initialize mobile menu on page load
-$(document).ready(function() {
-    // Initialize mobile menu state
-    const overlay = document.getElementById('mobileMenuOverlay');
-    if (overlay) {
-        overlay.style.transform = 'translateX(-100%)';
-    }
-    
-    // Close mobile menu when clicking outside
-    $(document).on('click', function(event) {
-        const overlay = document.getElementById('mobileMenuOverlay');
-        if (!overlay) return;
-        
-        const menuContent = overlay.querySelector('.mobile-menu-content');
-        const menuButton = document.querySelector('.mobile-menu-btn-topbar');
-        
-        if (!menuContent || !menuButton) return;
-        
-        const currentTransform = overlay.style.transform;
-        const isOpen = currentTransform === 'translateX(0px)' || currentTransform === 'translateX(0%)' || (currentTransform === '' && overlay.offsetLeft >= 0);
-        
-        if (isOpen) {
-            if (!menuContent.contains(event.target) && !menuButton.contains(event.target)) {
-                toggleMobileMenu();
-            }
-        }
-    });
-    
-    // Prevent menu from closing when clicking inside menu content
-    $('.mobile-menu-content').on('click', function(e) {
-        e.stopPropagation();
-    });
-});
 
 
 </script>
