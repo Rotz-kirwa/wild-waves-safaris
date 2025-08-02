@@ -1909,73 +1909,7 @@ body {
 		</div>
 	</nav>
 
-	<!-- Mobile Top Navigation Bar -->
-	<div class="mobile-top-navbar" style="display: none; position: fixed; top: 110px; left: 0; width: 100%; height: 50px; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 998; padding: 0 5px;">
-		<div style="display: flex; justify-content: space-around; align-items: center; height: 100%;">
-			<a href="index.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-home" style="font-size: 12px; margin-bottom: 1px;"></i>
-				<span>Home</span>
-			</a>
-			<a href="about.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-info-circle" style="font-size: 12px; margin-bottom: 1px;"></i>
-				<span>About</span>
-			</a>
-			<a href="destinations.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-map-marker" style="font-size: 12px; margin-bottom: 1px;"></i>
-				<span>Places</span>
-			</a>
-			<a href="accommodations.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-bed" style="font-size: 12px; margin-bottom: 1px;"></i>
-				<span>Stay</span>
-			</a>
-			<a href="offers.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-star" style="font-size: 12px; margin-bottom: 1px;"></i>
-				<span>Offers</span>
-			</a>
-			<a href="booking.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-calendar" style="font-size: 12px; margin-bottom: 1px;"></i>
-				<span>Book</span>
-			</a>
-			<a href="contact.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-phone" style="font-size: 12px; margin-bottom: 1px;"></i>
-				<span>Contact</span>
-			</a>
-		</div>
-	</div>
 
-	<!-- Mobile Bottom Navigation Bar -->
-	<div class="mobile-navbar" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 0 5px;">
-		<div style="display: flex; justify-content: space-around; align-items: center; height: 100%;">
-			<a href="index.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-home" style="font-size: 14px; margin-bottom: 1px;"></i>
-				<span>Home</span>
-			</a>
-			<a href="about.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-info-circle" style="font-size: 14px; margin-bottom: 1px;"></i>
-				<span>About</span>
-			</a>
-			<a href="destinations.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-map-marker" style="font-size: 14px; margin-bottom: 1px;"></i>
-				<span>Places</span>
-			</a>
-			<a href="accommodations.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-bed" style="font-size: 14px; margin-bottom: 1px;"></i>
-				<span>Stay</span>
-			</a>
-			<a href="offers.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-star" style="font-size: 14px; margin-bottom: 1px;"></i>
-				<span>Offers</span>
-			</a>
-			<a href="booking.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-calendar" style="font-size: 14px; margin-bottom: 1px;"></i>
-				<span>Book</span>
-			</a>
-			<a href="contact.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #2c3e50; font-size: 8px; padding: 2px;">
-				<i class="fa fa-phone" style="font-size: 14px; margin-bottom: 1px;"></i>
-				<span>Contact</span>
-			</a>
-		</div>
-	</div>
 
 	<!-- Mobile Menu Overlay -->
 	<div class="mobile-menu-overlay" id="mobileMenuOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.8); z-index: 9999; transform: translateX(-100%); transition: transform 0.3s ease;">
@@ -4166,9 +4100,77 @@ $(document).ready(function() {
 	backdrop-filter: blur(5px);
 }
 
-/* DESKTOP NAVBAR */
-.wildwave-navbar {
+/* MODERN RESPONSIVE DESIGN */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	line-height: 1.6;
+}
+
+/* TOPBAR */
+.wildwave-topbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background: #2c3e50;
+	color: white;
+	z-index: 1001;
 	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	font-size: 13px;
+}
+
+.wildwave-topbar .contact-info {
+	display: flex;
+	gap: 30px;
+	flex: 1;
+}
+
+.wildwave-topbar .contact-info a {
+	color: white;
+	text-decoration: none;
+}
+
+.wildwave-topbar .social-icons {
+	display: flex;
+	gap: 10px;
+}
+
+.wildwave-topbar .social-icons a {
+	color: white;
+	text-decoration: none;
+	width: 28px;
+	height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.1);
+}
+
+.mobile-menu-btn-topbar {
+	display: none;
+	background: rgba(255,255,255,0.2);
+	border: none;
+	color: white;
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+}
+
+/* MAIN NAVBAR */
+.wildwave-navbar {
 	position: fixed;
 	top: 40px;
 	left: 0;
@@ -4177,7 +4179,8 @@ $(document).ready(function() {
 	background: rgba(255, 255, 255, 0.95);
 	backdrop-filter: blur(10px);
 	box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-	z-index: 999;
+	z-index: 1000;
+	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 20px;
@@ -4202,7 +4205,7 @@ $(document).ready(function() {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	gap: 40px;
+	gap: 30px;
 }
 
 .wildwave-navbar .nav-menu a {
@@ -4211,7 +4214,7 @@ $(document).ready(function() {
 	font-weight: 500;
 	text-transform: uppercase;
 	font-size: 14px;
-	padding: 5px 0;
+	padding: 10px 0;
 	border-bottom: 2px solid transparent;
 	transition: all 0.3s ease;
 }
@@ -4225,22 +4228,85 @@ $(document).ready(function() {
 	cursor: pointer;
 	color: #2c3e50;
 	font-size: 16px;
+	padding: 10px;
 }
 
-.wildwave-navbar .search-icon:hover {
-	color: #ffc107;
-}
-
-.mobile-menu-btn-topbar {
-	display: none;
-}
-
+/* RESPONSIVE LAYOUT */
 body {
 	padding-top: 110px;
 }
 
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* BUTTONS */
+.button, .btn {
+	display: inline-block;
+	padding: 12px 24px;
+	min-height: 44px;
+	border: none;
+	border-radius: 8px;
+	background: #ffc107;
+	color: #2c3e50;
+	font-weight: 600;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-align: center;
+}
+
+.button:hover, .btn:hover {
+	background: #ffeb3b;
+	transform: translateY(-2px);
+}
+
+/* SECTIONS */
+.section {
+	padding: 60px 0;
+}
+
+/* IMAGES */
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
+	/* TOPBAR MOBILE */
+	.wildwave-topbar {
+		height: auto;
+		min-height: 60px;
+		flex-direction: column;
+		padding: 10px 20px;
+		gap: 10px;
+	}
+	
+	.wildwave-topbar .contact-info {
+		flex-direction: column;
+		gap: 8px;
+		text-align: center;
+		font-size: 12px;
+	}
+	
+	.mobile-menu-btn-topbar {
+		display: flex;
+		position: absolute;
+		top: 10px;
+		right: 20px;
+	}
+	
+	/* NAVBAR MOBILE */
+	.wildwave-navbar {
+		top: 60px;
+		height: 60px;
+		padding: 0 20px;
+	}
+	
 	.wildwave-navbar .nav-menu {
 		display: none;
 	}
@@ -4249,40 +4315,58 @@ body {
 		display: none;
 	}
 	
-	.mobile-menu-btn-topbar {
-		display: flex;
-		position: absolute;
-		top: 10px;
-		right: 20px;
-		width: 40px;
-		height: 40px;
-		background: rgba(255,255,255,0.2);
-		border: none;
-		color: white;
-		border-radius: 8px;
-		align-items: center;
-		justify-content: center;
-		cursor: pointer;
-		z-index: 1002;
+	.wildwave-navbar .logo {
+		font-size: 18px;
 	}
 	
-	.wildwave-topbar {
-		padding: 10px 20px;
-		flex-direction: column;
-		gap: 10px;
+	.wildwave-navbar .logo img {
+		height: 30px;
 	}
 	
 	body {
-		padding-top: 90px;
-		padding-bottom: 70px;
+		padding-top: 120px;
 	}
 	
-	.mobile-top-navbar {
-		display: flex !important;
+	/* CONTAINER */
+	.container {
+		padding: 0 15px;
 	}
 	
-	.mobile-navbar {
-		display: flex !important;
+	/* SECTIONS */
+	.section {
+		padding: 40px 0;
+	}
+	
+	/* BUTTONS */
+	.button, .btn {
+		width: 100%;
+		max-width: 300px;
+		padding: 15px 20px;
+		font-size: 16px;
+	}
+	
+	/* TEXT */
+	h1 { font-size: 2rem; }
+	h2 { font-size: 1.75rem; }
+	h3 { font-size: 1.5rem; }
+	p { font-size: 16px; line-height: 1.6; }
+	
+	/* CARDS/ITEMS */
+	.col-lg-4, .col-lg-6, .col-md-6 {
+		margin-bottom: 30px;
+	}
+	
+	/* FOOTER */
+	.footer {
+		padding: 40px 0;
+	}
+	
+	.footer .row {
+		text-align: center;
+	}
+	
+	.footer .col-lg-4 {
+		margin-bottom: 30px;
 	}
 }
 </style>
