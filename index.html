@@ -1884,7 +1884,7 @@ body {
 			<a href="#"><i class="fa fa-twitter"></i></a>
 			<a href="#"><i class="fa fa-instagram"></i></a>
 			<a href="#"><i class="fa fa-telegram"></i></a>
-			<button id="openMobileMenu" class="mobile-menu-btn-topbar">
+			<button class="mobile-menu-btn-topbar" onclick="toggleMobileMenu()">
 				<i class="fa fa-bars"></i>
 			</button>
 		</div>
@@ -1909,20 +1909,28 @@ body {
 		</div>
 	</nav>
 
-	<div id="mobileMenu" style="position: fixed; top: 0; right: -300px; width: 300px; height: 100vh; background: #2c3e50; z-index: 9999; transition: right 0.3s ease;">
-		<div style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
-			<span style="color: white; font-weight: bold; font-size: 18px;">Wildwavesafaris</span>
-			<button id="closeMobileMenu" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 5px;">&times;</button>
+	<!-- Mobile Menu Overlay -->
+	<div class="mobile-menu-overlay" id="mobileMenuOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.8); z-index: 9999; transform: translateX(-100%); transition: transform 0.3s ease;">
+		<div class="mobile-menu-content" style="width: 280px; height: 100%; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 20px; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
+			<div class="mobile-menu-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+				<div class="mobile-menu-logo" style="display: flex; align-items: center; gap: 10px; color: white; font-size: 16px; font-weight: bold;">
+					<img src="images/logo.png" alt="Wildwavesafaris" style="height: 25px;">
+					Wildwavesafaris
+				</div>
+				<button class="mobile-menu-close" onclick="toggleMobileMenu()" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 5px; min-height: 44px; min-width: 44px;">
+					<i class="fa fa-times"></i>
+				</button>
+			</div>
+			<ul class="mobile-nav-menu" style="list-style: none; padding: 0; margin: 0;">
+				<li style="margin-bottom: 5px;"><a href="index.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Home</a></li>
+				<li style="margin-bottom: 5px;"><a href="about.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">About Us</a></li>
+				<li style="margin-bottom: 5px;"><a href="destinations.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Destinations</a></li>
+				<li style="margin-bottom: 5px;"><a href="accommodations.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Accommodations</a></li>
+				<li style="margin-bottom: 5px;"><a href="offers.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Special Offers</a></li>
+				<li style="margin-bottom: 5px;"><a href="booking.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Booking</a></li>
+				<li style="margin-bottom: 5px;"><a href="contact.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Contact</a></li>
+			</ul>
 		</div>
-		<nav style="padding: 20px 0;">
-			<a href="index.html" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">Home</a>
-			<a href="about.html" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">About Us</a>
-			<a href="destinations.html" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">Destinations</a>
-			<a href="accommodations.html" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">Accommodations</a>
-			<a href="offers.html" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">Special Offers</a>
-			<a href="booking.html" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">Booking</a>
-			<a href="contact.html" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">Contact</a>
-		</nav>
 	</div>
 
 
@@ -3656,6 +3664,25 @@ body {
 <script src="plugins/easing/easing.js"></script>
 <script src="js/mobile-menu.js"></script>
 <script src="js/custom.js"></script>
+
+<!-- Mobile Menu Toggle Function -->
+<script>
+function toggleMobileMenu() {
+    const overlay = document.getElementById('mobileMenuOverlay');
+    if (overlay.style.transform === 'translateX(0px)' || overlay.style.transform === '') {
+        overlay.style.transform = 'translateX(-100%)';
+    } else {
+        overlay.style.transform = 'translateX(0px)';
+    }
+}
+
+// Close mobile menu when clicking outside
+document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+        toggleMobileMenu();
+    }
+});
+</script>
 <script>
 $(document).ready(function() {
     // Force video display and playback
@@ -4071,6 +4098,88 @@ $(document).ready(function() {
 	backdrop-filter: blur(5px);
 }
 
+/* Force navbar visibility on desktop */
+.wildwave-navbar {
+	display: flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	position: fixed !important;
+	top: 40px !important;
+	left: 0 !important;
+	width: 100% !important;
+	z-index: 999 !important;
+	background: rgba(255, 255, 255, 0.95) !important;
+	backdrop-filter: blur(10px) !important;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+	height: 70px !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	padding: 0 20px !important;
+}
+
+.wildwave-navbar .nav-menu {
+	display: flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	gap: 40px !important;
+}
+
+.wildwave-navbar .nav-menu li {
+	display: block !important;
+}
+
+.wildwave-navbar .nav-menu a {
+	color: #2c3e50 !important;
+	text-decoration: none !important;
+	font-weight: 500 !important;
+	text-transform: uppercase !important;
+	font-size: 14px !important;
+	padding: 5px 0 !important;
+	border-bottom: 2px solid transparent !important;
+	transition: all 0.3s ease !important;
+}
+
+.wildwave-navbar .nav-menu a:hover {
+	color: #ffc107 !important;
+	border-bottom-color: #ffc107 !important;
+}
+
+.wildwave-navbar .logo {
+	display: flex !important;
+	align-items: center !important;
+	gap: 10px !important;
+	font-size: 24px !important;
+	font-weight: bold !important;
+	color: #2c3e50 !important;
+	text-decoration: none !important;
+	flex-shrink: 0 !important;
+}
+
+.wildwave-navbar .logo img {
+	height: 40px !important;
+}
+
+.wildwave-navbar .search-icon {
+	cursor: pointer !important;
+	color: #2c3e50 !important;
+	font-size: 16px !important;
+	margin-right: 20px !important;
+}
+
+.wildwave-navbar .search-icon:hover {
+	color: #ffc107 !important;
+}
+
+/* Desktop navbar visibility fix */
+@media (min-width: 769px) {
+	.mobile-menu-btn-topbar {
+		display: none !important;
+	}
+}
+
 /* Mobile Navigation Styles */
 @media (max-width: 768px) {
 	/* Hide desktop navbar */
@@ -4119,6 +4228,13 @@ $(document).ready(function() {
 	/* Adjust body padding for mobile */
 	body {
 		padding-top: 80px !important;
+	}
+}
+
+/* Desktop body padding */
+@media (min-width: 769px) {
+	body {
+		padding-top: 110px !important;
 	}
 }
 </style>
