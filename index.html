@@ -3661,6 +3661,7 @@ body {
 <script src="styles/bootstrap4/bootstrap.min.js"></script>
 <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="plugins/easing/easing.js"></script>
+<script src="js/mobile-menu.js"></script>
 <script src="js/custom.js"></script>
 <script>
 $(document).ready(function() {
@@ -4026,10 +4027,7 @@ function toggleMobileMenu() {
     const overlay = document.getElementById('mobileMenuOverlay');
     if (!overlay) return;
     
-    const currentTransform = overlay.style.transform;
-    const isOpen = currentTransform === 'translateX(0px)' || currentTransform === 'translateX(0%)' || currentTransform === '';
-    
-    if (isOpen && currentTransform !== 'translateX(-100%)') {
+    if (overlay.style.transform === 'translateX(0%)' || overlay.style.transform === 'translateX(0px)') {
         overlay.style.transform = 'translateX(-100%)';
         document.body.style.overflow = 'auto';
     } else {
