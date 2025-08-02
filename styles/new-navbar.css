@@ -214,30 +214,36 @@ body {
         display: none !important;
     }
     
-    /* SHOW MOBILE MENU BUTTON */
-    .wildwave-navbar .mobile-menu-btn {
+    /* SHOW MOBILE MENU BUTTON IN TOPBAR */
+    .wildwave-topbar .mobile-menu-btn-topbar {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        color: #2c3e50;
-        background: none;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+        color: white;
+        background: rgba(255,255,255,0.1);
         border: none;
         cursor: pointer;
-        border-radius: 8px;
+        border-radius: 50%;
+        margin-left: 10px;
         transition: all 0.3s ease;
     }
     
-    .wildwave-navbar .mobile-menu-btn:hover {
-        background: rgba(250, 158, 27, 0.1);
-        color: #fa9e1b;
+    .wildwave-topbar .mobile-menu-btn-topbar:hover {
+        background: #fa9e1b;
+        color: #2c3e50;
+        transform: scale(1.1);
     }
     
-    .wildwave-navbar .mobile-menu-btn:active {
-        transform: scale(0.9);
-        background: rgba(250, 158, 27, 0.2);
+    .wildwave-topbar .mobile-menu-btn-topbar:active {
+        transform: scale(0.95);
+    }
+    
+    /* HIDE NAVBAR MOBILE BUTTON */
+    .wildwave-navbar .mobile-menu-btn {
+        display: none !important;
     }
     
     body {
@@ -272,12 +278,17 @@ body {
         height: 25px;
     }
     
-    /* ENSURE MOBILE BUTTON STAYS VISIBLE */
-    .wildwave-navbar .mobile-menu-btn {
+    /* ENSURE TOPBAR MOBILE BUTTON STAYS VISIBLE */
+    .wildwave-topbar .mobile-menu-btn-topbar {
         display: flex !important;
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    
+    /* HIDE NAVBAR MOBILE BUTTON */
+    .wildwave-navbar .mobile-menu-btn {
+        display: none !important;
     }
     
     .safari-promo {
