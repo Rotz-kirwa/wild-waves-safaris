@@ -4117,6 +4117,15 @@ $(document).ready(function() {
 	padding: 0 20px !important;
 }
 
+/* Ensure navbar is always visible on desktop */
+@media (min-width: 769px) {
+	.wildwave-navbar {
+		display: flex !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
+}
+
 .wildwave-navbar .nav-menu {
 	display: flex !important;
 	visibility: visible !important;

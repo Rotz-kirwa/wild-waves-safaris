@@ -161,6 +161,25 @@ body {
     padding-top: 110px;
 }
 
+/* DESKTOP FIRST - ENSURE NAVBAR IS VISIBLE */
+@media (min-width: 769px) {
+    .wildwave-navbar .nav-menu {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .wildwave-navbar .search-icon {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .wildwave-topbar .mobile-menu-btn-topbar {
+        display: none !important;
+    }
+}
+
 /* MOBILE RESPONSIVE - MOBILE FIRST */
 @media (max-width: 768px) {
     .wildwave-topbar {
