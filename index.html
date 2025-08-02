@@ -4166,6 +4166,39 @@ $(document).ready(function() {
 body {
 	padding-top: 110px;
 }
+
+/* MOBILE NAVBAR */
+@media (max-width: 768px) {
+	.wildwave-navbar .nav-menu {
+		display: none;
+	}
+	
+	.wildwave-navbar .search-icon {
+		display: none;
+	}
+	
+	.mobile-menu-btn-topbar {
+		display: flex;
+		position: absolute;
+		top: 8px;
+		right: 15px;
+		width: 40px;
+		height: 40px;
+		font-size: 18px;
+		border-radius: 8px;
+		background: rgba(255,255,255,0.2);
+		border: none;
+		color: white;
+		cursor: pointer;
+		align-items: center;
+		justify-content: center;
+		z-index: 1002;
+	}
+	
+	body {
+		padding-top: 80px;
+	}
+}
 </style>
 
 </body>
