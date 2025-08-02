@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Travel Packages - Wildwavesafaris</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Local and international travel packages with Wildwavesafaris">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/about_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/about_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/new-navbar.css">
+<style>
+.package-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    border-bottom: 2px solid #f0f0f0;
+}
+.package-tab {
+    padding: 15px 30px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+.package-tab.active {
+    color: #fa9e1b;
+    border-bottom-color: #fa9e1b;
+}
+.package-content {
+    display: none;
+}
+.package-content.active {
+    display: block;
+}
+.world-package {
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.world-package:hover {
+    transform: translateY(-5px);
+}
+.world-package-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.world-package-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(250,158,27,0.3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.world-package-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+.world-package-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.world-package-subtitle {
+    font-size: 16px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+.world-package-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffc107;
+    margin-bottom: 20px;
+}
+.world-package-features {
+    background: white;
+    padding: 30px;
+}
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.feature-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+}
+.feature-list li:last-child {
+    border-bottom: none;
+}
+.feature-list li i {
+    color: #90EE90;
+    margin-right: 10px;
+    width: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="super_container">
+	
+	<!-- NEW NAVBAR -->
+	<div class="wildwave-topbar">
+		<div class="contact-info">
+			<span><i class="fa fa-envelope"></i> <a href="mailto:wildwavesafaris@gmail.com">wildwavesafaris@gmail.com</a></span>
+			<span><i class="fa fa-phone"></i> <a href="tel:+254713241666">+254 713 241 666</a></span>
+			<span><i class="fa fa-map-marker"></i> <a href="https://maps.google.com/?q=Spur+Mall+Thika+Road+Nairobi" target="_blank">THIKA ROAD, SPUR MALL, NAIROBI</a></span>
+		</div>
+		<div class="social-icons">
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-instagram"></i></a>
+			<a href="#"><i class="fa fa-telegram"></i></a>
+		</div>
+	</div>
+
+	<nav class="wildwave-navbar">
+		<a href="index.html" class="logo">
+			<img src="images/logo.png" alt="Wildwavesafaris">
+			Wildwavesafaris
+		</a>
+		<ul class="nav-menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="destinations.html">Destinations</a></li>
+			<li><a href="accommodations.html">Accommodations</a></li>
+			<li><a href="offers.html">Special Offers</a></li>
+			<li><a href="booking.html">Booking</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+		<div class="search-icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<button class="mobile-menu-btn">
+			<i class="fa fa-bars"></i>
+		</button>
+	</nav>
+
+	<!-- Packages -->
+	<div class="intro">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<h2 class="intro_title">Discover the World with Wildwave</h2>
+					<p class="intro_text">From Kenya's wild beauty to the world's most iconic destinations</p>
+				</div>
+			</div>
+
+			<!-- Package Tabs -->
+			<div class="package-tabs">
+				<button class="package-tab active" onclick="showPackages('local')">Kenya Safaris</button>
+				<button class="package-tab" onclick="showPackages('international')">World Adventures</button>
+			</div>
+
+			<!-- Local Packages -->
+			<div id="local-packages" class="package-content active">
+				<div class="row intro_items">
+					<div class="col-lg-4 intro_col">
+						<div class="intro_item">
+							<div class="intro_item_overlay"></div>
+							<div class="intro_item_background" style="background-image:url('https://image.shutterstock.com/image-photo/pair-lion-lioness-grassland-masai-260nw-2458080141.jpg')"></div>
+							<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
+								<div class="intro_center text-center">
+									<h1>Maasai Mara Safari</h1>
+									<div class="intro_price">From KSh 45,000</div>
+									<p style="color: white; margin-top: 15px;">3 Days Great Migration Experience</p>
+								</div>
+								<div class="button intro_button"><div class="button_bcg"></div><a href="booking.html">book now<span></span><span></span><span></span></a></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 intro_col">
+						<div class="intro_item">
+							<div class="intro_item_overlay"></div>
+							<div class="intro_item_background" style="background-image:url('https://image.shutterstock.com/image-photo/giraffes-sunset-tsavo-east-west-260nw-2114896097.jpg')"></div>
+							<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
+								<div class="intro_center text-center">
+									<h1>Amboseli & Tsavo</h1>
+									<div class="intro_price">From KSh 65,000</div>
+									<p style="color: white; margin-top: 15px;">5 Days Elephant Paradise</p>
+								</div>
+								<div class="button intro_button"><div class="button_bcg"></div><a href="booking.html">book now<span></span><span></span><span></span></a></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 intro_col">
+						<div class="intro_item">
+							<div class="intro_item_overlay"></div>
+							<div class="intro_item_background" style="background-image:url('https://image.shutterstock.com/image-photo/chair-green-trees-on-white-260nw-2426978397.jpg')"></div>
+							<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
+								<div class="intro_center text-center">
+									<h1>Safari & Beach</h1>
+									<div class="intro_price">From KSh 85,000</div>
+									<p style="color: white; margin-top: 15px;">7 Days Safari + Diani Beach</p>
+								</div>
+								<div class="button intro_button"><div class="button_bcg"></div><a href="booking.html">book now<span></span><span></span><span></span></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- International Packages -->
+			<div id="international-packages" class="package-content">
+				
+				<!-- Egypt Pyramids -->
+				<div class="world-package">
+					<div class="row no-gutters">
+						<div class="col-lg-6">
+							<div class="world-package-image" style="background-image: url('https://images.unsplash.com/photo-1684457718740-190e844d5cb2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGhlJTIwcHlyYW1pZHMlMjBvZiUyMGVneXB0fGVufDB8fDB8fHww');">
+								<div class="world-package-overlay">
+									<div class="world-package-content">
+										<div class="world-package-title">Egypt Pyramids</div>
+										<div class="world-package-subtitle">Ancient Wonders of Giza</div>
+										<div class="world-package-price">From $1,200</div>
+										<div class="button"><div class="button_bcg"></div><a href="booking.html">book now<span></span><span></span><span></span></a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="world-package-features">
+								<h4 style="margin-bottom: 20px; color: #2c3e50;">Package Includes:</h4>
+								<ul class="feature-list">
+									<li><i class="fa fa-plane"></i> Round-trip flights from Nairobi</li>
+									<li><i class="fa fa-hotel"></i> 5 nights luxury hotel in Cairo</li>
+									<li><i class="fa fa-camera"></i> Guided tours of Pyramids & Sphinx</li>
+									<li><i class="fa fa-ship"></i> Nile River cruise experience</li>
+									<li><i class="fa fa-cutlery"></i> All meals and transfers included</li>
+									<li><i class="fa fa-user"></i> Professional Egyptologist guide</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- South Africa -->
+				<div class="world-package">
+					<div class="row no-gutters">
+						<div class="col-lg-6">
+							<div class="world-package-image" style="background-image: url('https://media.istockphoto.com/id/2165496803/photo/smiling-young-woman-taking-photos-while-relaxing-on-a-sandy-beach.webp?a=1&b=1&s=612x612&w=0&k=20&c=ykwJU-Ec8DHHbtO94T_WXhOvwBh2GWbcpl95XRv04eo=');">
+								<div class="world-package-overlay">
+									<div class="world-package-content">
+										<div class="world-package-title">South Africa</div>
+										<div class="world-package-subtitle">Cape Town & Safari Adventure</div>
+										<div class="world-package-price">From $1,800</div>
+										<div class="button"><div class="button_bcg"></div><a href="booking.html">book now<span></span><span></span><span></span></a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="world-package-features">
+								<h4 style="margin-bottom: 20px; color: #2c3e50;">Package Includes:</h4>
+								<ul class="feature-list">
+									<li><i class="fa fa-plane"></i> Flights Nairobi - Cape Town</li>
+									<li><i class="fa fa-mountain"></i> Table Mountain cable car</li>
+									<li><i class="fa fa-glass"></i> Wine tasting in Stellenbosch</li>
+									<li><i class="fa fa-binoculars"></i> Kruger National Park safari</li>
+									<li><i class="fa fa-anchor"></i> Cape Point & penguins tour</li>
+									<li><i class="fa fa-bed"></i> 7 nights accommodation</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Great Wall of China -->
+				<div class="world-package">
+					<div class="row no-gutters">
+						<div class="col-lg-6">
+							<div class="world-package-image" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600&h=400&fit=crop');">
+								<div class="world-package-overlay">
+									<div class="world-package-content">
+										<div class="world-package-title">Great Wall of China</div>
+										<div class="world-package-subtitle">Beijing & Ancient Wonders</div>
+										<div class="world-package-price">From $2,200</div>
+										<div class="button"><div class="button_bcg"></div><a href="booking.html">book now<span></span><span></span><span></span></a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="world-package-features">
+								<h4 style="margin-bottom: 20px; color: #2c3e50;">Package Includes:</h4>
+								<ul class="feature-list">
+									<li><i class="fa fa-plane"></i> Return flights via Dubai</li>
+									<li><i class="fa fa-fort-awesome"></i> Great Wall hiking experience</li>
+									<li><i class="fa fa-home"></i> Forbidden City guided tour</li>
+									<li><i class="fa fa-leaf"></i> Temple of Heaven visit</li>
+									<li><i class="fa fa-cutlery"></i> Authentic Peking duck dinner</li>
+									<li><i class="fa fa-bed"></i> 6 nights Beijing hotel</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Dubai -->
+				<div class="world-package">
+					<div class="row no-gutters">
+						<div class="col-lg-6">
+							<div class="world-package-image" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop');">
+								<div class="world-package-overlay">
+									<div class="world-package-content">
+										<div class="world-package-title">Dubai Luxury</div>
+										<div class="world-package-subtitle">Modern Marvels & Desert Safari</div>
+										<div class="world-package-price">From $1,500</div>
+										<div class="button"><div class="button_bcg"></div><a href="booking.html">book now<span></span><span></span><span></span></a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="world-package-features">
+								<h4 style="margin-bottom: 20px; color: #2c3e50;">Package Includes:</h4>
+								<ul class="feature-list">
+									<li><i class="fa fa-plane"></i> Direct flights from Nairobi</li>
+									<li><i class="fa fa-building"></i> Burj Khalifa observation deck</li>
+									<li><i class="fa fa-shopping-cart"></i> Dubai Mall & Gold Souk tours</li>
+									<li><i class="fa fa-sun-o"></i> Desert safari with BBQ dinner</li>
+									<li><i class="fa fa-ship"></i> Dubai Marina dhow cruise</li>
+									<li><i class="fa fa-bed"></i> 5 nights luxury hotel</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Turkey -->
+				<div class="world-package">
+					<div class="row no-gutters">
+						<div class="col-lg-6">
+							<div class="world-package-image" style="background-image: url('https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&h=400&fit=crop');">
+								<div class="world-package-overlay">
+									<div class="world-package-content">
+										<div class="world-package-title">Turkey Discovery</div>
+										<div class="world-package-subtitle">Istanbul & Cappadocia Magic</div>
+										<div class="world-package-price">From $1,600</div>
+										<div class="button"><div class="button_bcg"></div><a href="booking.html">book now<span></span><span></span><span></span></a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="world-package-features">
+								<h4 style="margin-bottom: 20px; color: #2c3e50;">Package Includes:</h4>
+								<ul class="feature-list">
+									<li><i class="fa fa-plane"></i> Flights via Turkish Airlines</li>
+									<li><i class="fa fa-home"></i> Hagia Sophia & Blue Mosque</li>
+									<li><i class="fa fa-shopping-bag"></i> Grand Bazaar shopping tour</li>
+									<li><i class="fa fa-heart"></i> Hot air balloon in Cappadocia</li>
+									<li><i class="fa fa-cutlery"></i> Traditional Turkish cuisine</li>
+									<li><i class="fa fa-bed"></i> 6 nights premium hotels</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- India Taj Mahal -->
+				<div class="world-package">
+					<div class="row no-gutters">
+						<div class="col-lg-6">
+							<div class="world-package-image" style="background-image: url('https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop');">
+								<div class="world-package-overlay">
+									<div class="world-package-content">
+										<div class="world-package-title">India Golden Triangle</div>
+										<div class="world-package-subtitle">Delhi, Agra & Jaipur</div>
+										<div class="world-package-price">From $1,400</div>
+										<div class="button"><div class="button_bcg"></div><a href="booking.html">book now<span></span><span></span><span></span></a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="world-package-features">
+								<h4 style="margin-bottom: 20px; color: #2c3e50;">Package Includes:</h4>
+								<ul class="feature-list">
+									<li><i class="fa fa-plane"></i> Return flights to Delhi</li>
+									<li><i class="fa fa-heart"></i> Taj Mahal sunrise visit</li>
+									<li><i class="fa fa-fort-awesome"></i> Red Fort & India Gate</li>
+									<li><i class="fa fa-home"></i> Amber Palace in Jaipur</li>
+									<li><i class="fa fa-cutlery"></i> Authentic Indian cuisine</li>
+									<li><i class="fa fa-car"></i> Private AC transport</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+function showPackages(type) {
+    // Hide all package contents
+    document.querySelectorAll('.package-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Remove active class from all tabs
+    document.querySelectorAll('.package-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Show selected package content
+    if (type === 'local') {
+        document.getElementById('local-packages').classList.add('active');
+        document.querySelector('[onclick="showPackages(\'local\')"]').classList.add('active');
+    } else {
+        document.getElementById('international-packages').classList.add('active');
+        document.querySelector('[onclick="showPackages(\'international\')"]').classList.add('active');
+    }
+}
+</script>
+
+</body>
+</html>

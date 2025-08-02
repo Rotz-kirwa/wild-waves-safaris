@@ -37,16 +37,42 @@ $(document).ready(function()
 		setHeader();
 	});
 
-	$(document).on('scroll', function()
-	{
+	// Remove scroll event that might hide navbar
+	// $(document).on('scroll', function()
+	// {
+	// 	setHeader();
+	// });
+	
+	// Force navbar to stay visible on page load
+	setTimeout(function() {
 		setHeader();
-	});
+	}, 100);
+	
+	// Periodically ensure navbar stays visible
+	setInterval(function() {
+		if (!$('.header').is(':visible') || $('.header').css('opacity') < 1) {
+			setHeader();
+		}
+	}, 1000);
 
 	initHomeSlider();
 	initMenu();
 	initCtaSlider();
 	initTestSlider();
 	initSearchForm();
+	
+	// Additional navbar protection
+	$(window).on('load', function() {
+		setTimeout(function() {
+			setHeader();
+			// Force all navbar elements to be visible
+			$('.header, .top_bar, .main_nav, .main_nav_col').css({
+				'visibility': 'visible !important',
+				'opacity': '1 !important',
+				'display': 'block !important'
+			});
+		}, 500);
+	});
 
 	/* 
 
@@ -56,7 +82,7 @@ $(document).ready(function()
 
 	function setHeader()
 	{
-		// Keep navbar always visible - no scroll behavior changes
+		// DO NOTHING - navbar is handled by navbar-fix.js
 		if(window.innerWidth > 991 && menuActive)
 		{
 			closeMenu();

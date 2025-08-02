@@ -573,7 +573,9 @@
 14. 400px
 ************/
 
-@media only screen and (max-width: 400px)
-{
-	
+/* Control image overflow */
+.destinations_image {
+  max-height: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }

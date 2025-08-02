@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Booking - Wildwavesafaris</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Book your safari with Wildwavesafaris">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/new-navbar.css">
+<style>
+.input_field {
+    background: white !important;
+    color: #333 !important;
+    border: 2px solid #ddd !important;
+    padding: 12px 15px !important;
+    border-radius: 5px !important;
+    margin-bottom: 15px !important;
+    width: 100% !important;
+    font-size: 14px !important;
+}
+
+select.input_field {
+    appearance: auto !important;
+    -webkit-appearance: auto !important;
+    -moz-appearance: auto !important;
+}
+
+select.input_field option {
+    background: white !important;
+    color: #333 !important;
+    padding: 8px !important;
+}
+
+.input_field:focus {
+    border-color: #fa9e1b !important;
+    outline: none !important;
+}
+
+label {
+    color: #31124b !important;
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+    display: block !important;
+    font-size: 14px !important;
+    margin-top: 10px !important;
+}
+
+label:first-child {
+    margin-top: 0 !important;
+}
+</style>
+</head>
+
+<body>
+
+<div class="super_container">
+	
+	<!-- NEW NAVBAR -->
+	<div class="wildwave-topbar">
+		<div class="contact-info">
+			<span><i class="fa fa-envelope"></i> <a href="mailto:wildwavesafaris@gmail.com">wildwavesafaris@gmail.com</a></span>
+			<span><i class="fa fa-phone"></i> <a href="tel:+254713241666">+254 713 241 666</a></span>
+			<span><i class="fa fa-map-marker"></i> <a href="https://maps.google.com/?q=Spur+Mall+Thika+Road+Nairobi" target="_blank">THIKA ROAD, SPUR MALL, NAIROBI</a></span>
+		</div>
+		<div class="social-icons">
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-instagram"></i></a>
+			<a href="#"><i class="fa fa-telegram"></i></a>
+		</div>
+	</div>
+
+	<nav class="wildwave-navbar">
+		<a href="index.html" class="logo">
+			<img src="images/logo.png" alt="Wildwavesafaris">
+			Wildwavesafaris
+		</a>
+		<ul class="nav-menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="destinations.html">Destinations</a></li>
+			<li><a href="accommodations.html">Accommodations</a></li>
+			<li><a href="offers.html">Special Offers</a></li>
+			<li><a href="booking.html">Booking</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+		<div class="search-icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<button class="mobile-menu-btn">
+			<i class="fa fa-bars"></i>
+		</button>
+	</nav>
+
+	<!-- Home -->
+	<div class="home" style="background: url('https://media.istockphoto.com/id/521853471/photo/finger-click-book-now-symbol.webp?a=1&b=1&s=612x612&w=0&k=20&c=NIbYsjCVKnY7chHkoSf6roAVUNINZi3ytbPNyMOsGIM=') center/cover; height: 60vh; position: relative;">
+		<div class="home_content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+			<div class="home_title" style="font-size: 3rem; font-weight: bold; color: #fa9e1b; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">book your safari</div>
+		</div>
+	</div>
+
+	<!-- Contact -->
+	<div class="contact">
+		<div class="contact_background" style="background-image:url(images/contact_background.jpg)"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="contact_form_container">
+						<div class="contact_title">Book Your Adventure</div>
+						<form action="#" id="booking_form" class="contact_form">
+							<label style="color: #31124b; font-weight: bold; margin-bottom: 5px; display: block;">Full Name *</label>
+							<input type="text" id="booking_form_name" class="input_field booking_form_name" placeholder="Enter your full name" required="required" data-error="Name is required.">
+							
+							<label style="color: #31124b; font-weight: bold; margin-bottom: 5px; display: block;">Email Address *</label>
+							<input type="email" id="booking_form_email" class="input_field booking_form_email" placeholder="Enter your email address" required="required" data-error="Valid email is required.">
+							
+							<label style="color: #31124b; font-weight: bold; margin-bottom: 5px; display: block;">Phone Number *</label>
+							<input type="tel" id="booking_form_phone" class="input_field booking_form_phone" placeholder="Enter your phone number" required="required" data-error="Phone is required.">
+							
+							<label style="color: #31124b; font-weight: bold; margin-bottom: 5px; display: block;">Choose Destination *</label>
+							<select id="booking_form_destination" class="input_field booking_form_destination" required="required">
+								<option value="" style="color: #999;">-- Select Your Destination --</option>
+								<option value="maasai-mara">Maasai Mara</option>
+								<option value="amboseli">Amboseli National Park</option>
+								<option value="tsavo">Tsavo National Parks</option>
+								<option value="samburu">Samburu Reserve</option>
+								<option value="nakuru">Lake Nakuru</option>
+								<option value="diani">Diani Beach</option>
+								<option value="international">International Travel</option>
+								<option value="other-travels">Other Travels</option>
+								<option value="custom">Custom Package</option>
+							</select>
+							
+							<label style="color: #31124b; font-weight: bold; margin-bottom: 5px; display: block;">Trip Duration *</label>
+							<select id="booking_form_duration" class="input_field booking_form_duration" required="required">
+								<option value="" style="color: #999;">-- Select Trip Duration --</option>
+								<option value="2-days">2 Days / 1 Night</option>
+								<option value="3-days">3 Days / 2 Nights</option>
+								<option value="5-days">5 Days / 4 Nights</option>
+								<option value="7-days">7 Days / 6 Nights</option>
+								<option value="10-days">10+ Days</option>
+							</select>
+							
+							<label style="color: #31124b; font-weight: bold; margin-bottom: 5px; display: block;">Number of Guests *</label>
+							<input type="number" id="booking_form_guests" class="input_field booking_form_guests" placeholder="How many people?" min="1" required="required">
+							
+							<label style="color: #31124b; font-weight: bold; margin-bottom: 5px; display: block;">Preferred Date *</label>
+							<input type="date" id="booking_form_date" class="input_field booking_form_date" required="required">
+							
+							<label style="color: #31124b; font-weight: bold; margin-bottom: 5px; display: block;">Special Requirements (Optional)</label>
+							<textarea id="booking_form_message" class="text_field contact_form_message" name="message" placeholder="Any special requests, dietary requirements, or questions?" rows="4"></textarea>
+							
+							<button type="submit" class="form_submit_button button">book now<span></span><span></span><span></span></button>
+						</form>
+					</div>
+				</div>
+				
+				<div class="col-lg-6">
+					<div class="contact_info" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+						<div class="contact_title" style="color: #31124b; font-size: 1.8rem; font-weight: bold; margin-bottom: 25px;">Booking Information</div>
+						<div class="contact_info_container">
+							<div class="contact_info_item" style="margin-bottom: 25px; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #fa9e1b;">
+								<div class="contact_info_icon" style="color: #fa9e1b; font-size: 1.5rem; margin-bottom: 10px;">
+									<i class="fa fa-clock-o"></i>
+								</div>
+								<div class="contact_info_content">
+									<div class="contact_info_title" style="color: #31124b; font-weight: bold; font-size: 1.1rem; margin-bottom: 8px;">Booking Process</div>
+									<div class="contact_info_text" style="color: #555; line-height: 1.6;">
+										1. Fill out the booking form<br>
+										2. We'll contact you within 24 hours<br>
+										3. Confirm details and make payment<br>
+										4. Receive your safari itinerary
+									</div>
+								</div>
+							</div>
+							
+							<div class="contact_info_item" style="margin-bottom: 25px; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #fa9e1b;">
+								<div class="contact_info_icon" style="color: #fa9e1b; font-size: 1.5rem; margin-bottom: 10px;">
+									<i class="fa fa-credit-card"></i>
+								</div>
+								<div class="contact_info_content">
+									<div class="contact_info_title" style="color: #31124b; font-weight: bold; font-size: 1.1rem; margin-bottom: 8px;">Payment Options</div>
+									<div class="contact_info_text" style="color: #555; line-height: 1.6;">
+										• Bank Transfer<br>
+										• Mobile Money (M-Pesa)<br>
+										• Credit/Debit Cards<br>
+										• PayPal
+									</div>
+								</div>
+							</div>
+							
+							<div class="contact_info_item" style="margin-bottom: 25px; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #fa9e1b;">
+								<div class="contact_info_icon" style="color: #fa9e1b; font-size: 1.5rem; margin-bottom: 10px;">
+									<i class="fa fa-shield"></i>
+								</div>
+								<div class="contact_info_content">
+									<div class="contact_info_title" style="color: #31124b; font-weight: bold; font-size: 1.1rem; margin-bottom: 8px;">Cancellation Policy</div>
+									<div class="contact_info_text" style="color: #555; line-height: 1.6;">
+										• Free cancellation up to 14 days<br>
+										• 50% refund 7-14 days before<br>
+										• 25% refund 3-7 days before<br>
+										• No refund within 3 days
+									</div>
+								</div>
+							</div>
+							
+							<div class="contact_info_item" style="margin-bottom: 0; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #fa9e1b;">
+								<div class="contact_info_icon" style="color: #fa9e1b; font-size: 1.5rem; margin-bottom: 10px;">
+									<i class="fa fa-phone"></i>
+								</div>
+								<div class="contact_info_content">
+									<div class="contact_info_title" style="color: #31124b; font-weight: bold; font-size: 1.1rem; margin-bottom: 8px;">Need Help?</div>
+									<div class="contact_info_text" style="color: #555; line-height: 1.6;">
+										Call us at <a href="tel:+254713241666" style="color: #fa9e1b; font-weight: bold;">+254 713 241 666</a><br>
+										Email: <a href="mailto:wildwavesafaris@gmail.com" style="color: #fa9e1b; font-weight: bold;">wildwavesafaris@gmail.com</a><br>
+										Available 24/7 for assistance
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+// Booking form handler - Send to WhatsApp
+document.getElementById('booking_form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('booking_form_name').value;
+    const email = document.getElementById('booking_form_email').value;
+    const phone = document.getElementById('booking_form_phone').value;
+    const destination = document.getElementById('booking_form_destination').options[document.getElementById('booking_form_destination').selectedIndex].text;
+    const duration = document.getElementById('booking_form_duration').options[document.getElementById('booking_form_duration').selectedIndex].text;
+    const guests = document.getElementById('booking_form_guests').value;
+    const date = document.getElementById('booking_form_date').value;
+    const message = document.getElementById('booking_form_message').value;
+    
+    const bookingDetails = `🦁 SAFARI BOOKING REQUEST 🦁\n\n` +
+                          `👤 Name: ${name}\n` +
+                          `📧 Email: ${email}\n` +
+                          `📱 Phone: ${phone}\n` +
+                          `🏞️ Destination: ${destination}\n` +
+                          `📅 Duration: ${duration}\n` +
+                          `👥 Number of Guests: ${guests}\n` +
+                          `🗓️ Preferred Date: ${date}\n` +
+                          `📝 Special Requirements: ${message || 'None'}\n\n` +
+                          `Thank you for choosing Wildwave Safaris! 🌟`;
+    
+    const whatsappUrl = `https://wa.me/254713241666?text=${encodeURIComponent(bookingDetails)}`;
+    window.open(whatsappUrl, '_blank');
+});
+</script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254713241666" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+	<span class="whatsapp-icon">💬</span>
+</a>
+
+<style>
+.whatsapp-float {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 60px;
+	height: 60px;
+	background: #25D366;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+	z-index: 9998;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	animation: pulse 2s infinite;
+}
+.whatsapp-float:hover {
+	transform: scale(1.1);
+	box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+	text-decoration: none;
+}
+.whatsapp-float .whatsapp-icon {
+	color: white;
+	font-size: 32px;
+	font-weight: bold;
+}
+@keyframes pulse {
+	0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+	50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.8); }
+	100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+}
+</style>
+
+</body>
+</html>

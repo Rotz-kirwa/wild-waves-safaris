@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/new-navbar.css">
 
 <style>
 .logo a {
@@ -137,30 +138,545 @@
     justify-content: center;
 }
 
-/* Fixed Navbar */
+/* Fixed Navbar - Always Visible */
 .header {
     position: fixed !important;
-    top: 0 !important;
+    top: 32px !important;
     left: 0 !important;
     width: 100% !important;
     z-index: 9999 !important;
     background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(10px) !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: background 0.3s ease, box-shadow 0.3s ease !important;
+    display: block !important;
+}
+
+.header.scrolled {
+    position: fixed !important;
+    top: 32px !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.15) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: background 0.3s ease, box-shadow 0.3s ease !important;
+    display: block !important;
 }
 
 .top_bar {
-    padding: 8px 0 !important;
-    min-height: auto !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 10000 !important;
+    background: #2c3e50 !important;
+    color: white !important;
+    padding: 4px 0 !important;
+    font-size: 13px !important;
+    min-height: 32px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    display: block !important;
 }
 
 .main_nav {
     padding: 10px 0 !important;
     min-height: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    display: block !important;
+}
+
+.main_nav_col {
+    height: 73px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    display: flex !important;
 }
 
 body {
-    padding-top: 80px !important;
+    padding-top: 125px !important;
+}
+
+/* Force all navbar elements to stay visible */
+.header *, .top_bar *, .main_nav *, .main_nav_col * {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Prevent any animations that might hide navbar */
+.header, .top_bar, .main_nav, .main_nav_col {
+    animation: none !important;
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -ms-animation: none !important;
+    -o-animation: none !important;
+}
+
+/* Override any potential hiding classes */
+.header.hidden, .top_bar.hidden, .main_nav.hidden {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    display: block !important;
+}
+
+/* Ensure nothing appears after copyright */
+.copyright::after,
+body::after,
+html::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Make copyright the definitive end */
+.copyright {
+    position: relative;
+    z-index: 1000;
+}
+
+/* Hide any potential background images after footer */
+body {
+    background-attachment: scroll !important;
+}
+
+/* Complete Footer Cleanup and Protection */
+.footer {
+    position: relative !important;
+    z-index: 100 !important;
+    margin-bottom: 0 !important;
+    overflow: hidden !important;
+}
+
+.copyright {
+    position: relative !important;
+    z-index: 1000 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+/* Ensure no content appears after copyright */
+.copyright ~ * {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Force page to end after copyright */
+html, body {
+    overflow-x: hidden !important;
+    position: relative !important;
+}
+
+/* Remove all pseudo elements after footer */
+body::after,
+html::after,
+.super_container::after,
+.footer::after,
+.copyright::after {
+    display: none !important;
+    content: none !important;
+    visibility: hidden !important;
+}
+
+/* Ensure super_container ends properly */
+.super_container {
+    overflow: hidden !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    position: relative !important;
+}
+
+/* Hide any background images on body/html */
+body {
+    background-image: none !important;
+    background-attachment: scroll !important;
+}
+
+html {
+    background-image: none !important;
+    background-attachment: scroll !important;
+}
+
+/* Prevent any floating or absolute positioned elements after footer */
+.footer ~ *,
+.copyright ~ * {
+    position: static !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    z-index: -1 !important;
+}
+
+/* Force clean ending */
+.copyright {
+    clear: both !important;
+    float: none !important;
+}
+
+/* Remove any potential trailing content */
+body > *:last-child:not(.super_container) {
+    display: none !important;
+}
+
+.super_container > *:last-child:not(.copyright) ~ * {
+    display: none !important;
+}
+
+/* Ensure footer newsletter input styling */
+.footer input::placeholder {
+    color: rgba(255,255,255,0.6) !important;
+}
+
+.footer input:focus::placeholder {
+    color: rgba(255,255,255,0.4) !important;
+}
+
+/* Mobile responsive footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 0 0 !important;
+    }
+    
+    .footer .row:last-child {
+        margin-top: 30px !important;
+        padding-top: 30px !important;
+    }
+    
+    .footer .col-lg-4 {
+        text-align: center !important;
+    }
+    
+    .footer .contact-item {
+        justify-content: center !important;
+    }
+    
+    .copyright {
+        text-align: center !important;
+    }
+    
+    .copyright .col-md-6 {
+        text-align: center !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .footer-nav {
+        margin-top: 15px !important;
+    }
+}
+
+/* Complete elimination of unwanted content */
+.home_slider_nav,
+.home_slider_dots,
+.cta_background,
+.parallax-window {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Force body and html to end at copyright */
+body, html {
+    background: #ffffff !important;
+    background-image: none !important;
+    background-attachment: scroll !important;
+    background-repeat: no-repeat !important;
+    background-size: auto !important;
+    background-position: 0 0 !important;
+}
+
+/* Ensure no elements can appear after copyright */
+.copyright {
+    position: relative !important;
+    z-index: 10000 !important;
+    clear: both !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 25px 0 !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Hide any potential background elements */
+*[style*="background-image"],
+*[data-parallax],
+.parallax-window,
+.cta_background {
+    background-image: none !important;
+    background: transparent !important;
+    display: none !important;
+}
+
+/* Force super_container to end properly */
+.super_container {
+    position: relative !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+/* Remove any floating elements */
+.home_slider_nav,
+.home_slider_dots,
+.home_slider_custom_dots {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    z-index: -1 !important;
+}
+
+/* Contact Info Bars */
+.contact-info-bar {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 18px 0;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 9998;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.top_bar {
+    background: #2c3e50 !important;
+    color: white !important;
+    padding: 4px 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 10000 !important;
+    font-size: 13px !important;
+    min-height: 32px !important;
+}
+
+.top_bar .phone {
+    color: white !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 32px !important;
+}
+
+.top_bar .phone i {
+    color: #ffc107 !important;
+    margin-right: 6px !important;
+    font-size: 13px !important;
+}
+
+.top_bar .phone a {
+    color: white !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+.top_bar .phone a:hover {
+    color: #ffc107 !important;
+}
+
+.top_bar .social_list {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 32px !important;
+}
+
+.top_bar .social_list_item {
+    margin: 0 8px !important;
+}
+
+.top_bar .social_list_item a {
+    color: white !important;
+    font-size: 12px !important;
+    transition: color 0.3s ease !important;
+    padding: 3px !important;
+    display: block !important;
+    border-radius: 50% !important;
+    width: 24px !important;
+    height: 24px !important;
+    text-align: center !important;
+    line-height: 18px !important;
+    background: rgba(255,255,255,0.1) !important;
+}
+
+.top_bar .social_list_item a:hover {
+    color: #2c3e50 !important;
+    background: #ffc107 !important;
+    transform: scale(1.1) !important;
+}
+
+.contact-info-bar:not(.top-contact-bar) {
+    top: 120px;
+}
+
+.header {
+    top: 32px !important;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.contact-info-item i {
+    color: #ffc107;
+    font-size: 1rem;
+}
+
+.contact-info-item span {
+    color: rgba(255,255,255,0.9);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: #ffc107;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: #ffc107;
+    color: #2c3e50;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+/* Contact Info Bar */
+.contact-info-bar {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 8px 0;
+    position: fixed;
+    top: 105px;
+    left: 0;
+    width: 100%;
+    z-index: 9998;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 2px 0;
+}
+
+.contact-info-item i {
+    color: #ffc107;
+    font-size: 0.9rem;
+    width: 18px;
+    text-align: center;
+}
+
+.contact-info-item span {
+    color: rgba(255,255,255,0.95);
+    font-weight: 500;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    padding: 2px 0;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    color: #ffc107;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 1px solid rgba(255,193,7,0.3);
+}
+
+.social-link:hover {
+    background: #ffc107;
+    color: #2c3e50;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+    border-color: #ffc107;
+}
+
+@media (max-width: 768px) {
+    .contact-info-bar {
+        padding: 12px 0;
+    }
+    
+    .contact-info-item {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+        gap: 10px;
+    }
+    
+    .contact-info-item i {
+        font-size: 1.1rem;
+    }
+    
+    .social-link {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+    }
+    
+    body {
+        padding-top: 140px !important;
+    }
 }
 
 /* Mobile Responsive Styles */
@@ -170,7 +686,25 @@ body {
     }
     
     .top_bar {
-        padding: 5px 0 !important;
+        padding: 10px 0 !important;
+        min-height: 50px !important;
+        font-size: 14px !important;
+    }
+    
+    .top_bar .phone {
+        font-size: 14px !important;
+        line-height: 50px !important;
+    }
+    
+    .top_bar .social_list {
+        height: 50px !important;
+    }
+    
+    .top_bar .social_list_item a {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 16px !important;
+        line-height: 19px !important;
     }
     
     .main_nav {
@@ -178,19 +712,11 @@ body {
     }
     
     body {
-        padding-top: 70px !important;
+        padding-top: 90px !important;
     }
     
     .logo a {
         font-size: 20px !important;
-    }
-    
-    .phone {
-        font-size: 14px !important;
-    }
-    
-    .social_list_item {
-        margin: 0 3px !important;
     }
     
     .hamburger {
@@ -258,15 +784,25 @@ body {
 
 @media (max-width: 480px) {
     .top_bar {
-        padding: 3px 0 !important;
+        padding: 8px 0 !important;
+        min-height: 45px !important;
+        font-size: 13px !important;
     }
     
-    .phone {
-        font-size: 12px !important;
+    .top_bar .phone {
+        font-size: 13px !important;
+        line-height: 45px !important;
     }
     
-    .social_list {
-        display: none !important;
+    .top_bar .social_list {
+        height: 45px !important;
+    }
+    
+    .top_bar .social_list_item a {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 14px !important;
+        line-height: 14px !important;
     }
     
     .logo a {
@@ -274,7 +810,27 @@ body {
     }
     
     body {
-        padding-top: 60px !important;
+        padding-top: 170px !important;
+    }
+    
+    .contact-info-bar {
+        padding: 10px 0;
+    }
+    
+    .contact-info-item {
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+        gap: 8px;
+    }
+    
+    .contact-info-item i {
+        font-size: 1rem;
+    }
+    
+    .social-link {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1rem;
     }
     
     .home_slider_item {
@@ -367,276 +923,2152 @@ body {
         margin: 0 5px !important;
     }
 }
+
+/* Modern Design Effects - Inspired by Meek Trails */
+* {
+    scroll-behavior: smooth !important;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    line-height: 1.6 !important;
+    color: #2c3e50 !important;
+}
+
+.service_item, .intro_item, .offers_item, .test_item, .trending_item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+}
+
+.service_item:hover, .intro_item:hover, .offers_item:hover, .test_item:hover, .trending_item:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 14px 28px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4) !important;
+}
+
+.main_nav_list a {
+    position: relative !important;
+    transition: all 0.3s ease !important;
+}
+
+.main_nav_list a::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -5px !important;
+    left: 50% !important;
+    width: 0 !important;
+    height: 2px !important;
+    background: #667eea !important;
+    transition: all 0.3s ease !important;
+    transform: translateX(-50%) !important;
+}
+
+.main_nav_list a:hover::after {
+    width: 100% !important;
+}
+
+.section_title {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: #2c3e50 !important;
+    margin-bottom: 60px !important;
+    position: relative !important;
+}
+
+.section_title::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -15px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 60px !important;
+    height: 4px !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border-radius: 2px !important;
+}
+
+.home_slider_content h1 {
+    font-size: 4rem !important;
+    font-weight: 800 !important;
+    color: #fff !important;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3) !important;
+    margin-bottom: 20px !important;
+}
+
+.test_item {
+    background: #fff !important;
+    padding: 30px !important;
+    border-left: 4px solid #667eea !important;
+}
+
+.input_field, .text_field {
+    border: 2px solid #e1e8ed !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    transition: all 0.3s ease !important;
+    background: #fff !important;
+}
+
+.input_field:focus, .text_field:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+    outline: none !important;
+}
+
+/* Advanced Modern Effects */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service_item::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent) !important;
+    transition: left 0.6s !important;
+}
+
+.service_item:hover::before {
+    left: 100% !important;
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite !important;
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.test_item::before {
+    content: '"' !important;
+    position: absolute !important;
+    top: -10px !important;
+    left: 30px !important;
+    font-size: 60px !important;
+    color: #667eea !important;
+    font-family: serif !important;
+    line-height: 1 !important;
+}
+
+.btn-modern {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 15px 35px !important;
+    color: white !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+}
+
+.btn-modern:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4) !important;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+}
+
+.scroll-progress {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 0% !important;
+    height: 3px !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    z-index: 10000 !important;
+    transition: width 0.3s ease !important;
+}
+
+.intro_item::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(45deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.intro_item:hover::after {
+    opacity: 1 !important;
+}
+
+.intro_item:hover .intro_item_content {
+    transform: translateY(-10px) !important;
+    z-index: 10 !important;
+    position: relative !important;
+}
+
+.offers_image_background {
+    transition: transform 0.5s ease !important;
+}
+
+.offers_item:hover .offers_image_background {
+    transform: scale(1.1) !important;
+}
+
+.trending_image img {
+    transition: transform 0.5s ease !important;
+}
+
+.trending_item:hover .trending_image img {
+    transform: scale(1.1) !important;
+}
+
+/* Events Section Styling */
+.events {
+    padding: 80px 0 !important;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+}
+
+.section_subtitle {
+    font-size: 1.1rem !important;
+    color: #6c757d !important;
+    margin-bottom: 50px !important;
+    max-width: 600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.event_item {
+    background: #fff !important;
+    border-radius: 15px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 30px !important;
+}
+
+.event_item:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+.event_image {
+    position: relative !important;
+    overflow: hidden !important;
+    height: 250px !important;
+}
+
+.event_image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.5s ease !important;
+}
+
+.event_item:hover .event_image img {
+    transform: scale(1.1) !important;
+}
+
+.event_date {
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    background: rgba(102, 126, 234, 0.9) !important;
+    color: white !important;
+    padding: 10px !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.event_date .day {
+    display: block !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    line-height: 1 !important;
+}
+
+.event_date .month {
+    display: block !important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.event_content {
+    padding: 30px !important;
+}
+
+.event_content h3 {
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
+    color: #2c3e50 !important;
+}
+
+.event_location {
+    color: #667eea !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 15px !important;
+}
+
+.event_location i {
+    margin-right: 5px !important;
+}
+
+.event_description {
+    color: #6c757d !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+}
+
+.event_price {
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    color: #667eea !important;
+    margin-bottom: 20px !important;
+}
+
+.event_button {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+/* Destinations Section Styling */
+.destinations {
+    padding: 80px 0 !important;
+    background: #fff !important;
+}
+
+.destination_item {
+    position: relative !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    margin-bottom: 30px !important;
+    transition: all 0.3s ease !important;
+}
+
+.destination_item.large {
+    height: 500px !important;
+}
+
+.destination_item.small {
+    height: 235px !important;
+}
+
+.destination_item:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+}
+
+.destination_image {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+}
+
+.destination_image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.5s ease !important;
+}
+
+.destination_item:hover .destination_image img {
+    transform: scale(1.1) !important;
+}
+
+.destination_overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(102, 126, 234, 0.5)) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+.destination_item:hover .destination_overlay {
+    opacity: 1 !important;
+}
+
+.destination_content {
+    text-align: center !important;
+    color: white !important;
+    padding: 20px !important;
+}
+
+.destination_content h3, .destination_content h4 {
+    color: white !important;
+    margin-bottom: 15px !important;
+    font-weight: 600 !important;
+}
+
+.destination_content p {
+    color: rgba(255,255,255,0.9) !important;
+    margin-bottom: 20px !important;
+}
+
+.destination_stats {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    margin-bottom: 25px !important;
+}
+
+.destination_stats span {
+    color: rgba(255,255,255,0.9) !important;
+    font-size: 0.9rem !important;
+}
+
+.destination_stats i {
+    margin-right: 5px !important;
+}
+
+.destination_button {
+    background: rgba(255,255,255,0.2) !important;
+    border: 2px solid rgba(255,255,255,0.3) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.destination_button:hover {
+    background: rgba(255,255,255,0.3) !important;
+    border-color: rgba(255,255,255,0.5) !important;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.6), rgba(102, 126, 234, 0.3));
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    color: white;
+}
+
+.hero-title {
+    font-size: 4rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 25px !important;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3) !important;
+    line-height: 1.2 !important;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem !important;
+    margin-bottom: 40px !important;
+    opacity: 0.95 !important;
+    max-width: 600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.hero-buttons {
+    display: flex !important;
+    gap: 20px !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+}
+
+.btn-hero {
+    padding: 15px 35px !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+}
+
+.btn-hero.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: 2px solid transparent !important;
+}
+
+.btn-hero.secondary {
+    background: transparent !important;
+    color: white !important;
+    border: 2px solid rgba(255,255,255,0.8) !important;
+}
+
+.btn-hero:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3) !important;
+}
+
+.quick-search {
+    background: white;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    margin-top: -80px;
+}
+
+.search-form-container {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.05);
+    padding: 40px;
+    margin: 0 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.search-form-modern {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 25px;
+    align-items: end;
+}
+
+.search-field {
+    position: relative;
+}
+
+.search-field label {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+.search-field .form-control {
+    border: none;
+    border-bottom: 3px solid #e1e8ed;
+    border-radius: 12px 12px 0 0;
+    padding: 18px 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+    appearance: none;
+    width: 100%;
+}
+
+.search-field .form-control:focus {
+    border-bottom-color: #667eea;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.06), 0 0 0 4px rgba(102, 126, 234, 0.1);
+    outline: none;
+    background: #ffffff;
+    transform: translateY(-2px);
+}
+
+.search-field .form-control:hover {
+    border-bottom-color: #667eea;
+    transform: translateY(-1px);
+}
+
+.search-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 18px 35px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 60px;
+    min-width: 180px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.search-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s;
+}
+
+.search-btn:hover::before {
+    left: 100%;
+}
+
+.search-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+.search-btn:active {
+    transform: translateY(-2px);
+}
+
+.search-btn i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Statistics Section */
+.stats-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 80px 0;
+    color: white;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.why-content {
+    padding-right: 40px;
+}
+
+.why-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #6c757d;
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.feature-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.feature-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+.feature-content p {
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.why-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.why-image img {
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+.why-image:hover img {
+    transform: scale(1.05);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.badge-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #667eea;
+    line-height: 1;
+}
+
+.badge-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .search-form-modern {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .why-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .stat-item {
+        margin-bottom: 30px;
+    }
+    
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .feature-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+/* CTA Banner */
+.cta-banner {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.cta-banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.cta-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.8));
+}
+
+.cta-banner-content {
+    position: relative;
+    z-index: 3;
+    color: white;
+}
+
+.cta-banner-content h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.cta-banner-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-cta {
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-cta.primary {
+    background: white;
+    color: #667eea;
+    border: 2px solid white;
+}
+
+.btn-cta.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.8);
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.btn-cta.primary:hover {
+    background: #f8f9fa;
+    color: #667eea;
+}
+
+.btn-cta.secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+}
+
+@media (max-width: 768px) {
+    .cta-banner-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-cta {
+        width: 280px;
+        justify-content: center;
+    }
+}
 </style>
 
 </head>
 
-<body>
+<body></script>
 
 <div class="super_container">
 	
-	<!-- Header -->
-
-	<header class="header">
-
-		<!-- Top Bar -->
-
-		<div class="top_bar">
-			<div class="container">
-				<div class="row">
-					<div class="col d-flex flex-row">
-						<div class="phone">+254 713 241 666</div>
-						<div class="social">
-							<ul class="social_list">
-								<li class="social_list_item"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-								<li class="social_list_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li class="social_list_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li class="social_list_item"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-								<li class="social_list_item"><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-								<li class="social_list_item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-							</ul>
-						</div>
-
-						</div>
-					</div>
-				</div>
-			</div>		
+	<!-- NEW NAVBAR -->
+	<div class="wildwave-topbar">
+		<div class="contact-info">
+			<span><i class="fa fa-envelope"></i> <a href="mailto:wildwavesafaris@gmail.com">wildwavesafaris@gmail.com</a></span>
+			<span><i class="fa fa-phone"></i> <a href="tel:+254713241666">+254 713 241 666</a></span>
+			<span><i class="fa fa-map-marker"></i> <a href="https://maps.google.com/?q=Spur+Mall+Thika+Road+Nairobi" target="_blank">THIKA ROAD, SPUR MALL, NAIROBI</a></span>
 		</div>
-
-		<!-- Main Navigation -->
-
-		<nav class="main_nav">
-			<div class="container">
-				<div class="row">
-					<div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
-						<div class="logo_container">
-							<div class="logo"><a href="#"><img src="images/logo.png" alt="">Wildwavesafaris</a></div>
-						</div>
-						<div class="main_nav_container ml-auto">
-							<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="#">home</a></li>
-								<li class="main_nav_item"><a href="about.html">about us</a></li>
-								<li class="main_nav_item"><a href="activities.html">activities</a></li>
-								<li class="main_nav_item"><a href="offers.html">offers</a></li>
-								<li class="main_nav_item"><a href="blog.html">news</a></li>
-								<li class="main_nav_item"><a href="contact.html">contact</a></li>
-							</ul>
-						</div>
-						<div class="content_search ml-lg-0 ml-auto">
-							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							width="17px" height="17px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-								<g>
-									<g>
-										<g>
-											<path class="mag_glass" fill="#FFFFFF" d="M78.438,216.78c0,57.906,22.55,112.343,63.493,153.287c40.945,40.944,95.383,63.494,153.287,63.494
-											s112.344-22.55,153.287-63.494C489.451,329.123,512,274.686,512,216.78c0-57.904-22.549-112.342-63.494-153.286
-											C407.563,22.549,353.124,0,295.219,0c-57.904,0-112.342,22.549-153.287,63.494C100.988,104.438,78.439,158.876,78.438,216.78z
-											M119.804,216.78c0-96.725,78.69-175.416,175.415-175.416s175.418,78.691,175.418,175.416
-											c0,96.725-78.691,175.416-175.416,175.416C198.495,392.195,119.804,313.505,119.804,216.78z"/>
-										</g>
-									</g>
-									<g>
-										<g>
-											<path class="mag_glass" fill="#FFFFFF" d="M6.057,505.942c4.038,4.039,9.332,6.058,14.625,6.058s10.587-2.019,14.625-6.058L171.268,369.98
-											c8.076-8.076,8.076-21.172,0-29.248c-8.076-8.078-21.172-8.078-29.249,0L6.057,476.693
-											C-2.019,484.77-2.019,497.865,6.057,505.942z"/>
-										</g>
-									</g>
-								</g>
-							</svg>
-						</div>
-
-						<form id="search_form" class="search_form bez_1">
-							<input type="search" class="search_content_input bez_1">
-						</form>
-
-						<div class="hamburger">
-							<i class="fa fa-bars trans_200"></i>
-						</div>
-					</div>
-				</div>
-			</div>	
-		</nav>
-
-	</header>
-
-	<div class="menu trans_500">
-		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-			<div class="menu_close_container"><div class="menu_close"></div></div>
-			<div class="logo menu_logo"><a href="#"><img src="images/logo.png" alt=""></a></div>
-			<ul>
-				<li class="menu_item"><a href="#">home</a></li>
-				<li class="menu_item"><a href="about.html">about us</a></li>
-				<li class="menu_item"><a href="activities.html">activities</a></li>
-				<li class="menu_item"><a href="offers.html">offers</a></li>
-				<li class="menu_item"><a href="blog.html">news</a></li>
-				<li class="menu_item"><a href="contact.html">contact</a></li>
-			</ul>
+		<div class="social-icons">
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-instagram"></i></a>
+			<a href="#"><i class="fa fa-telegram"></i></a>
 		</div>
 	</div>
 
-	<!-- Home -->
+	<nav class="wildwave-navbar">
+		<a href="index.html" class="logo">
+			<img src="images/logo.png" alt="Wildwavesafaris">
+			Wildwavesafaris
+		</a>
+		<ul class="nav-menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="destinations.html">Destinations</a></li>
+			<li><a href="accommodations.html">Accommodations</a></li>
+			<li><a href="offers.html">Special Offers</a></li>
+			<li><a href="booking.html">Booking</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+		<div class="search-icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<button class="mobile-menu-btn">
+			<i class="fa fa-bars"></i>
+		</button>
+	</nav>
 
-	<div class="home">
+
+
+
+
+	<!-- Hero Section -->
+	<div class="hero-section">
+		<div class="hero-background">
+			<video autoplay muted loop playsinline class="hero-video">
+				<source src="https://videos.pexels.com/video-files/5446310/5446310-hd_1920_1080_30fps.mp4" type="video/mp4">
+			</video>
+			<div class="hero-overlay"></div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<div class="hero-content text-center">
+						<h1 class="hero-title">Discover Kenya's Wild Beauty</h1>
+
+						<div class="hero-buttons">
+							<a href="#" class="btn-hero primary">Book Safari</a>
+							<a href="packages.html" class="btn-hero secondary">View Packages</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hero-scroll-indicator">
+			<div class="scroll-arrow"></div>
+		</div>
+	</div>
+
+	<!-- Promotional Message -->
+	<div class="quick-search">
+		<div class="promo-banner">
+				<div class="promo-content">
+					<div class="promo-highlight">SPECIAL SAFARI OFFER</div>
+					<h2 class="promo-title">Nothing beats a wild safari adventure</h2>
+					<div class="promo-deal">
+						<span class="deal-text">Save</span>
+						<span class="deal-amount">KSh 10,000</span>
+						<span class="deal-text">per person</span>
+					</div>
+					<p class="promo-subtitle"><span style="color: #ffc107; font-size: 1.3rem;">on the ultimate getaway into the heart of nature</span></p>
+					<div class="promo-buttons">
+						<a href="packages.html" class="promo-btn primary">View Packages</a>
+						<a href="booking.html" class="promo-btn secondary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<style>
+	.quick-search {
+		padding: 0;
+		margin: 0;
+	}
+	
+	.promo-banner {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		padding: 12px 0;
+		position: relative;
+		overflow: hidden;
+		margin: 0;
+		width: 100vw;
+		margin-left: calc(-50vw + 50%);
+		box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+	}
+	
+	.promo-banner::before {
+		content: '';
+		position: absolute;
+		top: -50%;
+		right: -50%;
+		width: 200%;
+		height: 200%;
+		background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+		animation: float 6s ease-in-out infinite;
+	}
+	
+	@keyframes float {
+		0%, 100% { transform: translateY(0px) rotate(0deg); }
+		50% { transform: translateY(-20px) rotate(180deg); }
+	}
+	
+	.promo-content {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		color: white;
+		padding: 0 20px;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	
+	.promo-highlight {
+		font-size: 0.7rem;
+		font-weight: 800;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		color: #ffc107;
+		margin-bottom: 8px;
+	}
+	
+	.promo-title {
+		font-size: 1.8rem;
+		font-weight: 700;
+		margin-bottom: 15px;
+		line-height: 1.2;
+		text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+	}
+	
+	.promo-deal {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		margin-bottom: 10px;
+		flex-wrap: wrap;
+	}
+	
+	.deal-text {
+		font-size: 1rem;
+		font-weight: 500;
+		opacity: 0.9;
+	}
+	
+	.deal-amount {
+		font-size: 2.2rem;
+		font-weight: 900;
+		color: #ffc107;
+		text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+		position: relative;
+	}
+	
+	.deal-amount::after {
+		content: '';
+		position: absolute;
+		bottom: -3px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80%;
+		height: 2px;
+		background: #ffc107;
+		border-radius: 2px;
+	}
+	
+	.promo-subtitle {
+		font-size: 0.95rem;
+		margin-bottom: 20px;
+		opacity: 0.9;
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.promo-buttons {
+		display: flex;
+		gap: 15px;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	
+	.promo-btn {
+		padding: 10px 25px;
+		border-radius: 50px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		transition: all 0.3s ease;
+		text-decoration: none;
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+		font-size: 0.85rem;
+	}
+	
+	.promo-btn.primary {
+		background: white;
+		color: #667eea;
+		border: 2px solid white;
+	}
+	
+	.promo-btn.secondary {
+		background: transparent;
+		color: white;
+		border: 2px solid rgba(255,255,255,0.8);
+	}
+	
+	.promo-btn:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+	}
+	
+	.promo-btn.primary:hover {
+		background: #ffc107;
+		color: #2c3e50;
+		border-color: #ffc107;
+	}
+	
+	.promo-btn.secondary:hover {
+		background: rgba(255,255,255,0.1);
+		border-color: white;
+	}
+	
+	@media (max-width: 768px) {
+		.promo-banner {
+			padding: 10px 20px;
+			margin: 0;
+		}
 		
-		<!-- Home Slider -->
-
-		<div class="home_slider_container">
-			
-			<div class="owl-carousel owl-theme home_slider">
-
-				<!-- Slider Item -->
-				<div class="owl-item home_slider_item">
-					<div class="home_slider_background">
-						<video autoplay muted loop playsinline class="slider-video" preload="auto">
-							<source src="https://videos.pexels.com/video-files/5446310/5446310-hd_1920_1080_30fps.mp4" type="video/mp4">
-						</video>
-					</div>
-
-					<div class="home_slider_content text-center">
-						<div class="home_slider_content_inner" data-animation-in="flipInX" data-animation-out="animate-out fadeOut">
-							<h1>discover</h1>
-							<h1>the world</h1>
-							<div class="button home_slider_button"><div class="button_bcg"></div><a href="#">explore now<span></span><span></span><span></span></a></div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slider Item -->
-				<div class="owl-item home_slider_item">
-					<div class="home_slider_background">
-						<video autoplay muted loop playsinline class="slider-video" preload="auto">
-							<source src="https://videos.pexels.com/video-files/11760783/11760783-uhd_2732_1440_30fps.mp4" type="video/mp4">
-						</video>
-					</div>
-
-					<div class="home_slider_content text-center">
-						<div class="home_slider_content_inner" data-animation-in="flipInX" data-animation-out="animate-out fadeOut">
-							<h1>explore</h1>
-							<h1>kenya safari</h1>
-							<div class="button home_slider_button"><div class="button_bcg"></div><a href="#">book safari<span></span><span></span><span></span></a></div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slider Item -->
-				<div class="owl-item home_slider_item">
-					<div class="home_slider_background">
-						<video autoplay muted loop playsinline class="slider-video" preload="auto">
-							<source src="https://videos.pexels.com/video-files/2335977/2335977-uhd_2560_1440_24fps.mp4" type="video/mp4">
-						</video>
-					</div>
-
-					<div class="home_slider_content text-center">
-						<div class="home_slider_content_inner" data-animation-in="flipInX" data-animation-out="animate-out fadeOut">
-							<h1>coastal</h1>
-							<h1>paradise</h1>
-							<div class="button home_slider_button"><div class="button_bcg"></div><a href="#">beach getaway<span></span><span></span><span></span></a></div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-			
-			<!-- Home Slider Nav - Prev -->
-			<div class="home_slider_nav home_slider_prev">
-				<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-					width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
-					<defs>
-						<linearGradient id='home_grad_prev'>
-							<stop offset='0%' stop-color='#ffc107'/>
-							<stop offset='100%' stop-color='#ffeb3b'/>
-						</linearGradient>
-					</defs>
-					<path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
-					M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
-					C22.545,2,26,5.541,26,9.909V23.091z"/>
-					<polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219 
-					11.042,18.219 "/>
-				</svg>
-			</div>
-			
-			<!-- Home Slider Nav - Next -->
-			<div class="home_slider_nav home_slider_next">
-				<svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-				width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
-					<defs>
-						<linearGradient id='home_grad_next'>
-							<stop offset='0%' stop-color='#ffc107'/>
-							<stop offset='100%' stop-color='#ffeb3b'/>
-						</linearGradient>
-					</defs>
-				<path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
-				M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
-				C22.545,2,26,5.541,26,9.909V23.091z"/>
-				<polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554 
-				17.046,15.554 "/>
-				</svg>
-			</div>
-
-			<!-- Home Slider Dots -->
-
-			<div class="home_slider_dots">
-				<ul id="home_slider_custom_dots" class="home_slider_custom_dots">
-					<li class="home_slider_custom_dot active"><div></div>01.</li>
-					<li class="home_slider_custom_dot"><div></div>02.</li>
-					<li class="home_slider_custom_dot"><div></div>03.</li>
-				</ul>
-			</div>
-			
+		.promo-title {
+			font-size: 2rem;
+		}
+		
+		.deal-amount {
+			font-size: 2.5rem;
+		}
+		
+		.promo-buttons {
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.promo-btn {
+			width: 250px;
+			text-align: center;
+		}
+	}
+	
+	.stats-section {
+		padding: 40px 0;
+	}
+	
+	.stat-item {
+		padding: 15px 10px;
+	}
+	
+	.stat-icon {
+		font-size: 2rem;
+		margin-bottom: 10px;
+	}
+	
+	.stat-number {
+		font-size: 2.5rem;
+		margin-bottom: 5px;
+	}
+	
+	.stat-label {
+		font-size: 0.9rem;
+	}
+	</style>
 		</div>
-
 	</div>
 
-	<!-- Services -->
+	<!-- Statistics Section -->
+	<div class="stats-section" style="padding: 40px 0;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="stat-item fade-in">
+						<div class="stat-icon">
+							<i class="fa fa-users"></i>
+						</div>
+						<div class="stat-number counter" data-count="2500">0</div>
+						<div class="stat-label">Happy Travelers</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="stat-item fade-in">
+						<div class="stat-icon">
+							<i class="fa fa-map-marker"></i>
+						</div>
+						<div class="stat-number counter" data-count="100">0</div>
+						<div class="stat-label">+ Destinations</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="stat-item fade-in">
+						<div class="stat-icon">
+							<i class="fa fa-calendar"></i>
+						</div>
+						<div class="stat-number counter" data-count="50">0</div>
+						<div class="stat-label">Footprints Across the Globe</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="stat-item fade-in">
+						<div class="stat-icon">
+							<i class="fa fa-star"></i>
+						</div>
+						<div class="stat-number counter" data-count="98">0</div>
+						<div class="stat-label">% Satisfaction</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<div class="services">
+	<!-- Safari Experiences Section -->
+	<div class="safari-experiences" style="padding: 60px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); position: relative; overflow: hidden;">
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
-					<h2 class="section_title">Our Services</h2>
+					<h2 class="section_title" style="font-size: 3rem; font-weight: 800; color: #2c3e50; margin-bottom: 20px;">Safari Experiences That Define Adventure</h2>
+					<p class="section_subtitle" style="font-size: 1.2rem; color: #6c757d; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">From heart-pounding wildlife encounters to serene cultural immersions, discover Kenya through our expertly crafted safari experiences</p>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<div class="service_item text-center">
-						<div class="service_icon"><img src="images/departure.png" alt=""></div>
-						<h3>Destinations</h3>
-						<p>Explore breathtaking destinations across Kenya and beyond</p>
-						<div class="button service_button"><div class="button_bcg"></div><a href="destinations.html">explore<span></span><span></span><span></span></a></div>
+				<!-- Big Five Safari -->
+				<div class="col-lg-6 col-md-12 mb-4">
+					<div class="experience-card large" style="position: relative; height: 400px; border-radius: 20px; overflow: hidden; background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(102, 126, 234, 0.3)), url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=400&fit=crop') center/cover; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+						<div class="experience-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, rgba(0,0,0,0.6), rgba(102, 126, 234, 0.4)); opacity: 0; transition: all 0.3s ease;"></div>
+						<div class="experience-content" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 40px; color: white; z-index: 2;">
+							<div class="experience-badge" style="display: inline-block; background: rgba(255, 193, 7, 0.9); color: #2c3e50; padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">Most Popular</div>
+							<h3 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 15px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Big Five Safari Adventure</h3>
+							<p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95; line-height: 1.6;">Witness the legendary Big Five in their natural habitat. Lions, elephants, leopards, rhinos, and buffalo await in Kenya's premier game reserves.</p>
+							<div class="experience-stats" style="display: flex; gap: 25px; margin-bottom: 25px; flex-wrap: wrap;">
+								<div class="stat" style="display: flex; align-items: center; gap: 8px;"><i class="fa fa-clock-o" style="color: #ffc107;"></i><span style="font-size: 0.9rem;">3-7 Days</span></div>
+								<div class="stat" style="display: flex; align-items: center; gap: 8px;"><i class="fa fa-users" style="color: #ffc107;"></i><span style="font-size: 0.9rem;">2-8 People</span></div>
+								<div class="stat" style="display: flex; align-items: center; gap: 8px;"><i class="fa fa-star" style="color: #ffc107;"></i><span style="font-size: 0.9rem;">4.9/5 Rating</span></div>
+							</div>
+							<div class="experience-price" style="font-size: 1.8rem; font-weight: 800; color: #ffc107; margin-bottom: 20px;">From KSh 65,000</div>
+							<a href="#" class="experience-btn" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);">Book Adventure</a>
+						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="service_item text-center">
-						<div class="service_icon"><img src="images/island.png" alt=""></div>
-						<h3>Activities</h3>
-						<p>Thrilling adventures and cultural experiences await</p>
-						<div class="button service_button activities-arrow-btn"><div class="button_bcg"></div><a href="activities.html">discover <span class="arrow-right">→</span><span></span><span></span><span></span></a></div>
+				
+				<!-- Right Column with 2 smaller cards -->
+				<div class="col-lg-6 col-md-12">
+					<div class="row">
+						<!-- Cultural Safari -->
+						<div class="col-12 mb-4">
+							<div class="experience-card small" style="position: relative; height: 190px; border-radius: 15px; overflow: hidden; background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(118, 75, 162, 0.3)), url('https://images.unsplash.com/photo-1504634203593-d7967426d7f8?w=400&h=200&fit=crop') center/cover; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+								<div class="experience-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, rgba(0,0,0,0.6), rgba(118, 75, 162, 0.4)); opacity: 0; transition: all 0.3s ease;"></div>
+								<div class="experience-content" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 25px; color: white; z-index: 2;">
+									<h4 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Maasai Cultural Safari</h4>
+									<p style="font-size: 0.9rem; margin-bottom: 15px; opacity: 0.9;">Immerse in authentic Maasai traditions and ceremonies</p>
+									<div style="display: flex; justify-content: space-between; align-items: center;">
+										<span style="font-size: 1.3rem; font-weight: 700; color: #ffc107;">From KSh 25,000</span>
+										<a href="#" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease;">Explore</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Luxury Safari -->
+						<div class="col-12">
+							<div class="experience-card small" style="position: relative; height: 190px; border-radius: 15px; overflow: hidden; background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(255, 193, 7, 0.3)), url('https://images.unsplash.com/photo-1645118036983-2f8a6c3902d2?w=400&h=200&fit=crop') center/cover; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+								<div class="experience-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, rgba(0,0,0,0.6), rgba(255, 193, 7, 0.4)); opacity: 0; transition: all 0.3s ease;"></div>
+								<div class="experience-content" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 25px; color: white; z-index: 2;">
+									<div class="experience-badge" style="display: inline-block; background: rgba(255, 193, 7, 0.9); color: #2c3e50; padding: 4px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Premium</div>
+									<h4 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Luxury Lodge Safari</h4>
+									<p style="font-size: 0.9rem; margin-bottom: 15px; opacity: 0.9;">5-star accommodations with world-class amenities</p>
+									<div style="display: flex; justify-content: space-between; align-items: center;">
+										<span style="font-size: 1.3rem; font-weight: 700; color: #ffc107;">From KSh 120,000</span>
+										<a href="#" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease;">Discover</a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="service_item text-center">
-						<div class="service_icon"><img src="images/suitcase.png" alt=""></div>
-						<h3>Airbnb &amp; Accommodations</h3>
-						<p>Comfortable stays from luxury lodges to budget options</p>
-						<div class="button service_button"><div class="button_bcg"></div><a href="accommodations.html">book now<span></span><span></span><span></span></a></div>
+			</div>
+			
+			<!-- Additional Experience Cards Row -->
+			<div class="row" style="margin-top: 40px;">
+				<!-- Hot Air Balloon -->
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+						<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1558472973-bb8bfb4ee4c5?w=400&h=200&fit=crop') center/cover; position: relative;">
+							<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 193, 7, 0.95); color: #2c3e50; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Unique</div>
+						</div>
+						<div class="card-content" style="padding: 30px;">
+							<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Hot Air Balloon Safari</h4>
+							<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Soar above the Maasai Mara at sunrise for breathtaking aerial views of wildlife migrations</p>
+							<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-clock-o" style="margin-right: 5px;"></i>3 Hours</span>
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>Max 16</span>
+							</div>
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 45,000</span>
+								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="service_item text-center">
-						<div class="service_icon"><img src="images/backpack.png" alt=""></div>
-						<h3>Tours & Safaris</h3>
-						<p>Unforgettable wildlife safaris and guided tours</p>
-						<div class="button service_button"><div class="button_bcg"></div><a href="tours.html">book safari<span></span><span></span><span></span></a></div>
+				
+				<!-- Night Safari -->
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+						<div class="card-image" style="height: 200px; background: url('https://image.shutterstock.com/image-photo/horizontal-colour-photograph-leopard-mouth-260nw-338348249.jpg') center/cover; position: relative;">
+							<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(118, 75, 162, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Thrilling</div>
+						</div>
+						<div class="card-content" style="padding: 30px;">
+							<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Night Game Drive</h4>
+							<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Experience the wild after dark with nocturnal animals and predators in their element</p>
+							<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-moon-o" style="margin-right: 5px;"></i>6-10 PM</span>
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>Max 6</span>
+							</div>
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 18,000</span>
+								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Photography Safari -->
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+						<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1664270716975-33992d17fdb3?w=400&h=200&fit=crop') center/cover; position: relative;">
+							<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(102, 126, 234, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Pro</div>
+						</div>
+						<div class="card-content" style="padding: 30px;">
+							<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Photography Safari</h4>
+							<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Capture stunning wildlife moments with professional photography guidance and equipment</p>
+							<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-camera" style="margin-right: 5px;"></i>Pro Guide</span>
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>Max 4</span>
+							</div>
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 85,000</span>
+								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Road Trip Safari -->
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+						<div class="card-image" style="height: 200px; background: url('https://plus.unsplash.com/premium_photo-1683140916567-6d3cea90caf6?w=400&h=200&fit=crop') center/cover; position: relative;">
+							<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 87, 34, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Adventure</div>
+						</div>
+						<div class="card-content" style="padding: 30px;">
+							<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Road Trip Safari</h4>
+							<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Explore Kenya's diverse landscapes on an epic road trip adventure through multiple national parks</p>
+							<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-road" style="margin-right: 5px;"></i>5-10 Days</span>
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-6 People</span>
+							</div>
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 95,000</span>
+								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Special Treats -->
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+						<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1684767627427-374f54c36061?w=400&h=200&fit=crop') center/cover; position: relative;">
+							<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(233, 30, 99, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Special</div>
+						</div>
+						<div class="card-content" style="padding: 30px;">
+							<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Coastal Special Treats</h4>
+							<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Relax and unwind with exclusive coastal experiences, beach activities, and tropical delights</p>
+							<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-sun-o" style="margin-right: 5px;"></i>3-5 Days</span>
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-10 People</span>
+							</div>
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 55,000</span>
+								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Honeymoon Safari -->
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+						<div class="card-image" style="height: 200px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3JtgSWp0rVi-AWK88ezzeccuUOMXhzZH_3hyjh9MDugt8NGBvvJYGefU&s') center/cover; position: relative;">
+							<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 20, 147, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Romantic</div>
+						</div>
+						<div class="card-content" style="padding: 30px;">
+							<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Honeymoon Safari</h4>
+							<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Celebrate your love with romantic safari adventures and luxury accommodations for couples</p>
+							<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-heart" style="margin-right: 5px;"></i>5-7 Days</span>
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2 People</span>
+							</div>
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 150,000</span>
+								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Family Day Out -->
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+						<div class="card-image" style="height: 200px; background: url('https://plus.unsplash.com/premium_photo-1681913246903-7fd7543a5a1b?w=400&h=200&fit=crop') center/cover; position: relative;">
+							<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(76, 175, 80, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Family</div>
+						</div>
+						<div class="card-content" style="padding: 30px;">
+							<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Family Day Out</h4>
+							<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Perfect family adventures with kid-friendly activities and coastal fun for all ages</p>
+							<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-child" style="margin-right: 5px;"></i>1-3 Days</span>
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>4-12 People</span>
+							</div>
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 35,000</span>
+								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Explore Mt Kenya -->
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+						<div class="card-image" style="height: 200px; background: url('https://assets.grok.com/users/6e5b3930-9cbb-48d5-9902-a9d6e1512092/generated/9fe34250-c327-47f0-b876-dbda3fd971da/image.jpg') center/cover; position: relative;">
+							<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(63, 81, 181, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Challenge</div>
+						</div>
+						<div class="card-content" style="padding: 30px;">
+							<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Explore Mt Kenya</h4>
+							<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Conquer Africa's second highest peak with guided mountain climbing and trekking adventures</p>
+							<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-mountain" style="margin-right: 5px;"></i>4-7 Days</span>
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-8 People</span>
+							</div>
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 75,000</span>
+								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Nature Walk -->
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+						<div class="card-image" style="height: 200px; background: url('https://assets.grok.com/users/6e5b3930-9cbb-48d5-9902-a9d6e1512092/generated/459730fd-6497-415b-9c46-76c42400379d/image.jpg') center/cover; position: relative;">
+							<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(139, 195, 74, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Peaceful</div>
+						</div>
+						<div class="card-content" style="padding: 30px;">
+							<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Nature Walk</h4>
+							<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Gentle guided walks through pristine forests and nature reserves to connect with wildlife</p>
+							<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-leaf" style="margin-right: 5px;"></i>2-4 Hours</span>
+								<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-15 People</span>
+							</div>
+							<div style="display: flex; justify-content: space-between; align-items: center;">
+								<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 8,000</span>
+								<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Activities Section -->
+		<div class="activities-section" style="padding: 60px 0; background: #fff; position: relative; overflow: hidden;">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<h2 class="section_title" style="font-size: 3rem; font-weight: 800; color: #2c3e50; margin-bottom: 20px;">Adventure Activities</h2>
+						<p class="section_subtitle" style="font-size: 1.2rem; color: #6c757d; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">Discover thrilling outdoor activities and adventures that complement your safari experience</p>
+					</div>
+				</div>
+				<div class="row">
+					<!-- Bicycle Adventures -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://plus.unsplash.com/premium_photo-1684274186177-9f2a3193061a?w=400&h=200&fit=crop') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 152, 0, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Active</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Bicycle Adventures</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Explore scenic trails and countryside on guided bicycle tours through Kenya's beautiful landscapes</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-bicycle" style="margin-right: 5px;"></i>3-6 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-12 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 8,000</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Mountain Bicycle Tours -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://plus.unsplash.com/premium_photo-1722105384760-0cc69da0cd43?w=400&h=200&fit=crop') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(76, 175, 80, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Eco</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Mountain Bicycle Tours</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Challenge yourself with mountain biking adventures through rugged terrains and forest trails</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-bicycle" style="margin-right: 5px;"></i>4-8 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-8 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 10,000</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Shooting Range -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1687384475723-6a1c70a91920?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNob290aW5nJTIwcmFuZ2V8ZW58MHx8MHx8fDA%3D') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(244, 67, 54, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Precision</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Shooting Range</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Test your marksmanship skills at professional shooting ranges with expert instruction and safety</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-crosshairs" style="margin-right: 5px;"></i>2-3 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>1-6 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 7,000</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Advanced Shooting Range -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1631631019516-d2f7c46f006f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fHNob290aW5nJTIwcmFuZ2V8ZW58MHx8MHx8fDA%3D') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(244, 67, 54, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Advanced</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Advanced Shooting Range</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Advanced marksmanship training with tactical scenarios and professional-grade equipment</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-crosshairs" style="margin-right: 5px;"></i>3-4 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>1-4 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 9,000</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Boat Safari -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1627379035856-21c94da4bb57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGJvYXQlMjBzYWZhcmklMjBpbiUyMGxha2VzfGVufDB8fDB8fHww') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(33, 150, 243, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Aquatic</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Boat Safari</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Explore Kenya's pristine lakes and rivers while spotting hippos, crocodiles, and diverse birdlife</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-ship" style="margin-right: 5px;"></i>4-6 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-12 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 5,000</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Horse Riding -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://media.istockphoto.com/id/2193172229/photo/young-woman-riding-a-horse-and-petting-it-under-a-cloudy-sky.webp?a=1&b=1&s=612x612&w=0&k=20&c=7IkguZpmF6ovI8t87LS1A9g6Xvhd08frUOR8dvUHF2Y=') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(139, 69, 19, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Equestrian</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Horse Riding Safari</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Experience the wilderness on horseback with guided rides through scenic landscapes and wildlife areas</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-clock-o" style="margin-right: 5px;"></i>2-4 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>1-8 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 6,000</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Camel Ride -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://plus.unsplash.com/premium_photo-1664301183877-85b1070c12b8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNhbWVsJTIwcmlkZXxlbnwwfHwwfHx8MA%3D%3D') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(205, 133, 63, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Desert</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Camel Ride Safari</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Experience traditional desert travel on camelback through scenic landscapes and cultural sites</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-clock-o" style="margin-right: 5px;"></i>2-3 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>1-10 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 4,000</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Bush Meal Picnics -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://plus.unsplash.com/premium_photo-1678914346808-c89ba6317b6d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YnVzaCUyMG1lYWxzJTIwcGljbmljc3xlbnwwfHwwfHx8MA%3D%3D') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(34, 139, 34, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Culinary</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Bush Meal Picnics</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Enjoy authentic outdoor dining experiences with traditional meals in scenic wilderness settings</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-cutlery" style="margin-right: 5px;"></i>2-4 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-20 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 3,500</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Bush Picnic -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://plus.unsplash.com/premium_photo-1682401101581-b6be0396b706?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGJ1c2glMjBtZWFscyUyMHBpY25pY3N8ZW58MHx8MHx8fDA%3D') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(34, 139, 34, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Outdoor</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Bush Picnic</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Relax and enjoy gourmet picnic experiences in pristine natural settings with stunning views</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-cutlery" style="margin-right: 5px;"></i>3-5 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-15 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 2,500</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Bird Watching -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://plus.unsplash.com/premium_photo-1722686568915-b40ee8a6c072?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlyZHdhdGNoaW5nfGVufDB8fDB8fHww') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(30, 144, 255, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Wildlife</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Bird Watching</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Discover Kenya's diverse bird species with expert guides in prime birding locations</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-eye" style="margin-right: 5px;"></i>3-6 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-10 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 4,500</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Sundown Experience -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1637561117375-cf0acbdff357?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHN1bmRvd24lMjBleHBlcmlybmNlfGVufDB8fDB8fHww') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 140, 0, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Scenic</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Sundown Experience</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Watch breathtaking sunsets over the savannah with cocktails and traditional entertainment</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-sun-o" style="margin-right: 5px;"></i>2-3 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-25 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 3,000</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Bush Camping -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1605401923238-b45d25aaecc8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJ1c2glMjBjYW1waW5nfGVufDB8fDB8fHww') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(34, 139, 34, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Adventure</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Bush Camping</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Sleep under the stars in comfortable tents with authentic wilderness camping experiences</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-moon-o" style="margin-right: 5px;"></i>1-3 Nights</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-8 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 8,500</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Scenic Landscapes -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1530398853612-30f978a8bf9b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fFNjZW5pYyUyMExhbmRzY2FwZXMlMjAlMjYlMjBQaG90b2dyYXBoeSUyMFNwb3RzfGVufDB8fDB8fHww') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(72, 61, 139, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Photography</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Scenic Landscapes</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Capture breathtaking landscapes and scenic views at Kenya's most photogenic locations</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-camera" style="margin-right: 5px;"></i>4-8 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>1-6 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 6,500</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Bonfire Nights -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8QnVzaGNyYWZ0JTIwJTI2JTIwU3Vydml2YWwlMjBTa2lsbHMlMjBXb3Jrc2hvcHN8ZW58MHx8MHx8fDA%3D') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 69, 0, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Cozy</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Bonfire Nights</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Gather around crackling bonfires with storytelling, music, and traditional entertainment under starlit skies</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-fire" style="margin-right: 5px;"></i>3-5 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>5-30 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 2,000</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Fishing Trips -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://plus.unsplash.com/premium_photo-1716312756736-b6ff9a30fa72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTUzfHxmaXNoaW5nJTIwdHJpcHN8ZW58MHx8MHx8fDA%3D') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(70, 130, 180, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Angling</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Fishing Trips</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Experience peaceful fishing adventures in Kenya's pristine lakes and rivers with expert guides</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-anchor" style="margin-right: 5px;"></i>4-8 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-8 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 7,500</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Parachuting -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1730358847065-060c2d910f82?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fFBhcmFjaHV0aW5nfGVufDB8fDB8fHww') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 69, 0, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Extreme</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Parachuting</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Experience the ultimate adrenaline rush with tandem skydiving over Kenya's stunning landscapes</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-plane" style="margin-right: 5px;"></i>3-4 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>1-4 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 9,500</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Aerial Tour -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://plus.unsplash.com/premium_photo-1723527889448-576d796d9a15?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBsYW5lJTIwYWVyaWFsJTIwdG91cnxlbnwwfHwwfHx8MA%3D%3D') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(30, 144, 255, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Scenic</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Aerial Tour</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Soar above Kenya's breathtaking landscapes on scenic flights over national parks and coastlines</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-plane" style="margin-right: 5px;"></i>1-3 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-6 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 8,500</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Helicopter Jumping -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1501803524289-cf5cc17e4e67?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aGVsaWNvcHRlciUyMGp1bXBpbmd8ZW58MHx8MHx8fDA%3D') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 69, 0, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Extreme</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Helicopter Jumping</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Take the ultimate leap from helicopters hovering over Kenya's breathtaking landscapes</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-helicopter-o" style="margin-right: 5px;"></i>3-4 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>1-2 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 10,000</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Freefall Jumping -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://images.unsplash.com/photo-1533715661006-ceab10fc05b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEZyZWVmYWxsJTIwSnVtcGluZ3xlbnwwfHwwfHx8MA%3D%3D') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(220, 20, 60, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Adrenaline</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Freefall Jumping</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Experience the ultimate rush with tandem freefall jumps from high altitudes over scenic landscapes</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-arrow-down" style="margin-right: 5px;"></i>4-5 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>1-3 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 9,000</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Archery -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://plus.unsplash.com/premium_photo-1718315737815-f8df309cee62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGFyY2hlcnl8ZW58MHx8MHx8fDA%3D') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(34, 139, 34, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Skill</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Archery</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Master the ancient art of archery with professional instruction and target practice sessions</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-bullseye" style="margin-right: 5px;"></i>2-3 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>1-8 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 3,500</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Swimming -->
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="experience-card-vertical" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%;">
+							<div class="card-image" style="height: 200px; background: url('https://media.istockphoto.com/id/1332365337/photo/boys-leaping-from-jetty-into-water-summertime-and-hot-weather.webp?a=1&b=1&s=612x612&w=0&k=20&c=DAdUj49lAOX69gv5WcEJy7XVBze5UeGyBP6TuiDcNU8=') center/cover; position: relative;">
+								<div class="floating-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(30, 144, 255, 0.95); color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);">Refreshing</div>
+							</div>
+							<div class="card-content" style="padding: 30px;">
+								<h4 style="font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px;">Swimming</h4>
+								<p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Enjoy refreshing swims in pristine lakes, rivers, and coastal waters with safety supervision</p>
+								<div class="card-stats" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-tint" style="margin-right: 5px;"></i>2-4 Hours</span>
+									<span style="font-size: 0.8rem; color: #667eea; font-weight: 600;"><i class="fa fa-users" style="margin-right: 5px;"></i>2-15 People</span>
+								</div>
+								<div style="display: flex; justify-content: space-between; align-items: center;">
+									<span style="font-size: 1.4rem; font-weight: 700; color: #667eea;">KSh 2,500</span>
+									<a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Floating Elements -->
+		<div style="position: absolute; top: 10%; right: 5%; width: 100px; height: 100px; background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 193, 7, 0.05)); border-radius: 50%; animation: float 6s ease-in-out infinite;"></div>
+		<div style="position: absolute; bottom: 15%; left: 8%; width: 60px; height: 60px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.05)); border-radius: 50%; animation: float 8s ease-in-out infinite reverse;"></div>
+	</div>
+	
+	<style>
+	.experience-card:hover {
+		transform: translateY(-10px) scale(1.02) !important;
+		box-shadow: 0 25px 50px rgba(0,0,0,0.2) !important;
+	}
+	
+	.experience-card:hover .experience-overlay {
+		opacity: 1 !important;
+	}
+	
+	.experience-card-vertical:hover {
+		transform: translateY(-15px) !important;
+		box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+	}
+	
+	.experience-btn:hover {
+		transform: translateY(-3px) !important;
+		box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4) !important;
+	}
+	
+	@keyframes float {
+		0%, 100% { transform: translateY(0px) rotate(0deg); }
+		50% { transform: translateY(-20px) rotate(180deg); }
+	}
+	
+	@media (max-width: 768px) {
+		.experience-card.large {
+			height: 300px !important;
+		}
+		.experience-card.small {
+			height: 160px !important;
+		}
+		.experience-content {
+			padding: 20px !important;
+		}
+		.section_title {
+			font-size: 2.2rem !important;
+		}
+		.section_subtitle {
+			font-size: 1rem !important;
+		}
+	}
+	</style>
+
+	<!-- Why Choose Us Section -->
+	<div class="why-choose-us" style="padding: 40px 0;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="why-content">
+						<h2 class="section_title text-left">Why Choose Wildwaves Safaris?</h2>
+						<p class="why-description">We are Kenya's premier safari specialists with years of experience creating unforgettable wildlife adventures. Our expert guides and personalized service ensure every moment of your safari exceeds expectations.</p>
+						<div class="why-features">
+							<div class="feature-item">
+								<div class="feature-icon">
+									<i class="fa fa-shield"></i>
+								</div>
+								<div class="feature-content">
+									<h4>Licensed & Insured</h4>
+									<p>Fully licensed by Kenya Tourism Board with comprehensive insurance coverage</p>
+								</div>
+							</div>
+							<div class="feature-item">
+								<div class="feature-icon">
+									<i class="fa fa-users"></i>
+								</div>
+								<div class="feature-content">
+									<h4>Expert Local Guides</h4>
+									<p>Professional guides with deep knowledge of wildlife and local culture</p>
+								</div>
+							</div>
+							<div class="feature-item">
+								<div class="feature-icon">
+									<i class="fa fa-clock-o"></i>
+								</div>
+								<div class="feature-content">
+									<h4>24/7 Support</h4>
+									<p>Round-the-clock assistance throughout your safari adventure</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="why-image">
+						<img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=500&fit=crop" alt="Safari Guide" class="img-fluid">
+						<div class="experience-badge">
+							<div class="badge-number">8+</div>
+							<div class="badge-text">Years<br>Experience</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
+
+
+	<!-- Adventure Message -->
+	<div class="adventure-message" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 50px 0; position: relative; overflow: hidden;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1 text-center">
+					<div class="adventure-content" style="position: relative; z-index: 2;">
+						<h2 style="color: white; font-size: 2.8rem; font-weight: 800; margin-bottom: 25px; text-shadow: 0 4px 8px rgba(0,0,0,0.3); line-height: 1.2;">Embark on the <span style="color: #ffc107; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Adventure of a Lifetime</span></h2>
+						<p style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: 500; line-height: 1.6; margin-bottom: 35px; max-width: 800px; margin-left: auto; margin-right: auto;">Discover the breathtaking beauty and wild wonders of Kenya with our expertly crafted tours and safaris.</p>
+						<div class="adventure-icons" style="display: flex; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap;">
+							<div class="icon-item" style="display: flex; flex-direction: column; align-items: center; color: white;">
+								<div style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+									<i class="fa fa-binoculars" style="font-size: 24px; color: #ffc107;"></i>
+								</div>
+								<span style="font-size: 0.9rem; font-weight: 600;">Wildlife</span>
+							</div>
+							<div class="icon-item" style="display: flex; flex-direction: column; align-items: center; color: white;">
+								<div style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+									<i class="fa fa-camera" style="font-size: 24px; color: #ffc107;"></i>
+								</div>
+								<span style="font-size: 0.9rem; font-weight: 600;">Photography</span>
+							</div>
+							<div class="icon-item" style="display: flex; flex-direction: column; align-items: center; color: white;">
+								<div style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+									<i class="fa fa-heart" style="font-size: 24px; color: #ffc107;"></i>
+								</div>
+								<span style="font-size: 0.9rem; font-weight: 600;">Adventure</span>
+							</div>
+							<div class="icon-item" style="display: flex; flex-direction: column; align-items: center; color: white;">
+								<div style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+									<i class="fa fa-globe" style="font-size: 24px; color: #ffc107;"></i>
+								</div>
+								<span style="font-size: 0.9rem; font-weight: 600;">Culture</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Floating Elements -->
+		<div style="position: absolute; top: 20%; right: 10%; width: 80px; height: 80px; background: rgba(255,193,7,0.2); border-radius: 50%; animation: float 6s ease-in-out infinite;"></div>
+		<div style="position: absolute; bottom: 20%; left: 15%; width: 60px; height: 60px; background: rgba(255,255,255,0.1); border-radius: 50%; animation: float 8s ease-in-out infinite reverse;"></div>
+		<div style="position: absolute; top: 50%; left: 5%; width: 40px; height: 40px; background: rgba(255,193,7,0.3); border-radius: 50%; animation: float 10s ease-in-out infinite;"></div>
+	</div>
+
 	<!-- Intro -->
-	
-	<div class="intro">
+	<div class="intro" style="padding: 40px 0;">
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -646,7 +3078,7 @@ body {
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<div class="intro_text text-center">
-						<p>Experience the ultimate safari adventure across Kenya's magnificent landscapes. From the Maasai Mara to Amboseli National Park, discover Africa's incredible wildlife and breathtaking scenery. </p>
+						<p>Embark on extraordinary safari adventures across Kenya's pristine wilderness. From witnessing the Great Migration in Maasai Mara to encountering elephants against Mount Kilimanjaro's backdrop in Amboseli, create memories that last a lifetime with our expertly crafted safari experiences.</p>
 					</div>
 				</div>
 			</div>
@@ -663,8 +3095,8 @@ body {
 							<div class="intro_date">May 25th - June 01st</div>
 							<div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
 							<div class="intro_center text-center">
-								<h1>Mauritius</h1>
-								<div class="intro_price">From KSh 188,500</div>
+								<h1>Maasai Mara Safari</h1>
+								<div class="intro_price">From KSh 45,000</div>
 								<div class="rating rating_4">
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
@@ -688,8 +3120,8 @@ body {
 							<div class="intro_date">May 25th - June 01st</div>
 							<div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
 							<div class="intro_center text-center">
-								<h1>Greece</h1>
-								<div class="intro_price">From KSh 188,500</div>
+								<h1>Amboseli National Park</h1>
+								<div class="intro_price">From KSh 35,000</div>
 								<div class="rating rating_4">
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
@@ -713,8 +3145,8 @@ body {
 							<div class="intro_date">May 25th - June 01st</div>
 							<div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
 							<div class="intro_center text-center">
-								<h1>Scotland</h1>
-								<div class="intro_price">From KSh 188,500</div>
+								<h1>Tsavo National Parks</h1>
+								<div class="intro_price">From KSh 28,000</div>
 								<div class="rating rating_4">
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
@@ -732,8 +3164,7 @@ body {
 	</div>
 
 	<!-- CTA -->
-
-	<div class="cta">
+	<div class="cta" style="margin-top: 20px;">
 		<!-- Image by https://unsplash.com/@thanni -->
 		<div class="cta_background" style="background-image:url(images/cta.jpg)"></div>
 		
@@ -834,172 +3265,12 @@ body {
 					
 	</div>
 
-	<!-- Offers -->
 
-	<div class="offers">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<h2 class="section_title">the best offers with rooms</h2>
-				</div>
-			</div>
-			<div class="row offers_items">
 
-				<!-- Offers Item -->
-				<div class="col-lg-6 offers_col">
-					<div class="offers_item">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="offers_image_container">
-									<!-- Image by https://unsplash.com/@kensuarez -->
-									<div class="offers_image_background" style="background-image:url(images/offer_1.jpg)"></div>
-									<div class="offer_name"><a href="#">grand castle</a></div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="offers_content">
-									<div class="offers_price">KSh 9,100<span>per night</span></div>
-									<div class="rating_r rating_r_4 offers_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-									<p class="offers_text">Experience royal luxury in our majestic castle-inspired lodge. Featuring panoramic savannah views, world-class amenities, and exclusive wildlife encounters right at your doorstep.</p>
-									<div class="offers_icons">
-										<ul class="offers_icons_list">
-											<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-										</ul>
-									</div>
-									<div class="offers_link"><a href="offers.html">read more</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Offers Item -->
-				<div class="col-lg-6 offers_col">
-					<div class="offers_item">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="offers_image_container">
-									<!-- Image by Egzon Bytyqi -->
-									<div class="offers_image_background" style="background-image:url(images/offer_2.jpg)"></div>
-									<div class="offer_name"><a href="#">turkey hills</a></div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="offers_content">
-									<div class="offers_price">KSh 6,500<span>per night</span></div>
-									<div class="rating_r rating_r_4 offers_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-									<p class="offers_text">Nestled in the rolling hills, this charming retreat offers breathtaking mountain vistas, cozy fireplaces, and authentic cultural experiences with local communities.</p>
-									<div class="offers_icons">
-										<ul class="offers_icons_list">
-											<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-										</ul>
-									</div>
-									<div class="offers_link"><a href="offers.html">read more</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<!-- Offers Item -->
-				<div class="col-lg-6 offers_col">
-					<div class="offers_item">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="offers_image_container">
-									<!-- Image by https://unsplash.com/@nevenkrcmarek -->
-									<div class="offers_image_background" style="background-image:url(images/offer_3.jpg)"></div>
-									<div class="offer_name"><a href="#">island dream</a></div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="offers_content">
-									<div class="offers_price">KSh 11,700<span>per night</span></div>
-									<div class="rating_r rating_r_4 offers_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-									<p class="offers_text">Escape to paradise at our exclusive island getaway. Private beaches, crystal-clear waters, luxury spa treatments, and unforgettable sunset dining experiences await.</p>
-									<div class="offers_icons">
-										<ul class="offers_icons_list">
-											<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-										</ul>
-									</div>
-									<div class="offers_link"><a href="offers.html">read more</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Offers Item -->
-				<div class="col-lg-6 offers_col">
-					<div class="offers_item">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="offers_image_container">
-									<!-- Image by https://unsplash.com/@mantashesthaven -->
-									<div class="offers_image_background" style="background-image:url(images/offer_4.jpg)"></div>
-									<div class="offer_name"><a href="#">travel light</a></div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="offers_content">
-									<div class="offers_price">KSh 3,900<span>per night</span></div>
-									<div class="rating_r rating_r_4 offers_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-									<p class="offers_text">Perfect for budget-conscious adventurers! Clean, comfortable accommodations with essential amenities, friendly service, and easy access to Kenya's top attractions.</p>
-									<div class="offers_icons">
-										<ul class="offers_icons_list">
-											<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-										</ul>
-									</div>
-									<div class="offers_link"><a href="offers.html">read more</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
 
 	<!-- Testimonials -->
-
-	<div class="testimonials">
+	<div class="testimonials" style="padding: 40px 0;">
 		<div class="test_border"></div>
 		<div class="container">
 			<div class="row">
@@ -1135,7 +3406,7 @@ body {
 		</div>
 	</div>
 
-	<div class="trending">
+	<div class="trending" style="padding: 40px 0;">
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
@@ -1244,163 +3515,115 @@ body {
 		</div>
 	</div>
 
-	<div class="contact">
-		<div class="contact_background" style="background-image:url(https://media.istockphoto.com/id/2168660269/photo/young-man-talking-on-smartphone-by-sunlit-window.webp?a=1&b=1&s=612x612&w=0&k=20&c=5Y7D7yVrW48XY4YPz0J3UXbYG9i-UQpaPouOIYQRgB8=); background-position: left center; background-size: cover;"></div>
-
+	<!-- Footer -->
+	<footer class="footer" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; padding: 60px 0 0 0; margin-top: 80px; position: relative; overflow: hidden;">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-5">
-					<div class="contact_image">
-						
+				<!-- Company Info -->
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="footer-section">
+						<div class="footer-logo mb-4">
+							<img src="images/logo.png" alt="Wildwavesafaris" style="height: 40px; margin-right: 10px;">
+							<span style="font-size: 24px; font-weight: bold; color: #ffc107;">Wildwavesafaris</span>
+						</div>
+						<p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 25px;">Experience Kenya's pristine wilderness and encounter majestic wildlife. Your gateway to authentic African safari adventures that create memories lasting a lifetime.</p>
+						<div class="footer-social">
+							<a href="#" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; text-align: center; line-height: 40px; color: #ffc107; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ffc107'; this.style.color='#2c3e50'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,193,7,0.2)'; this.style.color='#ffc107'; this.style.transform='translateY(0)';"><i class="fa fa-facebook"></i></a>
+							<a href="#" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; text-align: center; line-height: 40px; color: #ffc107; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ffc107'; this.style.color='#2c3e50'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,193,7,0.2)'; this.style.color='#ffc107'; this.style.transform='translateY(0)';"><i class="fa fa-instagram"></i></a>
+							<a href="#" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; text-align: center; line-height: 40px; color: #ffc107; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ffc107'; this.style.color='#2c3e50'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,193,7,0.2)'; this.style.color='#ffc107'; this.style.transform='translateY(0)';"><i class="fa fa-twitter"></i></a>
+							<a href="#" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; text-align: center; line-height: 40px; color: #ffc107; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ffc107'; this.style.color='#2c3e50'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,193,7,0.2)'; this.style.color='#ffc107'; this.style.transform='translateY(0)';"><i class="fa fa-telegram"></i></a>
+						</div>
 					</div>
 				</div>
-				<div class="col-lg-7">
-					<div class="contact_form_container">
-						<div class="contact_title">get in touch</div>
-						<form action="#" id="contact_form" class="contact_form">
-							<input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Name" required="required" data-error="Name is required.">
-							<input type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
-							<input type="text" id="contact_form_subject" class="contact_form_subject input_field" placeholder="Subject" required="required" data-error="Subject is required.">
-							<textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
-							<a href="#" id="whatsapp_link" class="form_submit_button button" onclick="return sendWhatsApp()">send message<span></span><span></span><span></span></a>
-						</form>
+
+				<!-- Quick Links -->
+				<div class="col-lg-2 col-md-6 mb-4">
+					<div class="footer-section">
+						<h5 style="color: #ffc107; font-weight: 600; margin-bottom: 25px; font-size: 18px;">Quick Links</h5>
+						<ul style="list-style: none; padding: 0; margin: 0;">
+							<li style="margin-bottom: 12px;"><a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Home</a></li>
+							<li style="margin-bottom: 12px;"><a href="about.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">About Us</a></li>
+							<li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Safari Packages</a></li>
+							<li style="margin-bottom: 12px;"><a href="blog.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">News & Blog</a></li>
+							<li style="margin-bottom: 12px;"><a href="contact.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Safari Destinations -->
+				<div class="col-lg-3 col-md-6 mb-4">
+					<div class="footer-section">
+						<h5 style="color: #ffc107; font-weight: 600; margin-bottom: 25px; font-size: 18px;">Top Destinations</h5>
+						<ul style="list-style: none; padding: 0; margin: 0;">
+							<li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Maasai Mara</a></li>
+							<li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Amboseli National Park</a></li>
+							<li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Tsavo National Parks</a></li>
+							<li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Samburu Reserve</a></li>
+							<li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; display: block; padding: 5px 0;" onmouseover="this.style.color='#ffc107'; this.style.paddingLeft='10px';" onmouseout="this.style.color='rgba(255,255,255,0.8)'; this.style.paddingLeft='0';">Lake Nakuru</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Contact Info -->
+				<div class="col-lg-3 col-md-6 mb-4">
+					<div class="footer-section">
+						<h5 style="color: #ffc107; font-weight: 600; margin-bottom: 25px; font-size: 18px;">Contact Info</h5>
+						<div class="contact-item" style="display: flex; align-items: center; margin-bottom: 20px;">
+							<div style="width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+								<i class="fa fa-map-marker" style="color: #ffc107; font-size: 16px;"></i>
+							</div>
+							<div>
+								<p style="margin: 0; color: rgba(255,255,255,0.8); font-size: 14px; line-height: 1.4;">THIKA ROAD, SPUR MALL<br>NAIROBI, KENYA</p>
+							</div>
+						</div>
+						<div class="contact-item" style="display: flex; align-items: center; margin-bottom: 20px;">
+							<div style="width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+								<i class="fa fa-phone" style="color: #ffc107; font-size: 16px;"></i>
+							</div>
+							<div>
+								<a href="tel:+254713241666" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#ffc107';" onmouseout="this.style.color='rgba(255,255,255,0.8)';">+254 713 241 666</a>
+							</div>
+						</div>
+						<div class="contact-item" style="display: flex; align-items: center; margin-bottom: 20px;">
+							<div style="width: 40px; height: 40px; background: rgba(255,193,7,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+								<i class="fa fa-envelope" style="color: #ffc107; font-size: 16px;"></i>
+							</div>
+							<div>
+								<a href="mailto:wildwavesafaris@gmail.com" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; transition: color 0.3s ease; word-break: break-all;" onmouseover="this.style.color='#ffc107';" onmouseout="this.style.color='rgba(255,255,255,0.8)';">wildwavesafaris@gmail.com</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
 
-	<!-- Footer -->
-
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-
-				<!-- Footer Column -->
-				<div class="col-lg-3 footer_column">
-					<div class="footer_col">
-						<div class="footer_content footer_about">
-							<div class="logo_container footer_logo">
-								<div class="logo"><a href="#"><img src="images/logo.png" alt="">Wildwavesafaris</a></div>
-							</div>
-							<p class="footer_about_text">Discover breathtaking destinations and unforgettable safari adventures. Experience Kenya's pristine wilderness, encounter majestic wildlife, and create memories that last a lifetime. Your gateway to authentic African adventures awaits.</p>
-							<ul class="footer_social_list">
-								<li class="footer_social_item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-								<li class="footer_social_item"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-								<li class="footer_social_item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li class="footer_social_item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li class="footer_social_item"><a href="#"><i class="fa fa-behance"></i></a></li>
-							</ul>
-						</div>
+			<!-- Newsletter Section -->
+			<div class="row" style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
+				<div class="col-lg-8">
+					<h5 style="color: #ffc107; font-weight: 600; margin-bottom: 15px; font-size: 18px;">Subscribe to Our Newsletter</h5>
+					<p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">Get the latest safari deals, travel tips, and wildlife updates delivered to your inbox.</p>
+				</div>
+				<div class="col-lg-4">
+					<div style="display: flex; gap: 10px;">
+						<input type="email" placeholder="Your email address" style="flex: 1; padding: 12px 15px; border: none; border-radius: 25px; background: rgba(255,255,255,0.1); color: white; font-size: 14px;" onfocus="this.style.background='rgba(255,255,255,0.2)'; this.style.outline='none';" onblur="this.style.background='rgba(255,255,255,0.1)';">
+						<button style="padding: 12px 25px; background: #ffc107; color: #2c3e50; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='#ffeb3b'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#ffc107'; this.style.transform='translateY(0)';">Subscribe</button>
 					</div>
 				</div>
-
-				<!-- Footer Column -->
-				<div class="col-lg-3 footer_column">
-					<div class="footer_col">
-						<div class="footer_title">blog posts</div>
-						<div class="footer_content footer_blog">
-							
-							<!-- Footer blog item -->
-							<div class="footer_blog_item clearfix">
-								<div class="footer_blog_image"><img src="images/footer_blog_1.jpg" alt="Kenya Safari Adventures"></div>
-								<div class="footer_blog_content">
-									<div class="footer_blog_title"><a href="blog.html">Kenya Safari Adventures 2025</a></div>
-									<div class="footer_blog_date">Jan 20, 2025</div>
-								</div>
-							</div>
-							
-							<!-- Footer blog item -->
-							<div class="footer_blog_item clearfix">
-								<div class="footer_blog_image"><img src="images/footer_blog_2.jpg" alt="Hidden Gems Kenya"></div>
-								<div class="footer_blog_content">
-									<div class="footer_blog_title"><a href="blog.html">Discover Hidden Gems in Kenya</a></div>
-									<div class="footer_blog_date">Jan 18, 2025</div>
-								</div>
-							</div>
-
-							<!-- Footer blog item -->
-							<div class="footer_blog_item clearfix">
-								<div class="footer_blog_image"><img src="images/footer_blog_3.jpg" alt="Coastal Kenya Beach"></div>
-								<div class="footer_blog_content">
-									<div class="footer_blog_title"><a href="blog.html">Coastal Kenya Beach Guide</a></div>
-									<div class="footer_blog_date">Jan 15, 2025</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<!-- Footer Column -->
-				<div class="col-lg-3 footer_column">
-					<div class="footer_col">
-						<div class="footer_title">tags</div>
-						<div class="footer_content footer_tags">
-							<ul class="tags_list clearfix">
-								<li class="tag_item"><a href="#">safari</a></li>
-								<li class="tag_item"><a href="#">wildlife</a></li>
-								<li class="tag_item"><a href="#">kenya</a></li>
-								<li class="tag_item"><a href="#">beach</a></li>
-								<li class="tag_item"><a href="#">mountain</a></li>
-								<li class="tag_item"><a href="#">photography</a></li>
-								<li class="tag_item"><a href="#">adventure</a></li>
-								<li class="tag_item"><a href="#">travel</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<!-- Footer Column -->
-				<div class="col-lg-3 footer_column">
-					<div class="footer_col">
-						<div class="footer_title">contact info</div>
-						<div class="footer_content footer_contact">
-							<ul class="contact_info_list">
-								<li class="contact_info_item d-flex flex-row">
-									<div><div class="contact_info_icon"><img src="images/placeholder.svg" alt=""></div></div>
-									<div class="contact_info_text">Nairobi, Kenya</div>
-								</li>
-								<li class="contact_info_item d-flex flex-row">
-									<div><div class="contact_info_icon"><img src="images/phone-call.svg" alt=""></div></div>
-									<div class="contact_info_text">+254 713 241 666</div>
-								</li>
-								<li class="contact_info_item d-flex flex-row">
-									<div><div class="contact_info_icon"><img src="images/message.svg" alt=""></div></div>
-									<div class="contact_info_text"><a href="mailto:wildwavesafaris@gmail.com?Subject=Hello" target="_top">wildwavesafaris@gmail.com</a></div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</footer>
 
-	<!-- Copyright -->
-
-	<div class="copyright">
+	<!-- Copyright Section -->
+	<div class="copyright" style="background: #1a252f; color: rgba(255,255,255,0.7); padding: 25px 0; border-top: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 1000;">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 order-lg-1 order-2  ">
-					<div class="copyright_content d-flex flex-row align-items-center">
-						<div><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by wabisabi and algokings
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-					</div>
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<p style="margin: 0; font-size: 14px;">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Wildwavesafaris. All rights reserved | Made with ❤️ by wabisabi and algokings</p>
 				</div>
-				<div class="col-lg-9 order-lg-2 order-1">
-					<div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
-						<div class="footer_nav">
-							<ul class="footer_nav_list">
-								<li class="footer_nav_item"><a href="#">home</a></li>
-								<li class="footer_nav_item"><a href="about.html">about us</a></li>
-								<li class="footer_nav_item"><a href="offers.html">offers</a></li>
-								<li class="footer_nav_item"><a href="blog.html">news</a></li>
-								<li class="footer_nav_item"><a href="contact.html">contact</a></li>
-							</ul>
-						</div>
+				<div class="col-md-6 text-md-right">
+					<div class="footer-nav" style="margin-top: 10px;">
+						<a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 15px; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#ffc107';" onmouseout="this.style.color='rgba(255,255,255,0.7)';">Privacy Policy</a>
+						<a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 15px; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#ffc107';" onmouseout="this.style.color='rgba(255,255,255,0.7)';">Terms of Service</a>
+						<a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 15px; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#ffc107';" onmouseout="this.style.color='rgba(255,255,255,0.7)';">Sitemap</a>
 					</div>
 				</div>
 			</div>
@@ -1434,6 +3657,215 @@ $(document).ready(function() {
             });
         });
     }, 500);
+    
+    // Modern scroll animations
+    function animateOnScroll() {
+        $('.service_item, .intro_item, .offers_item, .test_item').each(function() {
+            var elementTop = $(this).offset().top;
+            var elementBottom = elementTop + $(this).outerHeight();
+            var viewportTop = $(window).scrollTop();
+            var viewportBottom = viewportTop + $(window).height();
+            
+            if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                $(this).addClass('animate-in');
+            }
+        });
+    }
+    
+    $(window).on('scroll', animateOnScroll);
+    animateOnScroll();
+    
+    // Smooth hover effects
+    $('.service_item, .intro_item, .offers_item, .test_item, .trending_item').hover(
+        function() {
+            $(this).css('transform', 'translateY(-8px)');
+        },
+        function() {
+            $(this).css('transform', 'translateY(0)');
+        }
+    );
+    
+    // Enhanced button effects
+    $('.button').hover(
+        function() {
+            $(this).css({
+                'transform': 'translateY(-2px)',
+                'box-shadow': '0 10px 20px rgba(102, 126, 234, 0.4)'
+            });
+        },
+        function() {
+            $(this).css({
+                'transform': 'translateY(0)',
+                'box-shadow': 'none'
+            });
+        }
+    );
+    
+    // Add scroll progress bar
+    $('body').prepend('<div class="scroll-progress"></div>');
+    
+    // Update scroll progress
+    $(window).scroll(function() {
+        var scrollTop = $(window).scrollTop();
+        var docHeight = $(document).height();
+        var winHeight = $(window).height();
+        var scrollPercent = (scrollTop) / (docHeight - winHeight);
+        var scrollPercentRounded = Math.round(scrollPercent * 100);
+        $('.scroll-progress').css('width', scrollPercentRounded + '%');
+    });
+    
+    // Parallax effect for CTA section
+    $(window).scroll(function() {
+        var scrolled = $(window).scrollTop();
+        var parallax = $('.cta_background');
+        var speed = 0.5;
+        parallax.css('transform', 'translateY(' + (scrolled * speed) + 'px)');
+    });
+    
+    // Advanced fade-in animations
+    function checkFadeIn() {
+        $('.fade-in').each(function() {
+            var elementTop = $(this).offset().top;
+            var elementBottom = elementTop + $(this).outerHeight();
+            var viewportTop = $(window).scrollTop();
+            var viewportBottom = viewportTop + $(window).height();
+            
+            if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                $(this).addClass('visible');
+            }
+        });
+    }
+    
+    // Add fade-in class to elements
+    $('.service_item, .intro_item, .offers_item, .test_item, .trending_item').addClass('fade-in');
+    
+    $(window).on('scroll', checkFadeIn);
+    checkFadeIn();
+    
+    // Floating animation for service icons
+    $('.service_icon').addClass('floating');
+    
+    // Modern button ripple effect
+    $('.button, .btn-modern').on('click', function(e) {
+        var ripple = $('<span class="ripple"></span>');
+        var size = 60;
+        var x = e.pageX - $(this).offset().left - size / 2;
+        var y = e.pageY - $(this).offset().top - size / 2;
+        
+        ripple.css({
+            width: size,
+            height: size,
+            top: y + 'px',
+            left: x + 'px'
+        }).appendTo(this);
+        
+        setTimeout(function() {
+            ripple.remove();
+        }, 600);
+    });
+    
+    // Enhanced hover effects for cards
+    $('.service_item, .intro_item, .offers_item, .trending_item').hover(
+        function() {
+            $(this).addClass('hover-lift');
+        },
+        function() {
+            $(this).removeClass('hover-lift');
+        }
+    );
+    
+    // Smooth scroll for navigation links
+    $('.main_nav_list a[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        var target = $($(this).attr('href'));
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 80
+            }, 800);
+        }
+    });
+    
+    // Loading shimmer effect
+    $('.slider-video').addClass('loading-shimmer');
+    
+    $('.slider-video').on('loadeddata', function() {
+        $(this).removeClass('loading-shimmer');
+    });
+    
+    // Glass card effect for testimonials
+    $('.test_item').addClass('glass-card');
+    
+    // Counter animation for statistics
+    function animateCounters() {
+        $('.counter').each(function() {
+            var $this = $(this);
+            var countTo = $this.attr('data-count');
+            
+            $({ countNum: $this.text() }).animate({
+                countNum: countTo
+            }, {
+                duration: 2000,
+                easing: 'linear',
+                step: function() {
+                    $this.text(Math.floor(this.countNum));
+                },
+                complete: function() {
+                    $this.text(this.countNum);
+                }
+            });
+        });
+    }
+    
+    // Trigger counter animation when in view
+    $(window).scroll(function() {
+        $('.counter').each(function() {
+            var elementTop = $(this).offset().top;
+            var viewportBottom = $(window).scrollTop() + $(window).height();
+            
+            if (elementTop < viewportBottom && !$(this).hasClass('animated')) {
+                $(this).addClass('animated');
+                animateCounters();
+            }
+        });
+    });
+    
+    // Modern navigation active state
+    $(window).scroll(function() {
+        var scrollDistance = $(window).scrollTop();
+        
+        $('section').each(function(i) {
+            if ($(this).position().top <= scrollDistance + 100) {
+                $('.main_nav_list a.active').removeClass('active');
+                $('.main_nav_list a').eq(i).addClass('active');
+            }
+        });
+    });
+    
+    // Image lazy loading effect
+    $('img').each(function() {
+        $(this).on('load', function() {
+            $(this).addClass('loaded');
+        });
+    });
+    
+    // Modern tooltip effect
+    $('[data-tooltip]').hover(
+        function() {
+            var tooltip = $('<div class="modern-tooltip">' + $(this).data('tooltip') + '</div>');
+            $('body').append(tooltip);
+            
+            var pos = $(this).offset();
+            tooltip.css({
+                top: pos.top - tooltip.outerHeight() - 10,
+                left: pos.left + ($(this).outerWidth() / 2) - (tooltip.outerWidth() / 2)
+            }).fadeIn(200);
+        },
+        function() {
+            $('.modern-tooltip').fadeOut(200, function() {
+                $(this).remove();
+            });
+        }
+    );
     
     // Force reinitialize home slider
     if($('.home_slider').length && typeof $.fn.owlCarousel !== 'undefined') {
@@ -1470,7 +3902,233 @@ function sendWhatsApp() {
     document.getElementById('whatsapp_link').href = link;
     return true;
 }
+
+// Complete Footer Protection and Cleanup
+$(document).ready(function() {
+    // Comprehensive cleanup function
+    function cleanupFooter() {
+        // Remove any elements after copyright
+        $('.copyright').nextAll().remove();
+        $('.footer').nextAll(':not(.copyright)').remove();
+        
+        // Remove any floating or absolute positioned elements
+        $('body').find('*').each(function() {
+            var $el = $(this);
+            if ($el.css('position') === 'absolute' || $el.css('position') === 'fixed') {
+                var top = parseInt($el.css('top')) || 0;
+                var copyrightTop = $('.copyright').offset().top;
+                if (top > copyrightTop + 100) {
+                    $el.remove();
+                }
+            }
+        });
+        
+        // Force clean background
+        $('body, html').css({
+            'background-image': 'none !important',
+            'background-attachment': 'scroll !important',
+            'background-repeat': 'no-repeat !important'
+        });
+        
+        // Ensure copyright is the final element
+        $('.copyright').css({
+            'position': 'relative',
+            'z-index': '1000',
+            'clear': 'both',
+            'margin-bottom': '0',
+            'padding-bottom': '0'
+        });
+    }
+    
+    // Run cleanup immediately
+    cleanupFooter();
+    
+    // Run cleanup after page load
+    $(window).on('load', function() {
+        setTimeout(cleanupFooter, 500);
+    });
+    
+    // Monitor for any new elements being added
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                $(mutation.addedNodes).each(function() {
+                    var $node = $(this);
+                    // Remove any nodes added after copyright
+                    if ($node.index() > $('.copyright').index() && !$node.hasClass('copyright')) {
+                        $node.remove();
+                    }
+                    // Remove any nodes with suspicious positioning
+                    if ($node.css && ($node.css('position') === 'absolute' || $node.css('position') === 'fixed')) {
+                        var nodeTop = parseInt($node.css('top')) || 0;
+                        var copyrightTop = $('.copyright').offset() ? $('.copyright').offset().top : 0;
+                        if (nodeTop > copyrightTop + 100) {
+                            $node.remove();
+                        }
+                    }
+                });
+            }
+        });
+    });
+    
+    // Start observing
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['style', 'class']
+    });
+    
+    // Periodic cleanup
+    setInterval(function() {
+        $('.copyright').nextAll().remove();
+        // Remove any elements with suspicious z-index
+        $('*').each(function() {
+            var zIndex = parseInt($(this).css('z-index')) || 0;
+            if (zIndex > 1000 && !$(this).hasClass('copyright') && !$(this).closest('.copyright').length) {
+                $(this).remove();
+            }
+        });
+    }, 2000);
+    
+    // Force final cleanup on page unload
+    $(window).on('beforeunload', function() {
+        cleanupFooter();
+    });
+});
+
+// NAVBAR PROTECTION - Ensure navbar never disappears
+$(document).ready(function() {
+    function forceNavbarVisible() {
+        // Force header to be visible
+        $('.header').css({
+            'position': 'fixed !important',
+            'top': '32px !important',
+            'left': '0 !important',
+            'width': '100% !important',
+            'z-index': '9999 !important',
+            'visibility': 'visible !important',
+            'opacity': '1 !important',
+            'display': 'block !important',
+            'transform': 'none !important',
+            'background': 'rgba(255, 255, 255, 0.95) !important',
+            'backdrop-filter': 'blur(10px) !important',
+            'box-shadow': '0 2px 10px rgba(0,0,0,0.1) !important'
+        }).show();
+        
+        // Force top bar to be visible
+        $('.top_bar').css({
+            'position': 'fixed !important',
+            'top': '0 !important',
+            'left': '0 !important',
+            'width': '100% !important',
+            'z-index': '10000 !important',
+            'visibility': 'visible !important',
+            'opacity': '1 !important',
+            'display': 'block !important',
+            'transform': 'none !important',
+            'height': '32px !important',
+            'background': '#2c3e50 !important',
+            'color': 'white !important'
+        }).show();
+        
+        // Force main nav to be visible
+        $('.main_nav, .main_nav_col').css({
+            'visibility': 'visible !important',
+            'opacity': '1 !important',
+            'display': 'block !important',
+            'transform': 'none !important',
+            'height': '73px !important'
+        }).show();
+        
+        // Remove any hidden classes
+        $('.header, .top_bar, .main_nav, .main_nav_col').removeClass('hidden');
+    }
+    
+    // Run immediately
+    forceNavbarVisible();
+    
+    // Run after page load
+    $(window).on('load', function() {
+        setTimeout(forceNavbarVisible, 100);
+        setTimeout(forceNavbarVisible, 500);
+        setTimeout(forceNavbarVisible, 1000);
+    });
+    
+    // Monitor for any changes and fix them
+    setInterval(function() {
+        if (!$('.header').is(':visible') || 
+            $('.header').css('opacity') < 1 || 
+            $('.header').css('visibility') === 'hidden' ||
+            !$('.top_bar').is(':visible') || 
+            $('.top_bar').css('opacity') < 1 || 
+            $('.top_bar').css('visibility') === 'hidden') {
+            forceNavbarVisible();
+        }
+    }, 500);
+    
+    // Override any scroll events that might hide navbar
+    $(window).off('scroll.navbar');
+    $(document).off('scroll.navbar');
+    
+    // Prevent any CSS transitions that might hide navbar
+    $('<style>').prop('type', 'text/css').html(`
+        .header, .top_bar, .main_nav, .main_nav_col {
+            transition: background 0.3s ease, box-shadow 0.3s ease !important;
+            -webkit-transition: background 0.3s ease, box-shadow 0.3s ease !important;
+            -moz-transition: background 0.3s ease, box-shadow 0.3s ease !important;
+            -ms-transition: background 0.3s ease, box-shadow 0.3s ease !important;
+            -o-transition: background 0.3s ease, box-shadow 0.3s ease !important;
+        }
+        .header.scrolled .top_bar {
+            visibility: visible !important;
+            opacity: 1 !important;
+            height: 32px !important;
+            transform: none !important;
+        }
+    `).appendTo('head');
+});
 </script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254713241666" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+	<span class="whatsapp-icon">💬</span>
+</a>
+
+<style>
+.whatsapp-float {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 60px;
+	height: 60px;
+	background: #25D366;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+	z-index: 9998;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	animation: pulse 2s infinite;
+}
+.whatsapp-float:hover {
+	transform: scale(1.1);
+	box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+	text-decoration: none;
+}
+.whatsapp-float .whatsapp-icon {
+	color: white;
+	font-size: 32px;
+	font-weight: bold;
+}
+@keyframes pulse {
+	0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+	50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.8); }
+	100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+}
+</style>
 
 </body>
 

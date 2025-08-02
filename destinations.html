@@ -4,343 +4,383 @@
 <title>Destinations - Wildwavesafaris</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Kenya Safari Destinations">
+<meta name="description" content="Explore amazing destinations with Wildwavesafaris">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/responsive.css">
-<style>
-.logo a {
-    background: linear-gradient(45deg, #ff6b35, #f7931e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 900 !important;
-    font-size: 28px !important;
-    text-shadow: 2px 2px 4px rgba(255,107,53,0.4);
-    filter: drop-shadow(0 0 8px rgba(255,107,53,0.3));
-}
-.main_nav_list a {
-    background: linear-gradient(45deg, #ff6b35, #e67e22);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 800 !important;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 0 5px rgba(255,107,53,0.2));
-}
-.main_nav_list a:hover {
-    background: linear-gradient(45deg, #e67e22, #d35400);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    transform: scale(1.08);
-    filter: drop-shadow(0 0 10px rgba(230,126,34,0.4));
-}
-.destinations-hero {
-    background: url('images/home_slider.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 70vh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    color: #007bff;
-    text-align: center;
-    padding-bottom: 80px;
-}
-.category-section {
-    margin-bottom: 60px;
-    padding: 40px 0;
-}
-.category-header {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    text-align: center;
-    border-left: 5px solid #ffc107;
-}
-.destination-card {
-    background: linear-gradient(135deg, #ffffff, #f8f9fa);
-    border-radius: 15px;
-    padding: 0;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: none;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    height: 100%;
-}
-.destination-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-.destination-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px 15px 0 0;
-}
-.destination-content {
-    padding: 25px;
-}
-.destination-name {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #2d2c2c;
-    margin-bottom: 15px;
-    position: relative;
-}
-.destination-name::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: linear-gradient(90deg, #fa9e1b, #8d4fff);
-    border-radius: 2px;
-}
-.destination-description {
-    color: #666;
-    line-height: 1.7;
-    font-size: 1rem;
-}
-.destinations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-@media (max-width: 768px) {
-    .destinations-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
-
-@keyframes textGlow {
-    0% {
-        text-shadow: 4px 4px 8px rgba(0,0,0,0.6), 0 0 25px rgba(255,107,53,0.3);
-        filter: drop-shadow(0 0 15px rgba(255,107,53,0.5));
-    }
-    100% {
-        text-shadow: 4px 4px 8px rgba(0,0,0,0.8), 0 0 35px rgba(255,107,53,0.6);
-        filter: drop-shadow(0 0 25px rgba(255,107,53,0.8));
-    }
-}
-</style>
+<link rel="stylesheet" type="text/css" href="styles/about_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/about_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/new-navbar.css">
 </head>
 
 <body>
 
 <div class="super_container">
-    
-    <!-- Header -->
-    <header class="header">
-        <div class="top_bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col d-flex flex-row">
-                        <div class="phone">0713241666</div>
-                        <div class="social">
-                            <ul class="social_list">
-                                <li class="social_list_item"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                <li class="social_list_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li class="social_list_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>        
-        </div>
+	
+	<!-- NEW NAVBAR -->
+	<div class="wildwave-topbar">
+		<div class="contact-info">
+			<span><i class="fa fa-envelope"></i> <a href="mailto:wildwavesafaris@gmail.com">wildwavesafaris@gmail.com</a></span>
+			<span><i class="fa fa-phone"></i> <a href="tel:+254713241666">+254 713 241 666</a></span>
+			<span><i class="fa fa-map-marker"></i> <a href="https://maps.google.com/?q=Spur+Mall+Thika+Road+Nairobi" target="_blank">THIKA ROAD, SPUR MALL, NAIROBI</a></span>
+		</div>
+		<div class="social-icons">
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-instagram"></i></a>
+			<a href="#"><i class="fa fa-telegram"></i></a>
+		</div>
+	</div>
 
-        <nav class="main_nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
-                        <div class="logo_container">
-                            <div class="logo"><a href="index.html"><img src="images/logo.png" alt="">Wildwavesafaris</a></div>
-                        </div>
-                        <div class="main_nav_container ml-auto">
-                            <ul class="main_nav_list">
-                                <li class="main_nav_item"><a href="index.html">home</a></li>
-                                <li class="main_nav_item"><a href="about.html">about us</a></li>
-                                <li class="main_nav_item"><a href="offers.html">offers</a></li>
-                                <li class="main_nav_item"><a href="blog.html">news</a></li>
-                                <li class="main_nav_item"><a href="contact.html">contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </nav>
-    </header>
+	<nav class="wildwave-navbar">
+		<a href="index.html" class="logo">
+			<img src="images/logo.png" alt="Wildwavesafaris">
+			Wildwavesafaris
+		</a>
+		<ul class="nav-menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="destinations.html">Destinations</a></li>
+			<li><a href="accommodations.html">Accommodations</a></li>
+			<li><a href="offers.html">Special Offers</a></li>
+			<li><a href="booking.html">Booking</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+		<div class="search-icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<button class="mobile-menu-btn">
+			<i class="fa fa-bars"></i>
+		</button>
+	</nav>
 
-    <!-- Hero Section -->
-    <div class="destinations-hero">
-        <div class="container">
-            <h1 style="font-size: 4rem; margin-bottom: 25px; font-weight: 900; background: linear-gradient(45deg, #ff6b35, #f7931e, #e67e22); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 4px 4px 8px rgba(0,0,0,0.6); animation: textGlow 2s ease-in-out infinite alternate; filter: drop-shadow(0 0 15px rgba(255,107,53,0.5));">🌍 Kenya Safari Destinations</h1>
-            <p style="font-size: 1.6rem; font-weight: 700; background: linear-gradient(45deg, #e67e22, #d35400); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 3px 3px 6px rgba(0,0,0,0.5); letter-spacing: 1.5px; filter: drop-shadow(0 0 10px rgba(230,126,34,0.4));">Discover the most breathtaking destinations across Kenya</p>
-        </div>
-    </div>
+	<!-- Home -->
+	<div class="home" style="height: 600px; position: relative; overflow: hidden;">
+		<div style="display: flex; height: 100%; width: 100%;">
+			<!-- Left Image - Golden Gate Bridge -->
+			<div style="flex: 1; background: url('https://media.istockphoto.com/id/1571494714/photo/view-of-golden-gate-bridge.webp?a=1&b=1&s=612x612&w=0&k=20&c=0JehrDPl9dEzARFUnZ_27n1OaeWquQxyQplcW1xFW7E=') center/cover no-repeat; position: relative;">
+				<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));"></div>
+				<div style="position: absolute; bottom: 30px; left: 30px; color: white; z-index: 2;">
+					<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">International Travel</h3>
+					<p style="margin: 5px 0 0; font-size: 1rem; opacity: 0.9;">Explore the world beyond Kenya</p>
+				</div>
+			</div>
+			<!-- Right Image - London -->
+			<div style="flex: 1; background: url('https://media.istockphoto.com/id/155445312/photo/london-on-the-move.webp?a=1&b=1&s=612x612&w=0&k=20&c=RF9EtnpoaMBaVGYckj0OM9hHPds6rjyncCu8S6uotEM=') center/cover no-repeat; position: relative;">
+				<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));"></div>
+				<div style="position: absolute; bottom: 30px; right: 30px; color: white; z-index: 2; text-align: right;">
+					<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">City Adventures</h3>
+					<p style="margin: 5px 0 0; font-size: 1rem; opacity: 0.9;">Urban experiences worldwide</p>
+				</div>
+			</div>
+		</div>
+		<!-- Centered Title -->
+		<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 3;">
+			<div style="background: rgba(0,0,0,0.7); padding: 20px 40px; border-radius: 10px; backdrop-filter: blur(10px);">
+				<div class="home_title" style="color: white; font-size: 3.5rem; font-weight: 700; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">DESTINATIONS</div>
+				<p style="color: #fa9e1b; font-size: 1.2rem; margin: 10px 0 0; font-weight: 500;">Discover Amazing Places Around The World</p>
+			</div>
+		</div>
+	</div>
 
-    <!-- Destinations Content -->
-    <div class="container" style="padding: 80px 0;">
-        
-        <!-- Nature & Wildlife Safari Destinations -->
-        <div class="category-section">
-            <div class="category-header">
-                <h2>🌿 Nature & Wildlife Safari Destinations</h2>
-            </div>
-            
-            <div class="destinations-grid">
-                <div class="destination-card">
-                    <img src="https://media.istockphoto.com/id/454332391/photo/great-wildebeest-migration-in-kenya-waiting.webp?a=1&b=1&s=612x612&w=0&k=20&c=Rj3NJx_1NGbV_kccDJ3poCVlYq-vwc9RLo1prrh3vyI=" alt="Maasai Mara" class="destination-image">
-                    <div class="destination-content">
-                        <div class="destination-name">Maasai Mara National Reserve</div>
-                        <div class="destination-description">Famous for the Great Migration and Big Five wildlife viewing in Kenya's most renowned game reserve.</div>
-                    </div>
-                </div>
-                
-                <div class="destination-card">
-                    <img src="https://images.unsplash.com/photo-1592670130915-d3dcd94675a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YW1ib3NlbGl8ZW58MHx8MHx8fDA%3D" alt="Amboseli" class="destination-image">
-                    <div class="destination-content">
-                        <div class="destination-name">Amboseli National Park</div>
-                        <div class="destination-description">Stunning views of Mt. Kilimanjaro and large elephant herds in this iconic African landscape.</div>
-                    </div>
-                </div>
-                
-                <div class="destination-card">
-                    <img src="https://media.istockphoto.com/id/2191707708/photo/african-bush-elephant.webp?a=1&b=1&s=612x612&w=0&k=20&c=ormUmNhYEBOQmiv9uxoX_Pi4hUYXWMt-noQ5yyFopDg=" alt="Tsavo" class="destination-image">
-                    <div class="destination-content">
-                        <div class="destination-name">Tsavo East & West National Parks</div>
-                        <div class="destination-description">Vast wilderness areas known for red elephants and rugged, untamed terrain.</div>
-                    </div>
-                </div>
-                
-                <div class="destination-card">
-                    <img src="https://media.istockphoto.com/id/2168651527/photo/kenya-lake-nakaru-flamingoes.webp?a=1&b=1&s=612x612&w=0&k=20&c=aUwwqYrxM_GslE1FbRfuD_-gaWDtCZH33ukiCE-NXUc=" alt="Lake Nakuru" class="destination-image">
-                    <div class="destination-content">
-                        <div class="destination-name">Lake Nakuru National Park</div>
-                        <div class="destination-description">Famous for pink flamingos and black rhino sanctuary in this alkaline lake ecosystem.</div>
-                    </div>
-                </div>
-                
-                <div class="destination-card">
-                    <img src="https://images.unsplash.com/photo-1603703182693-51a19941fa59?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2FtYnVydXxlbnwwfHwwfHx8MA%3D%3D" alt="Samburu" class="destination-image">
-                    <div class="destination-content">
-                        <div class="destination-name">Samburu National Reserve</div>
-                        <div class="destination-description">Unique northern species like Grevy's zebra, reticulated giraffe, and Beisa oryx.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+	<!-- Kenya Destinations -->
+	<div class="destinations-section" style="padding: 80px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center mb-5">
+					<h2 style="font-size: 3rem; font-weight: 300; color: #2c3e50; margin-bottom: 15px; letter-spacing: 2px;">KENYA DESTINATIONS</h2>
+					<div style="width: 80px; height: 3px; background: linear-gradient(90deg, #fa9e1b, #e67e22); margin: 0 auto 20px;"></div>
+					<p style="font-size: 1.1rem; color: #7f8c8d; max-width: 600px; margin: 0 auto;">Discover breathtaking locations across Kenya's wilderness</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://plus.unsplash.com/premium_photo-1661863287056-5c1d73ad5dec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNlcmVuZ2V0aXxlbnwwfHwwfHx8MA%3D%3D') center/cover; position: relative;">
+							<div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">POPULAR</div>
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Maasai Mara</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">Great Migration & Big Five</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 45,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Experience the Great Migration and Big Five in Kenya's most famous wildlife reserve.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #fa9e1b, #e67e22); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://media.istockphoto.com/id/966223936/photo/giant-elephant-grazing-at-amboseli-with-kilimanjaro.webp?a=1&b=1&s=612x612&w=0&k=20&c=oqdmcIpJbxaTGupMy-kg4hvuAOoppQdOPBhLtiuP3sE=') center/cover; position: relative;">
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Amboseli</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">Elephants & Kilimanjaro Views</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 35,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Elephants with Mount Kilimanjaro backdrop in this iconic national park.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1691161510065-298039a5b51b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGlhbmklMjBiZWFjaHxlbnwwfHwwfHx8MA%3D%3D') center/cover; position: relative;">
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Diani Beach</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">Pristine White Sand Beaches</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 25,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Pristine white sand beaches perfect for relaxation and water sports.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #00bcd4, #0097a7); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-        <!-- Coastal & Beach Destinations -->
-        <div class="category-section">
-            <div class="category-header">
-                <h2>🏖️ Coastal & Beach Destinations</h2>
-            </div>
-            
-            <div class="destinations-grid">
-                <div class="destination-card">
-                    <img src="https://images.unsplash.com/photo-1667935837291-1dc178866251?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlhbmklMjBiZWFjaCUyMGtlbnlhfGVufDB8fDB8fHww" alt="Diani Beach" class="destination-image">
-                    <div class="destination-content">
-                        <div class="destination-name">Diani Beach</div>
-                        <div class="destination-description">Pristine white sandy beaches perfect for relaxation, water sports, and tropical getaways.</div>
-                    </div>
-                </div>
-                
-                <div class="destination-card">
-                    <img src="https://images.unsplash.com/photo-1673262791211-55f7a4e13118?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2F0YW11JTIwYmVhY2h8ZW58MHx8MHx8fDA%3D" alt="Watamu" class="destination-image">
-                    <div class="destination-content">
-                        <div class="destination-name">Watamu</div>
-                        <div class="destination-description">Marine national park with excellent snorkeling, diving, and a peaceful coastal town atmosphere.</div>
-                    </div>
-                </div>
-                
-                <div class="destination-card">
-                    <img src="https://media.istockphoto.com/id/645423412/photo/lamu-old-town-waterfront-kenya-unesco-world-heritage-site.webp?a=1&b=1&s=612x612&w=0&k=20&c=fd1Vrm2KQwiZKqr-JxPB8kQM-OiqGZxRBeC2kW5f1S4=" alt="Lamu Island" class="destination-image">
-                    <div class="destination-content">
-                        <div class="destination-name">Lamu Island</div>
-                        <div class="destination-description">UNESCO World Heritage site rich in Swahili culture, architecture, and maritime history.</div>
-                    </div>
-                </div>
-                
-                <div class="destination-card">
-                    <img src="https://media.istockphoto.com/id/655442826/photo/ruins-of-ancient-gedi.webp?a=1&b=1&s=612x612&w=0&k=20&c=na30M2mxAKIlz89f-2YaVebbiRyCGUvsgNdZ6b1HJ98=" alt="Malindi" class="destination-image">
-                    <div class="destination-content">
-                        <div class="destination-name">Malindi</div>
-                        <div class="destination-description">Historic coastal town with ancient ruins, beautiful beaches, and luxury beach resorts.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+	<!-- East Africa Destinations -->
+	<div class="destinations-section" style="padding: 80px 0; background: white;">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center mb-5">
+					<h2 style="font-size: 3rem; font-weight: 300; color: #2c3e50; margin-bottom: 15px; letter-spacing: 2px;">EAST AFRICA DESTINATIONS</h2>
+					<div style="width: 80px; height: 3px; background: linear-gradient(90deg, #27ae60, #229954); margin: 0 auto 20px;"></div>
+					<p style="font-size: 1.1rem; color: #7f8c8d; max-width: 600px; margin: 0 auto;">Explore the wonders of East Africa beyond Kenya</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://media.istockphoto.com/id/2164403910/photo/woman-looking-through-binoculars-while-standing-in-jeep.webp?a=1&b=1&s=612x612&w=0&k=20&c=KU-AvDhL-72fxpMV2mz7VWQG1b9mmkQCrscJDg9s1kw=') center/cover; position: relative;">
+							<div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #27ae60, #229954); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">TANZANIA</div>
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Serengeti</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">Endless Plains & Wildlife</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 85,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Experience the endless plains and incredible wildlife of Tanzania's Serengeti.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #27ae60, #229954); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvcmVzdHxlbnwwfHwwfHx8MA%3D%3D') center/cover; position: relative;">
+							<div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #8e44ad, #7d3c98); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">UGANDA</div>
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Bwindi Forest</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">Mountain Gorilla Trekking</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 120,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Trek through ancient forests to encounter mountain gorillas in their natural habitat.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #8e44ad, #7d3c98); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1564221778350-e9c052164a57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHZvbGNhbm9lc3xlbnwwfHwwfHx8MA%3D%3D') center/cover; position: relative;">
+							<div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #e67e22, #d35400); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">RWANDA</div>
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Volcanoes National Park</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">Golden Monkeys & Gorillas</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 95,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Discover golden monkeys and mountain gorillas in Rwanda's volcanic landscapes.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #e67e22, #d35400); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 footer_column">
-                    <div class="footer_col">
-                        <div class="footer_content footer_about">
-                            <div class="logo_container footer_logo">
-                                <div class="logo"><a href="#"><img src="images/logo.png" alt="">Wildwavesafaris</a></div>
-                            </div>
-                            <p class="footer_about_text">Wildwavesafaris specializes in creating unforgettable safari experiences across Kenya and East Africa.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 footer_column">
-                    <div class="footer_col">
-                        <div class="footer_title">contact info</div>
-                        <div class="footer_content footer_contact">
-                            <ul class="contact_info_list">
-                                <li class="contact_info_item d-flex flex-row">
-                                    <div><div class="contact_info_icon"><img src="images/placeholder.svg" alt=""></div></div>
-                                    <div class="contact_info_text">Nairobi, Kenya</div>
-                                </li>
-                                <li class="contact_info_item d-flex flex-row">
-                                    <div><div class="contact_info_icon"><img src="images/phone-call.svg" alt=""></div></div>
-                                    <div class="contact_info_text">0713241666</div>
-                                </li>
-                                <li class="contact_info_item d-flex flex-row">
-                                    <div><div class="contact_info_icon"><img src="images/message.svg" alt=""></div></div>
-                                    <div class="contact_info_text"><a href="mailto:wildwavesafaris@gmail.com">wildwavesafaris@gmail.com</a></div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Copyright -->
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 order-lg-1 order-2">
-                    <div class="copyright_content d-flex flex-row align-items-center">
-                        <div>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by wabisabi and algokings</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<!-- International Destinations -->
+	<div class="destinations-section" style="padding: 80px 0; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); position: relative; overflow: hidden;">
+		<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&auto=format&fit=crop&q=60') center/cover; opacity: 0.1;"></div>
+		<div class="container" style="position: relative; z-index: 2;">
+			<div class="row">
+				<div class="col text-center mb-5">
+					<h2 style="font-size: 3rem; font-weight: 300; color: white; margin-bottom: 15px; letter-spacing: 2px;">INTERNATIONAL DESTINATIONS</h2>
+					<div style="width: 80px; height: 3px; background: linear-gradient(90deg, #fa9e1b, #e67e22); margin: 0 auto 20px;"></div>
+					<p style="font-size: 1.1rem; color: #bdc3c7; max-width: 600px; margin: 0 auto;">Explore the world's most incredible destinations</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: rgba(255,255,255,0.95); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.2)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1570097703229-b195d6dd291f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RWlmZmVsJTIwVG93ZXJ8ZW58MHx8MHx8fDA%3D') center/cover; position: relative;">
+							<div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">EUROPE</div>
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Paris, France</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">City of Light & Romance</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 180,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Experience the romance and culture of Paris with iconic landmarks and cuisine.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: rgba(255,255,255,0.95); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.2)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1546412414-e1885259563a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZHViYWl8ZW58MHx8MHx8fDA%3D') center/cover; position: relative;">
+							<div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">ASIA</div>
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Dubai, UAE</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">Modern Luxury & Desert</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 150,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Discover modern luxury, desert adventures, and world-class shopping in Dubai.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: rgba(255,255,255,0.95); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.2)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://plus.unsplash.com/premium_photo-1681803531285-75db948035d3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXNhfGVufDB8fDB8fHww') center/cover; position: relative;">
+							<div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">AMERICA</div>
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">New York, USA</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">The City That Never Sleeps</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 220,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Experience the energy and excitement of New York City's iconic attractions.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: rgba(255,255,255,0.95); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.2)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1628503218283-6ddeac69dfea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHlyYW1pZHMlMjBvZiUyMGdpemF8ZW58MHx8MHx8fDA%3D') center/cover; position: relative;">
+							<div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #d4af37, #b8860b); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">AFRICA</div>
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Cairo, Egypt</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">Ancient Pyramids & History</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 160,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Explore the ancient wonders of the Pyramids of Giza and discover Egypt's rich history.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #d4af37, #b8860b); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: rgba(255,255,255,0.95); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.2)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://plus.unsplash.com/premium_photo-1694475507860-2b9fbdd2de63?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z3JlYXQlMjB3YWxsJTIwb2YlMjBjaGluYXxlbnwwfHwwfHx8MA%3D%3D') center/cover; position: relative;">
+							<div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #c0392b, #a93226); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">ASIA</div>
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Beijing, China</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">Great Wall & Ancient Culture</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 190,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Walk along the Great Wall of China and immerse yourself in thousands of years of history and culture.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #c0392b, #a93226); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: rgba(255,255,255,0.95); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.2)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1565343904200-1307ffd712a8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hpbmElMjBzdG9uZSUyMHNvbGRpZXJzfGVufDB8fDB8fHww') center/cover; position: relative;">
+							<div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #8b4513, #654321); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">MYSTERY</div>
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Xi'an, China</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">Terracotta Warriors & Mysteries</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 175,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Discover the mysterious Terracotta Warriors where strange things have happened here. Uncover ancient secrets and archaeological wonders.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #8b4513, #654321); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="destination-card" style="background: rgba(255,255,255,0.95); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.2)'">
+						<div style="height: 250px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGhhaWxhbmR8ZW58MHx8MHx8fDA%3D') center/cover; position: relative;">
+							<div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #ff6b35, #f7931e); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;">TROPICAL</div>
+							<div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Bangkok, Thailand</h3>
+								<p style="margin: 5px 0 0; opacity: 0.9;">Temples, Culture & Street Food</p>
+							</div>
+						</div>
+						<div style="padding: 25px;">
+							<div style="font-size: 1.8rem; font-weight: 700; color: #27ae60; margin-bottom: 15px;">From KSh 140,000</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Experience the vibrant culture of Thailand with golden temples, bustling markets, delicious street food, and tropical beaches.</p>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #ff6b35, #f7931e); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Book Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
 <script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="js/custom.js"></script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254713241666" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+	<span class="whatsapp-icon">💬</span>
+</a>
+
+<style>
+.whatsapp-float {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 60px;
+	height: 60px;
+	background: #25D366;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+	z-index: 9998;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	animation: pulse 2s infinite;
+}
+.whatsapp-float:hover {
+	transform: scale(1.1);
+	box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+	text-decoration: none;
+}
+.whatsapp-float .whatsapp-icon {
+	color: white;
+	font-size: 32px;
+	font-weight: bold;
+}
+@keyframes pulse {
+	0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+	50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.8); }
+	100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+}
+</style>
 
 </body>
 </html>

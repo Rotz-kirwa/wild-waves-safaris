@@ -4,310 +4,379 @@
 <title>Accommodations - Wildwavesafaris</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Luxury Accommodations & Airbnb">
+<meta name="description" content="Safari accommodations and lodges with Wildwavesafaris">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/responsive.css">
-<style>
-.accommodations-hero {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1627363650407-b145507ad9ea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWlyYm5icyUyMGFuZCUyMGFjY29tb2R0aW9ufGVufDB8fDB8fHww');
-    background-size: cover;
-    background-position: center;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
-.accommodation-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 40px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-.accommodation-card:hover {
-    transform: translateY(-10px);
-}
-.accommodation-image {
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-.accommodation-content {
-    padding: 30px;
-}
-.accommodation-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #2d2c2c;
-}
-.accommodation-description {
-    color: #666;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-.accommodation-features {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 25px;
-}
-.accommodation-features li {
-    padding: 5px 0;
-    color: #555;
-}
-.accommodation-features li i {
-    color: #ff6b35;
-    margin-right: 10px;
-    width: 20px;
-}
-.book-btn {
-    background: linear-gradient(135deg, #ff6b35, #f7931e);
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 25px;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-.book-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
-    color: white;
-    text-decoration: none;
-}
-.price-tag {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 107, 53, 0.9);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="styles/about_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/about_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/new-navbar.css">
 </head>
 
 <body>
 
 <div class="super_container">
-    
-    <!-- Header -->
-    <header class="header">
-        <div class="top_bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col d-flex flex-row">
-                        <div class="phone">0713241666</div>
-                        <div class="social">
-                            <ul class="social_list">
-                                <li class="social_list_item"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                <li class="social_list_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li class="social_list_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="user_box_register user_box_link"><a href="#">register</a></div>
-                    </div>
-                </div>
-            </div>        
-        </div>
+	
+	<!-- NEW NAVBAR -->
+	<div class="wildwave-topbar">
+		<div class="contact-info">
+			<span><i class="fa fa-envelope"></i> <a href="mailto:wildwavesafaris@gmail.com">wildwavesafaris@gmail.com</a></span>
+			<span><i class="fa fa-phone"></i> <a href="tel:+254713241666">+254 713 241 666</a></span>
+			<span><i class="fa fa-map-marker"></i> <a href="https://maps.google.com/?q=Spur+Mall+Thika+Road+Nairobi" target="_blank">THIKA ROAD, SPUR MALL, NAIROBI</a></span>
+		</div>
+		<div class="social-icons">
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-instagram"></i></a>
+			<a href="#"><i class="fa fa-telegram"></i></a>
+		</div>
+	</div>
 
-        <nav class="main_nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
-                        <div class="logo_container">
-                            <div class="logo"><a href="index.html"><img src="images/logo.png" alt="">Wildwavesafaris</a></div>
-                        </div>
-                        <div class="main_nav_container ml-auto">
-                            <ul class="main_nav_list">
-                                <li class="main_nav_item"><a href="index.html">home</a></li>
-                                <li class="main_nav_item"><a href="about.html">about us</a></li>
-                                <li class="main_nav_item"><a href="activities.html">activities</a></li>
-                                <li class="main_nav_item"><a href="accommodations.html" style="color: #ff6b35 !important;">accommodations</a></li>
-                                <li class="main_nav_item"><a href="offers.html">offers</a></li>
-                                <li class="main_nav_item"><a href="contact.html">contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </nav>
-    </header>
+	<nav class="wildwave-navbar">
+		<a href="index.html" class="logo">
+			<img src="images/logo.png" alt="Wildwavesafaris">
+			Wildwavesafaris
+		</a>
+		<ul class="nav-menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="destinations.html">Destinations</a></li>
+			<li><a href="accommodations.html">Accommodations</a></li>
+			<li><a href="offers.html">Special Offers</a></li>
+			<li><a href="booking.html">Booking</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+		<div class="search-icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<button class="mobile-menu-btn">
+			<i class="fa fa-bars"></i>
+		</button>
+	</nav>
 
-    <!-- Hero Section -->
-    <div class="accommodations-hero">
-        <div class="container">
-            <h1 style="font-size: 3.5rem; margin-bottom: 20px;">🏡 Luxury Accommodations</h1>
-            <p style="font-size: 1.3rem;">Experience comfort and elegance in Kenya's finest stays</p>
-        </div>
-    </div>
+	<!-- Home -->
+	<div class="home" style="height: 600px; position: relative; overflow: hidden;">
+		<div style="display: flex; height: 100%; width: 100%;">
+			<!-- Left Image -->
+			<div style="flex: 1; background: url('https://plus.unsplash.com/premium_photo-1675745330148-1f7e5a7674a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWNjb21vZGF0aW9ufGVufDB8fDB8fHww') center/cover no-repeat; position: relative;">
+				<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));"></div>
+				<div style="position: absolute; bottom: 30px; left: 30px; color: white; z-index: 2;">
+					<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Luxury Lodges</h3>
+					<p style="margin: 5px 0 0; font-size: 1rem; opacity: 0.9;">Premium safari experiences</p>
+				</div>
+			</div>
+			<!-- Right Image -->
+			<div style="flex: 1; background: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWNjb21vZGF0aW9ufGVufDB8fDB8fHww') center/cover no-repeat; position: relative;">
+				<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));"></div>
+				<div style="position: absolute; bottom: 30px; right: 30px; color: white; z-index: 2; text-align: right;">
+					<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Safari Camps</h3>
+					<p style="margin: 5px 0 0; font-size: 1rem; opacity: 0.9;">Authentic wilderness stays</p>
+				</div>
+			</div>
+		</div>
+		<!-- Centered Title -->
+		<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 3;">
+			<div style="background: rgba(0,0,0,0.7); padding: 20px 40px; border-radius: 10px; backdrop-filter: blur(10px);">
+				<div class="home_title" style="color: white; font-size: 3.5rem; font-weight: 700; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">ACCOMMODATIONS</div>
+				<p style="color: #fa9e1b; font-size: 1.2rem; margin: 10px 0 0; font-weight: 500;">Your Perfect Safari Stay Awaits</p>
+			</div>
+		</div>
+	</div>
 
-    <!-- Accommodations Section -->
-    <div class="container" style="padding: 80px 0;">
-        <div class="row">
-            <div class="col text-center" style="margin-bottom: 60px;">
-                <h2 style="font-size: 2.5rem; color: #2d2c2c; margin-bottom: 20px;">Handpicked Accommodations</h2>
-                <p style="font-size: 1.1rem; color: #666;">From luxury safari lodges to cozy Airbnb retreats, discover your perfect home away from home</p>
-            </div>
-        </div>
+	<!-- Premium Accommodations -->
+	<div class="premium-accommodations" style="padding: 80px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center mb-5">
+					<h2 style="font-size: 3rem; font-weight: 300; color: #2c3e50; margin-bottom: 15px; letter-spacing: 2px;">SAFARI ACCOMMODATIONS</h2>
+					<div style="width: 80px; height: 3px; background: linear-gradient(90deg, #fa9e1b, #e67e22); margin: 0 auto 20px;"></div>
+					<p style="font-size: 1.1rem; color: #7f8c8d; max-width: 600px; margin: 0 auto;">From luxury lodges to budget-friendly camps, we offer the perfect stay for every traveler</p>
+				</div>
+			</div>
+			<div class="row">
+				
+				<!-- Luxury Safari Lodges -->
+				<div class="col-lg-6 mb-4">
+					<div class="luxury-accommodation-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'">
+						<div class="accommodation-badge" style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600; z-index: 2; box-shadow: 0 4px 15px rgba(243,156,18,0.3);">LUXURY</div>
+						<div class="accommodation-image" style="height: 200px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500&auto=format&fit=crop&q=60') center/cover; position: relative;">
+							<div style="position: absolute; bottom: 20px; left: 30px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Luxury Safari Lodges</h3>
+							</div>
+						</div>
+						<div class="accommodation-content" style="padding: 30px;">
+							<div class="price-section" style="margin-bottom: 20px;">
+								<span style="font-size: 2.2rem; font-weight: 700; color: #27ae60;">KSh 15,000</span>
+								<span style="font-size: 1.1rem; color: #7f8c8d; margin-left: 10px;">per night</span>
+							</div>
+							<div style="display: flex; align-items: center; margin-bottom: 15px;">
+								<div style="color: #f39c12; font-size: 1.1rem; margin-right: 10px;">★★★★★</div>
+								<span style="color: #7f8c8d; font-size: 0.9rem;">(5.0/5 rating)</span>
+							</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Premium lodges with panoramic views, gourmet dining, spa services, and private game drives. Perfect for honeymoons and special occasions.</p>
+							<div style="display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+								<span style="background: #e8f5e8; color: #27ae60; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-wifi" style="margin-right: 5px;"></i>WiFi</span>
+								<span style="background: #e8f5e8; color: #27ae60; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-cutlery" style="margin-right: 5px;"></i>Dining</span>
+								<span style="background: #e8f5e8; color: #27ae60; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-car" style="margin-right: 5px;"></i>Transport</span>
+								<span style="background: #e8f5e8; color: #27ae60; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-heart" style="margin-right: 5px;"></i>Spa</span>
+							</div>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(243,156,18,0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(243,156,18,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(243,156,18,0.3)'">Book Now</a>
+						</div>
+					</div>
+				</div>
 
-        <div class="row">
-            
-            <div class="col-lg-6 col-md-12">
-                <div class="accommodation-card">
-                    <div class="accommodation-image" style="background-image: url('https://images.unsplash.com/photo-1627363650407-b145507ad9ea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWlyYm5icyUyMGFuZCUyMGFjY29tb2R0aW9ufGVufDB8fDB8fHww')">
-                        <div class="price-tag">From KSh 8,500/night</div>
-                    </div>
-                    <div class="accommodation-content">
-                        <h3 class="accommodation-title">Safari Lodge Retreat</h3>
-                        <p class="accommodation-description">Immerse yourself in the heart of the wilderness with our exclusive safari lodge. Wake up to breathtaking savannah views and the sounds of nature at your doorstep.</p>
-                        <ul class="accommodation-features">
-                            <li><i class="fa fa-wifi"></i>Free Wi-Fi & Modern Amenities</li>
-                            <li><i class="fa fa-car"></i>Game Drive Access</li>
-                            <li><i class="fa fa-cutlery"></i>Gourmet Bush Dining</li>
-                            <li><i class="fa fa-bed"></i>Luxury King-Size Beds</li>
-                        </ul>
-                        <a href="contact.html" class="book-btn">Book Now</a>
-                    </div>
-                </div>
-            </div>
+				<!-- Mid-Range Safari Camps -->
+				<div class="col-lg-6 mb-4">
+					<div class="luxury-accommodation-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'">
+						<div class="accommodation-badge" style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600; z-index: 2; box-shadow: 0 4px 15px rgba(52,152,219,0.3);">MID-RANGE</div>
+						<div class="accommodation-image" style="height: 200px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://media.istockphoto.com/id/2188360288/photo/couple-playing-with-daughter-on-hotel-bed.webp?a=1&b=1&s=612x612&w=0&k=20&c=VyNDc3KVjg1t76nThDglhp7Y2-g_p0euVNaiYtCaAzc=') center/cover; position: relative;">
+							<div style="position: absolute; bottom: 20px; left: 30px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Mid-Range Safari Camps</h3>
+							</div>
+						</div>
+						<div class="accommodation-content" style="padding: 30px;">
+							<div class="price-section" style="margin-bottom: 20px;">
+								<span style="font-size: 2.2rem; font-weight: 700; color: #27ae60;">KSh 8,500</span>
+								<span style="font-size: 1.1rem; color: #7f8c8d; margin-left: 10px;">per night</span>
+							</div>
+							<div style="display: flex; align-items: center; margin-bottom: 15px;">
+								<div style="color: #f39c12; font-size: 1.1rem; margin-right: 10px;">★★★★☆</div>
+								<span style="color: #7f8c8d; font-size: 0.9rem;">(4.2/5 rating)</span>
+							</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Comfortable tented camps with en-suite bathrooms, restaurant facilities, and guided game drives. Great value for families and groups.</p>
+							<div style="display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+								<span style="background: #e3f2fd; color: #2196f3; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-bed" style="margin-right: 5px;"></i>En-suite</span>
+								<span style="background: #e3f2fd; color: #2196f3; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-cutlery" style="margin-right: 5px;"></i>Restaurant</span>
+								<span style="background: #e3f2fd; color: #2196f3; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-users" style="margin-right: 5px;"></i>Groups</span>
+								<span style="background: #e3f2fd; color: #2196f3; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-binoculars" style="margin-right: 5px;"></i>Game Drives</span>
+							</div>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(52,152,219,0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(52,152,219,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(52,152,219,0.3)'">Book Now</a>
+						</div>
+					</div>
+				</div>
 
-            <div class="col-lg-6 col-md-12">
-                <div class="accommodation-card">
-                    <div class="accommodation-image" style="background-image: url('https://images.unsplash.com/photo-1580862842731-404e4d3048e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGFpcmJuYnMlMjBhbmQlMjBhY2NvbW9kdGlvbnxlbnwwfHwwfHx8MA%3D%3D')">
-                        <div class="price-tag">From KSh 6,200/night</div>
-                    </div>
-                    <div class="accommodation-content">
-                        <h3 class="accommodation-title">Coastal Paradise Villa</h3>
-                        <p class="accommodation-description">Escape to our stunning beachfront villa where turquoise waters meet pristine white sands. Perfect for romantic getaways and family adventures alike.</p>
-                        <ul class="accommodation-features">
-                            <li><i class="fa fa-umbrella"></i>Private Beach Access</li>
-                            <li><i class="fa fa-tint"></i>Infinity Pool & Spa</li>
-                            <li><i class="fa fa-home"></i>Fully Equipped Kitchen</li>
-                            <li><i class="fa fa-users"></i>Sleeps up to 8 Guests</li>
-                        </ul>
-                        <a href="contact.html" class="book-btn">Book Now</a>
-                    </div>
-                </div>
-            </div>
+				<!-- Budget Safari Camps -->
+				<div class="col-lg-6 mb-4">
+					<div class="luxury-accommodation-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'">
+						<div class="accommodation-badge" style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #27ae60, #229954); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600; z-index: 2; box-shadow: 0 4px 15px rgba(39,174,96,0.3);">BUDGET</div>
+						<div class="accommodation-image" style="height: 200px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=500&auto=format&fit=crop&q=60') center/cover; position: relative;">
+							<div style="position: absolute; bottom: 20px; left: 30px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Budget Safari Camps</h3>
+							</div>
+						</div>
+						<div class="accommodation-content" style="padding: 30px;">
+							<div class="price-section" style="margin-bottom: 20px;">
+								<span style="font-size: 2.2rem; font-weight: 700; color: #27ae60;">KSh 4,500</span>
+								<span style="font-size: 1.1rem; color: #7f8c8d; margin-left: 10px;">per night</span>
+							</div>
+							<div style="display: flex; align-items: center; margin-bottom: 15px;">
+								<div style="color: #f39c12; font-size: 1.1rem; margin-right: 10px;">★★★☆☆</div>
+								<span style="color: #7f8c8d; font-size: 0.9rem;">(3.8/5 rating)</span>
+							</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Clean and comfortable budget camps with shared facilities, communal dining, and group game drives. Perfect for backpackers and budget travelers.</p>
+							<div style="display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+								<span style="background: #e8f5e8; color: #27ae60; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-home" style="margin-right: 5px;"></i>Clean</span>
+								<span style="background: #e8f5e8; color: #27ae60; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-group" style="margin-right: 5px;"></i>Shared</span>
+								<span style="background: #e8f5e8; color: #27ae60; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-money" style="margin-right: 5px;"></i>Budget</span>
+								<span style="background: #e8f5e8; color: #27ae60; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-camera" style="margin-right: 5px;"></i>Safari</span>
+							</div>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #27ae60, #229954); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(39,174,96,0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(39,174,96,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(39,174,96,0.3)'">Book Now</a>
+						</div>
+					</div>
+				</div>
 
-            <div class="col-lg-6 col-md-12">
-                <div class="accommodation-card">
-                    <div class="accommodation-image" style="background-image: url('https://media.istockphoto.com/id/109727027/photo/family-of-three-on-hotel-balcony-overlooking-ocean.webp?a=1&b=1&s=612x612&w=0&k=20&c=0lMOm6ufpsS0NcWgGlitFX9y5DCKQV-To5q6NaKZACY=')">
-                        <div class="price-tag">From KSh 12,000/night</div>
-                    </div>
-                    <div class="accommodation-content">
-                        <h3 class="accommodation-title">Ocean View Penthouse</h3>
-                        <p class="accommodation-description">Indulge in luxury at our premium penthouse suite with panoramic ocean views. Experience world-class hospitality with personalized service and exclusive amenities.</p>
-                        <ul class="accommodation-features">
-                            <li><i class="fa fa-eye"></i>360° Ocean Views</li>
-                            <li><i class="fa fa-glass"></i>Private Balcony & Bar</li>
-                            <li><i class="fa fa-concierge-bell"></i>24/7 Concierge Service</li>
-                            <li><i class="fa fa-star"></i>5-Star Luxury Amenities</li>
-                        </ul>
-                        <a href="contact.html" class="book-btn">Book Now</a>
-                    </div>
-                </div>
-            </div>
+				<!-- Beach Resorts -->
+				<div class="col-lg-6 mb-4">
+					<div class="luxury-accommodation-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'">
+						<div class="accommodation-badge" style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #00bcd4, #0097a7); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600; z-index: 2; box-shadow: 0 4px 15px rgba(0,188,212,0.3);">BEACH</div>
+						<div class="accommodation-image" style="height: 200px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=500&auto=format&fit=crop&q=60') center/cover; position: relative;">
+							<div style="position: absolute; bottom: 20px; left: 30px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Beach Resorts</h3>
+							</div>
+						</div>
+						<div class="accommodation-content" style="padding: 30px;">
+							<div class="price-section" style="margin-bottom: 20px;">
+								<span style="font-size: 2.2rem; font-weight: 700; color: #27ae60;">KSh 12,000</span>
+								<span style="font-size: 1.1rem; color: #7f8c8d; margin-left: 10px;">per night</span>
+							</div>
+							<div style="display: flex; align-items: center; margin-bottom: 15px;">
+								<div style="color: #f39c12; font-size: 1.1rem; margin-right: 10px;">★★★★★</div>
+								<span style="color: #7f8c8d; font-size: 0.9rem;">(4.8/5 rating)</span>
+							</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Beachfront resorts at Diani and Malindi with water sports, spa treatments, and ocean views. Combine safari with beach relaxation.</p>
+							<div style="display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+								<span style="background: #e0f7fa; color: #00bcd4; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-anchor" style="margin-right: 5px;"></i>Water Sports</span>
+								<span style="background: #e0f7fa; color: #00bcd4; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-sun-o" style="margin-right: 5px;"></i>Beach</span>
+								<span style="background: #e0f7fa; color: #00bcd4; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-glass" style="margin-right: 5px;"></i>Bar</span>
+								<span style="background: #e0f7fa; color: #00bcd4; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-leaf" style="margin-right: 5px;"></i>Spa</span>
+							</div>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #00bcd4, #0097a7); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,188,212,0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0,188,212,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,188,212,0.3)'">Book Now</a>
+						</div>
+					</div>
+				</div>
 
-            <div class="col-lg-6 col-md-12">
-                <div class="accommodation-card">
-                    <div class="accommodation-image" style="background-image: url('https://plus.unsplash.com/premium_photo-1710361777337-a2e3e16dda59?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGFpcmJuYnMlMjBhbmQlMjBhY2NvbW9kdGlvbnxlbnwwfHwwfHx8MA%3D%3D')">
-                        <div class="price-tag">From KSh 4,800/night</div>
-                    </div>
-                    <div class="accommodation-content">
-                        <h3 class="accommodation-title">Mountain Hideaway Cabin</h3>
-                        <p class="accommodation-description">Discover tranquility in our cozy mountain cabin surrounded by lush forests and pristine nature. Perfect for digital detox and reconnecting with the wilderness.</p>
-                        <ul class="accommodation-features">
-                            <li><i class="fa fa-tree"></i>Forest Surroundings</li>
-                            <li><i class="fa fa-fire"></i>Fireplace & Cozy Interiors</li>
-                            <li><i class="fa fa-leaf"></i>Eco-Friendly Design</li>
-                            <li><i class="fa fa-paw"></i>Wildlife Viewing Deck</li>
-                        </ul>
-                        <a href="contact.html" class="book-btn">Book Now</a>
-                    </div>
-                </div>
-            </div>
+				<!-- City Hotels -->
+				<div class="col-lg-6 mb-4">
+					<div class="luxury-accommodation-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'">
+						<div class="accommodation-badge" style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600; z-index: 2; box-shadow: 0 4px 15px rgba(156,39,176,0.3);">CITY</div>
+						<div class="accommodation-image" style="height: 200px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&auto=format&fit=crop&q=60') center/cover; position: relative;">
+							<div style="position: absolute; bottom: 20px; left: 30px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">City Hotels</h3>
+							</div>
+						</div>
+						<div class="accommodation-content" style="padding: 30px;">
+							<div class="price-section" style="margin-bottom: 20px;">
+								<span style="font-size: 2.2rem; font-weight: 700; color: #27ae60;">KSh 6,500</span>
+								<span style="font-size: 1.1rem; color: #7f8c8d; margin-left: 10px;">per night</span>
+							</div>
+							<div style="display: flex; align-items: center; margin-bottom: 15px;">
+								<div style="color: #f39c12; font-size: 1.1rem; margin-right: 10px;">★★★★☆</div>
+								<span style="color: #7f8c8d; font-size: 0.9rem;">(4.3/5 rating)</span>
+							</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Modern hotels in Nairobi and Mombasa with business facilities, restaurants, and easy access to airports and attractions.</p>
+							<div style="display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+								<span style="background: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-building" style="margin-right: 5px;"></i>Modern</span>
+								<span style="background: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-wifi" style="margin-right: 5px;"></i>WiFi</span>
+								<span style="background: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-briefcase" style="margin-right: 5px;"></i>Business</span>
+								<span style="background: #f3e5f5; color: #9c27b0; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-plane" style="margin-right: 5px;"></i>Airport</span>
+							</div>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(156,39,176,0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(156,39,176,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(156,39,176,0.3)'">Book Now</a>
+						</div>
+					</div>
+				</div>
 
-            <div class="col-lg-12">
-                <div class="accommodation-card">
-                    <div class="accommodation-image" style="background-image: url('https://plus.unsplash.com/premium_photo-1687996106476-9e851e2b0eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFpcmJuYnMlMjBhbmQlMjBhY2NvbW9kdGlvbnxlbnwwfHwwfHx8MA%3D%3D'); height: 300px;">
-                        <div class="price-tag">From KSh 15,500/night</div>
-                    </div>
-                    <div class="accommodation-content">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <h3 class="accommodation-title">Exclusive Safari Estate</h3>
-                                <p class="accommodation-description">Experience the ultimate in luxury with our private safari estate. This magnificent property offers unparalleled comfort, breathtaking views, and exclusive access to Kenya's most pristine wilderness areas. Perfect for groups and special celebrations.</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <ul class="accommodation-features">
-                                            <li><i class="fa fa-home"></i>Private Estate (10+ Bedrooms)</li>
-                                            <li><i class="fa fa-car"></i>Private Game Vehicles</li>
-                                            <li><i class="fa fa-user"></i>Personal Butler Service</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul class="accommodation-features">
-                                            <li><i class="fa fa-cutlery"></i>Private Chef & Dining</li>
-                                            <li><i class="fa fa-plane"></i>Helicopter Landing Pad</li>
-                                            <li><i class="fa fa-glass"></i>Wine Cellar & Bar</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 text-center">
-                                <a href="contact.html" class="book-btn" style="font-size: 1.1rem; padding: 15px 40px;">Book Exclusive Stay</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+				<!-- Airbnb & Apartments -->
+				<div class="col-lg-6 mb-4">
+					<div class="luxury-accommodation-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: all 0.4s ease; position: relative;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)'">
+						<div class="accommodation-badge" style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #ff5722, #d84315); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600; z-index: 2; box-shadow: 0 4px 15px rgba(255,87,34,0.3);">PRIVATE</div>
+						<div class="accommodation-image" style="height: 200px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&auto=format&fit=crop&q=60') center/cover; position: relative;">
+							<div style="position: absolute; bottom: 20px; left: 30px; color: white;">
+								<h3 style="font-size: 1.8rem; font-weight: 600; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Airbnb & Apartments</h3>
+							</div>
+						</div>
+						<div class="accommodation-content" style="padding: 30px;">
+							<div class="price-section" style="margin-bottom: 20px;">
+								<span style="font-size: 2.2rem; font-weight: 700; color: #27ae60;">KSh 3,500</span>
+								<span style="font-size: 1.1rem; color: #7f8c8d; margin-left: 10px;">per night</span>
+							</div>
+							<div style="display: flex; align-items: center; margin-bottom: 15px;">
+								<div style="color: #f39c12; font-size: 1.1rem; margin-right: 10px;">★★★★☆</div>
+								<span style="color: #7f8c8d; font-size: 0.9rem;">(4.1/5 rating)</span>
+							</div>
+							<p style="color: #5a6c7d; line-height: 1.6; margin-bottom: 20px;">Private apartments and homes for extended stays, family groups, and those seeking local experiences with kitchen facilities.</p>
+							<div style="display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+								<span style="background: #fbe9e7; color: #ff5722; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-key" style="margin-right: 5px;"></i>Private</span>
+								<span style="background: #fbe9e7; color: #ff5722; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-home" style="margin-right: 5px;"></i>Home</span>
+								<span style="background: #fbe9e7; color: #ff5722; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-cutlery" style="margin-right: 5px;"></i>Kitchen</span>
+								<span style="background: #fbe9e7; color: #ff5722; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 500;"><i class="fa fa-users" style="margin-right: 5px;"></i>Family</span>
+							</div>
+							<a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #ff5722, #d84315); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255,87,34,0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255,87,34,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255,87,34,0.3)'">Book Now</a>
+						</div>
+					</div>
+				</div>
 
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 
-    <!-- Call to Action -->
-    <div style="background: #f8f9fa; padding: 60px 0;">
-        <div class="container text-center">
-            <h2 style="margin-bottom: 20px; color: #2d2c2c;">🌟 Ready for Your Perfect Stay?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 30px; color: #666;">Let us help you find the ideal accommodation for your Kenyan adventure</p>
-            <a href="contact.html" class="book-btn" style="font-size: 1.1rem; padding: 15px 40px;">Contact Us Today</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 footer_column">
-                    <div class="footer_col">
-                        <div class="footer_content footer_about">
-                            <div class="logo_container footer_logo">
-                                <div class="logo"><a href="#"><img src="images/logo.png" alt="">Wildwavesafaris</a></div>
-                            </div>
-                            <p class="footer_about_text">Discover breathtaking destinations and unforgettable safari adventures.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+	<!-- Premium Features -->
+	<div class="premium-features" style="padding: 80px 0; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); position: relative; overflow: hidden;">
+		<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&auto=format&fit=crop&q=60') center/cover; opacity: 0.1;"></div>
+		<div class="container" style="position: relative; z-index: 2;">
+			<div class="row">
+				<div class="col text-center mb-5">
+					<h2 style="font-size: 3rem; font-weight: 300; color: white; margin-bottom: 15px; letter-spacing: 2px;">WHAT'S INCLUDED</h2>
+					<div style="width: 80px; height: 3px; background: linear-gradient(90deg, #fa9e1b, #e67e22); margin: 0 auto 20px;"></div>
+					<p style="font-size: 1.1rem; color: #bdc3c7; max-width: 600px; margin: 0 auto;">Every accommodation package comes with these premium features and services</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-md-6 mb-4">
+					<div class="feature-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px 30px; text-align: center; transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+						<div style="width: 80px; height: 80px; background: linear-gradient(135deg, #fa9e1b, #e67e22); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(250,158,27,0.3);">
+							<i class="fa fa-bed" style="font-size: 2rem; color: white;"></i>
+						</div>
+						<h3 style="color: white; font-size: 1.5rem; font-weight: 600; margin-bottom: 15px;">Comfortable Rooms</h3>
+						<p style="color: #bdc3c7; line-height: 1.6; margin: 0;">Clean, comfortable accommodations with quality bedding and premium amenities for your perfect rest</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-4">
+					<div class="feature-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px 30px; text-align: center; transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+						<div style="width: 80px; height: 80px; background: linear-gradient(135deg, #27ae60, #229954); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(39,174,96,0.3);">
+							<i class="fa fa-cutlery" style="font-size: 2rem; color: white;"></i>
+						</div>
+						<h3 style="color: white; font-size: 1.5rem; font-weight: 600; margin-bottom: 15px;">Meals Included</h3>
+						<p style="color: #bdc3c7; line-height: 1.6; margin: 0;">Full board or half board options with local and international cuisine prepared by expert chefs</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-4">
+					<div class="feature-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px 30px; text-align: center; transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+						<div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(52,152,219,0.3);">
+							<i class="fa fa-car" style="font-size: 2rem; color: white;"></i>
+						</div>
+						<h3 style="color: white; font-size: 1.5rem; font-weight: 600; margin-bottom: 15px;">Transport</h3>
+						<p style="color: #bdc3c7; line-height: 1.6; margin: 0;">Airport transfers and game drive vehicles included in packages with professional drivers</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-4">
+					<div class="feature-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px 30px; text-align: center; transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+						<div style="width: 80px; height: 80px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(231,76,60,0.3);">
+							<i class="fa fa-shield" style="font-size: 2rem; color: white;"></i>
+						</div>
+						<h3 style="color: white; font-size: 1.5rem; font-weight: 600; margin-bottom: 15px;">Safety & Security</h3>
+						<p style="color: #bdc3c7; line-height: 1.6; margin: 0;">24/7 security, safe locations, and emergency support available for complete peace of mind</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
 <script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="js/custom.js"></script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254713241666" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+	<span class="whatsapp-icon">💬</span>
+</a>
+
+<style>
+.whatsapp-float {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 60px;
+	height: 60px;
+	background: #25D366;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+	z-index: 9998;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	animation: pulse 2s infinite;
+}
+.whatsapp-float:hover {
+	transform: scale(1.1);
+	box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+	text-decoration: none;
+}
+.whatsapp-float .whatsapp-icon {
+	color: white;
+	font-size: 32px;
+	font-weight: bold;
+}
+@keyframes pulse {
+	0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+	50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.8); }
+	100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+}
+</style>
 
 </body>
 </html>
