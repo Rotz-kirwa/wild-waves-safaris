@@ -49,10 +49,34 @@
 		<div class="search-icon">
 			<i class="fa fa-search"></i>
 		</div>
-		<button class="mobile-menu-btn">
+		<button class="mobile-menu-btn" onclick="toggleMobileMenu()">
 			<i class="fa fa-bars"></i>
 		</button>
 	</nav>
+
+	<!-- Mobile Menu Overlay -->
+	<div class="mobile-menu-overlay" id="mobileMenuOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.8); z-index: 9999; transform: translateX(-100%); transition: transform 0.3s ease;">
+		<div class="mobile-menu-content" style="width: 280px; height: 100%; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 20px; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
+			<div class="mobile-menu-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+				<div class="mobile-menu-logo" style="display: flex; align-items: center; gap: 10px; color: white; font-size: 16px; font-weight: bold;">
+					<img src="images/logo.png" alt="Wildwavesafaris" style="height: 25px;">
+					Wildwavesafaris
+				</div>
+				<button class="mobile-menu-close" onclick="toggleMobileMenu()" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 5px; min-height: 44px; min-width: 44px;">
+					<i class="fa fa-times"></i>
+				</button>
+			</div>
+			<ul class="mobile-nav-menu" style="list-style: none; padding: 0; margin: 0;">
+				<li style="margin-bottom: 5px;"><a href="index.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Home</a></li>
+				<li style="margin-bottom: 5px;"><a href="about.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">About Us</a></li>
+				<li style="margin-bottom: 5px;"><a href="destinations.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Destinations</a></li>
+				<li style="margin-bottom: 5px;"><a href="accommodations.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Accommodations</a></li>
+				<li style="margin-bottom: 5px;"><a href="offers.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Special Offers</a></li>
+				<li style="margin-bottom: 5px;"><a href="booking.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Booking</a></li>
+				<li style="margin-bottom: 5px;"><a href="contact.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Contact</a></li>
+			</ul>
+		</div>
+	</div>
 
 	<!-- Home -->
 	<div class="home" style="height: 600px; position: relative; overflow: hidden;">
@@ -378,5 +402,38 @@
 }
 </style>
 
+<script>
+function toggleMobileMenu() {
+	const overlay = document.getElementById('mobileMenuOverlay');
+	if (overlay.style.transform === 'translateX(0px)' || overlay.style.transform === 'translateX(0%)') {
+		overlay.style.transform = 'translateX(-100%)';
+		document.body.style.overflow = 'auto';
+	} else {
+		overlay.style.transform = 'translateX(0)';
+		document.body.style.overflow = 'hidden';
+	}
+}
+
+// Close menu when clicking outside
+document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
+	if (e.target === this) {
+		toggleMobileMenu();
+	}
+});
+
+// Add hover effects
+document.querySelectorAll('.mobile-nav-menu a').forEach(link => {
+	link.addEventListener('mouseenter', function() {
+		this.style.background = 'rgba(255,255,255,0.1)';
+		this.style.color = '#fa9e1b';
+		this.style.transform = 'translateX(5px)';
+	});
+	link.addEventListener('mouseleave', function() {
+		this.style.background = 'transparent';
+		this.style.color = 'white';
+		this.style.transform = 'translateX(0)';
+	});
+});
+</script>
 </body>
 </html>
