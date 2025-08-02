@@ -1867,7 +1867,7 @@ body {
 
 </head>
 
-<body></script>
+<body>
 
 <div class="super_container">
 	
@@ -1883,6 +1883,9 @@ body {
 			<a href="#"><i class="fa fa-twitter"></i></a>
 			<a href="#"><i class="fa fa-instagram"></i></a>
 			<a href="#"><i class="fa fa-telegram"></i></a>
+			<button class="mobile-menu-btn-topbar" onclick="toggleMobileMenu()">
+				<i class="fa fa-bars"></i>
+			</button>
 		</div>
 	</div>
 
@@ -1907,6 +1910,30 @@ body {
 			<i class="fa fa-bars"></i>
 		</button>
 	</nav>
+
+	<!-- Mobile Menu Overlay -->
+	<div class="mobile-menu-overlay" id="mobileMenuOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.8); z-index: 9999; transform: translateX(-100%); transition: transform 0.3s ease;">
+		<div class="mobile-menu-content" style="width: 280px; height: 100%; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 20px; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
+			<div class="mobile-menu-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+				<div class="mobile-menu-logo" style="display: flex; align-items: center; gap: 10px; color: white; font-size: 16px; font-weight: bold;">
+					<img src="images/logo.png" alt="Wildwavesafaris" style="height: 25px;">
+					Wildwavesafaris
+				</div>
+				<button class="mobile-menu-close" onclick="toggleMobileMenu()" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 5px; min-height: 44px; min-width: 44px;">
+					<i class="fa fa-times"></i>
+				</button>
+			</div>
+			<ul class="mobile-nav-menu" style="list-style: none; padding: 0; margin: 0;">
+				<li style="margin-bottom: 5px;"><a href="index.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Home</a></li>
+				<li style="margin-bottom: 5px;"><a href="about.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">About Us</a></li>
+				<li style="margin-bottom: 5px;"><a href="destinations.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Destinations</a></li>
+				<li style="margin-bottom: 5px;"><a href="accommodations.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Accommodations</a></li>
+				<li style="margin-bottom: 5px;"><a href="offers.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Special Offers</a></li>
+				<li style="margin-bottom: 5px;"><a href="booking.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Booking</a></li>
+				<li style="margin-bottom: 5px;"><a href="contact.html" onclick="toggleMobileMenu()" style="display: block; color: white; text-decoration: none; padding: 15px 20px; border-radius: 8px; transition: all 0.3s ease; font-size: 16px; font-weight: 500; min-height: 44px; line-height: 1.2;">Contact</a></li>
+			</ul>
+		</div>
+	</div>
 
 
 
@@ -3997,6 +4024,33 @@ $(document).ready(function() {
     });
 });
 
+// Mobile Menu Toggle Function
+function toggleMobileMenu() {
+    const overlay = document.getElementById('mobileMenuOverlay');
+    const isOpen = overlay.style.transform === 'translateX(0px)' || overlay.style.transform === 'translateX(0%)';
+    
+    if (isOpen) {
+        overlay.style.transform = 'translateX(-100%)';
+        document.body.style.overflow = 'auto';
+    } else {
+        overlay.style.transform = 'translateX(0)';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const overlay = document.getElementById('mobileMenuOverlay');
+    const menuContent = overlay.querySelector('.mobile-menu-content');
+    const menuButton = document.querySelector('.mobile-menu-btn-topbar');
+    
+    if (overlay.style.transform === 'translateX(0px)' || overlay.style.transform === 'translateX(0%)') {
+        if (!menuContent.contains(event.target) && !menuButton.contains(event.target)) {
+            toggleMobileMenu();
+        }
+    }
+});
+
 // NAVBAR PROTECTION - Ensure navbar never disappears
 $(document).ready(function() {
     function forceNavbarVisible() {
@@ -4127,6 +4181,32 @@ $(document).ready(function() {
 	0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
 	50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.8); }
 	100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+}
+
+/* Mobile Menu Enhancements */
+.mobile-nav-menu a:hover {
+	background: rgba(255,255,255,0.1) !important;
+	color: #ffc107 !important;
+	transform: translateX(5px) !important;
+}
+
+/* Mobile Menu Overlay Backdrop */
+.mobile-menu-overlay {
+	backdrop-filter: blur(5px);
+}
+
+/* Touch-friendly mobile menu */
+@media (max-width: 768px) {
+	.mobile-menu-btn-topbar {
+		position: absolute !important;
+		top: 8px !important;
+		right: 15px !important;
+		z-index: 1002 !important;
+	}
+	
+	.wildwave-topbar {
+		position: relative;
+	}
 }
 </style>
 
