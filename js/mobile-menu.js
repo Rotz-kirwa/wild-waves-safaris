@@ -4,30 +4,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const menu = document.getElementById('mobileMenu');
     
     if (openBtn && menu) {
-        openBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            menu.classList.add('open');
+        openBtn.addEventListener('click', function() {
+            menu.style.right = '0';
         });
     }
     
     if (closeBtn && menu) {
         closeBtn.addEventListener('click', function() {
-            menu.classList.remove('open');
+            menu.style.right = '-300px';
         });
     }
     
-    // Close on outside click
-    document.addEventListener('click', function(e) {
-        if (menu && !menu.contains(e.target) && !openBtn.contains(e.target)) {
-            menu.classList.remove('open');
-        }
-    });
-    
     // Close on nav link click
-    const navLinks = menu.querySelectorAll('.mobile-nav a');
+    const navLinks = menu.querySelectorAll('a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            menu.classList.remove('open');
+            menu.style.right = '-300px';
         });
     });
 });
